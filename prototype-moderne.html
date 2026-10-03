@@ -2790,6 +2790,229 @@
       z-index: 0;
     }
 
+
+    /* ══════════════════════════════════════════════════════
+       MODERN STUDIO REDESIGN : PAGES SAVOIR-FAIRE
+       ══════════════════════════════════════════════════════ */
+    .detail-overlay {
+      background: #FAF8F6 !important;
+      backdrop-filter: blur(20px);
+    }
+    .detail-topbar {
+      height: 72px;
+      padding: 0 48px;
+      background: rgba(250, 248, 246, 0.92) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(214, 204, 196, 0.5);
+    }
+    .detail-hero {
+      padding: 80px 48px 56px !important;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .detail-hero-label {
+      font-size: 0.76rem !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--brand);
+      background: var(--brand-muted);
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(196, 174, 174, 0.4);
+    }
+    .detail-hero-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem) !important;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .detail-hero-desc {
+      font-size: 1.12rem !important;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      max-width: 820px;
+      background: #FFFFFF;
+      padding: 28px 34px;
+      border-radius: 18px;
+      border: 1px solid var(--sand);
+      box-shadow: 0 4px 20px rgba(138, 114, 114, 0.05);
+    }
+
+    /* Cards des études de cas modernisées */
+    .detail-cases {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .case-study {
+      padding: 48px !important;
+      background: #FFFFFF;
+      border-radius: 24px;
+      border: 1px solid rgba(214, 204, 196, 0.7);
+      box-shadow: 0 6px 30px rgba(20, 20, 20, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .case-study:hover {
+      box-shadow: 0 12px 40px rgba(138, 114, 114, 0.1);
+    }
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--cream-deep);
+    }
+    .case-meta-item {
+      background: var(--cream-deep);
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--sand);
+    }
+    .case-meta-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--ink-light);
+      margin-bottom: 2px;
+    }
+    .case-meta-value {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--brand-dark);
+    }
+    .case-title {
+      font-size: 1.85rem !important;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .case-desc {
+      font-size: 1rem !important;
+      line-height: 1.75;
+      color: var(--ink-mid);
+    }
+
+    /* Grille de points clés / features en cartes subtiles */
+    .case-features {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px !important;
+      margin: 28px 0 !important;
+      padding: 0 !important;
+      list-style: none !important;
+    }
+    .case-features li {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      border-radius: 14px;
+      padding: 20px 22px !important;
+      font-size: 0.92rem !important;
+      line-height: 1.65;
+      color: var(--ink-mid);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .case-features li:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(138, 114, 114, 0.08);
+      border-color: var(--brand-light);
+    }
+    .case-features li::before {
+      display: none !important;
+    }
+    .case-features li strong {
+      color: var(--brand-dark);
+      font-size: 0.96rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .case-features li strong::before {
+      content: '✦';
+      color: var(--brand);
+      font-size: 0.8rem;
+    }
+
+    /* Galeries visuelles et captures enrichies */
+    .case-strip {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 16px 4px 8px;
+      margin-top: 24px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--sand-mid) transparent;
+    }
+    .case-strip-item {
+      flex: 0 0 340px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--sand);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+      background: #fff;
+    }
+    .case-strip-item:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 32px rgba(138, 114, 114, 0.15);
+      border-color: var(--brand-light);
+    }
+    .case-strip-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Bottom Next/Prev Savoir-Faire Bar */
+    .detail-bottom-nav {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 48px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--sand);
+    }
+    .detail-nav-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 24px;
+      background: #FFFFFF;
+      border: 1px solid var(--sand);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .detail-nav-card:hover {
+      background: var(--brand);
+      color: #FFFFFF !important;
+      border-color: var(--brand);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(138, 114, 114, 0.2);
+    }
+    .detail-nav-card:hover span {
+      color: rgba(255,255,255,0.8) !important;
+    }
+
 </style>
 </head>
 <body>
