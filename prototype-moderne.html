@@ -2981,6 +2981,63 @@
       display: inline !important;
     }
 
+
+    /* ══════════════════════════════════════════════════════
+       HARMONISATION SUBTILE CORAIL DANS TOUT LE PORTFOLIO
+       ══════════════════════════════════════════════════════ */
+    :root {
+      --corail-subtle: #D86B52;       /* Touche vive mais dosée */
+      --corail-soft:   rgba(216, 107, 82, 0.08); /* Fond translucide doux */
+      --corail-border: rgba(216, 107, 82, 0.25);
+    }
+
+    /* 1. Petits symboles '+' et compteurs dans les cartes métriques */
+    .metric-value span.counter::before,
+    .metric-value::first-letter {
+      color: var(--corail-subtle);
+    }
+
+    /* 2. Frise chronologique (timeline dots) */
+    .exp-dot {
+      background: var(--corail-subtle) !important;
+      box-shadow: 0 0 0 4px var(--corail-soft) !important;
+    }
+
+    /* 3. Pastilles compétences mises en avant (highlight) */
+    .skill-pill.highlight {
+      background: #FFFFFF !important;
+      color: var(--ink) !important;
+      border: 1px solid var(--corail-border) !important;
+      position: relative;
+    }
+    .skill-pill.highlight::before {
+      content: '•';
+      color: var(--corail-subtle);
+      margin-right: 6px;
+      font-size: 1.1rem;
+      line-height: 0;
+      vertical-align: middle;
+    }
+
+    /* 4. Fin liseré discret au survol des cartes Savoir-Faire */
+    .sf-card::before {
+      background: linear-gradient(90deg, var(--corail-subtle), var(--brand)) !important;
+    }
+
+    /* 5. Flèche au survol des cartes Savoir-Faire */
+    .sf-card:hover .sf-card-arrow {
+      background: var(--corail-subtle) !important;
+      border-color: var(--corail-subtle) !important;
+      box-shadow: 0 6px 16px rgba(216, 107, 82, 0.25) !important;
+    }
+
+    /* 6. Accent sur les témoignages */
+    .testimonial-tag {
+      color: var(--corail-subtle) !important;
+      background: var(--corail-soft) !important;
+      border: 1px solid var(--corail-border) !important;
+    }
+
 </style>
 </head>
 <body>
