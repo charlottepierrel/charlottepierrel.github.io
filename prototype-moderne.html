@@ -2901,10 +2901,10 @@
       margin-bottom: 20px;
       border-bottom: 1px solid var(--cream-deep);
     }
-    /* Blocs Entreprise & Outils : écriture gris/noir, fond sable doux neutre */
+    /* Blocs Entreprise & Outils sous fond corail raffiné */
     .case-meta-item {
-      background: var(--cream-deep) !important;
-      border: 1px solid var(--sand) !important;
+      background: #FBF0EC !important; /* Fond corail doux et chaleureux */
+      border: 1px solid rgba(216, 107, 82, 0.22) !important;
       padding: 6px 14px;
       border-radius: 8px;
     }
@@ -2912,14 +2912,14 @@
       font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.1em;
-      color: var(--ink-light) !important;
+      color: #D86B52 !important;
       margin-bottom: 2px;
       text-transform: uppercase;
     }
     .case-meta-value {
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--ink) !important; /* Ecriture gris noir nette */
+      color: var(--ink) !important;
     }
     .case-title {
       font-size: 1.55rem !important;
@@ -2982,60 +2982,66 @@
     }
 
 
-    /* ══════════════════════════════════════════════════════
-       HARMONISATION SUBTILE CORAIL DANS TOUT LE PORTFOLIO
-       ══════════════════════════════════════════════════════ */
-    :root {
-      --corail-subtle: #D86B52;       /* Touche vive mais dosée */
-      --corail-soft:   rgba(216, 107, 82, 0.08); /* Fond translucide doux */
-      --corail-border: rgba(216, 107, 82, 0.25);
+    
+    .sf-card {
+      user-select: none;
+    }
+    .sf-tags {
+      pointer-events: none; /* Le clic traverse vers la carte */
+      padding-right: 52px;   /* Espace sécurisé pour ne jamais toucher la flèche */
+    }
+    .sf-tag {
+      pointer-events: none;
+    }
+    .sf-tag:hover {
+      transform: none !important;
+      background: var(--cream-deep) !important;
+      border-color: var(--sand) !important;
+      color: var(--ink-light) !important;
     }
 
-    /* 1. Petits symboles '+' et compteurs dans les cartes métriques */
-    .metric-value span.counter::before,
-    .metric-value::first-letter {
-      color: var(--corail-subtle);
-    }
 
-    /* 2. Frise chronologique (timeline dots) */
-    .exp-dot {
-      background: var(--corail-subtle) !important;
-      box-shadow: 0 0 0 4px var(--corail-soft) !important;
-    }
-
-    /* 3. Pastilles compétences mises en avant (highlight) */
-    .skill-pill.highlight {
-      background: #FFFFFF !important;
-      color: var(--ink) !important;
-      border: 1px solid var(--corail-border) !important;
+    /* ── Indicateur et flèche pour carrousel photo horizontal ── */
+    .case-strip-wrapper {
       position: relative;
+      margin-top: 14px;
     }
-    .skill-pill.highlight::before {
-      content: '•';
-      color: var(--corail-subtle);
-      margin-right: 6px;
-      font-size: 1.1rem;
-      line-height: 0;
-      vertical-align: middle;
+    .case-strip-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(6px);
     }
-
-    /* 4. Fin liseré discret au survol des cartes Savoir-Faire */
-    .sf-card::before {
-      background: linear-gradient(90deg, var(--corail-subtle), var(--brand)) !important;
+    .case-strip-arrow:hover {
+      background: #FFFFFF;
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 6px 18px rgba(216, 107, 82, 0.22);
+      color: #D86B52;
+      border-color: rgba(216, 107, 82, 0.35);
     }
-
-    /* 5. Flèche au survol des cartes Savoir-Faire */
-    .sf-card:hover .sf-card-arrow {
-      background: var(--corail-subtle) !important;
-      border-color: var(--corail-subtle) !important;
-      box-shadow: 0 6px 16px rgba(216, 107, 82, 0.25) !important;
+    .case-strip-arrow.right {
+      right: -14px;
     }
-
-    /* 6. Accent sur les témoignages */
-    .testimonial-tag {
-      color: var(--corail-subtle) !important;
-      background: var(--corail-soft) !important;
-      border: 1px solid var(--corail-border) !important;
+    .case-strip-arrow.left {
+      left: -14px;
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .case-strip-arrow.right { right: 4px; }
+      .case-strip-arrow.left { left: 4px; }
     }
 
 </style>
@@ -3232,7 +3238,7 @@
       <div class="sf-grid">
 
         <!-- Carte 1 : Stratégie digitale -->
-        <div class="sf-card reveal reveal-delay-1">
+        <div class="sf-card reveal reveal-delay-1" onclick="openDetail(1)" role="button" tabindex="0" style="cursor:pointer;">
           <div class="sf-card-num" onclick="openDetail(1)" style="cursor:pointer;">01</div>
           <div class="sf-card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
@@ -3252,7 +3258,7 @@
         </div>
 
         <!-- Carte 2 : Communication et contenu -->
-        <div class="sf-card reveal reveal-delay-2">
+        <div class="sf-card reveal reveal-delay-2" onclick="openDetail(2)" role="button" tabindex="0" style="cursor:pointer;">
           <div class="sf-card-num" onclick="openDetail(2)" style="cursor:pointer;">02</div>
           <div class="sf-card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
@@ -3271,7 +3277,7 @@
         </div>
 
         <!-- Carte 3 : Social Media -->
-        <div class="sf-card reveal reveal-delay-3">
+        <div class="sf-card reveal reveal-delay-3" onclick="openDetail(3)" role="button" tabindex="0" style="cursor:pointer;">
           <div class="sf-card-num" onclick="openDetail(3)" style="cursor:pointer;">03</div>
           <div class="sf-card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
@@ -3285,7 +3291,6 @@
             <span class="sf-tag">Pinterest</span>
             <span class="sf-tag">TikTok</span>
             <span class="sf-tag">Meta Ads</span>
-            <span class="sf-tag">Canva</span>
           </div>
           <div class="sf-card-arrow" onclick="openDetail(3)" style="cursor:pointer;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
         </div>
@@ -3293,7 +3298,7 @@
       </div><!-- /sf-grid -->
       <div class="sf-grid-last reveal">
         <!-- Carte 4 : Gestion de projet -->
-        <div class="sf-card reveal reveal-delay-4">
+        <div class="sf-card reveal reveal-delay-4" onclick="openDetail(4)" role="button" tabindex="0" style="cursor:pointer;">
           <div class="sf-card-num" onclick="openDetail(4)" style="cursor:pointer;">04</div>
           <div class="sf-card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
@@ -3310,7 +3315,7 @@
         </div>
 
         <!-- Carte 5 : IA appliquée au marketing -->
-        <div class="sf-card reveal reveal-delay-5" style="border-color: var(--brand-light); background: linear-gradient(160deg, var(--brand-muted) 0%, var(--cream) 60%);">
+        <div class="sf-card reveal reveal-delay-5" onclick="openDetail(5)" role="button" tabindex="0" style="cursor:pointer; border-color: var(--brand-light); background: linear-gradient(160deg, var(--brand-muted) 0%, var(--cream) 60%);">
           <div class="sf-card-num" style="color: var(--brand);">05</div>
           <div class="sf-card-icon" style="background: var(--brand-muted);">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M12 16a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2v-2a2 2 0 012-2z"/><path d="M2 12a2 2 0 012-2h2a2 2 0 012 2 2 2 0 01-2 2H4a2 2 0 01-2-2z"/><path d="M16 12a2 2 0 012-2h2a2 2 0 012 2 2 2 0 01-2 2h-2a2 2 0 01-2-2z"/><path d="M5.6 5.6l1.4 1.4M16.9 16.9l1.5 1.5M5.6 18.4l1.4-1.4M16.9 7.1l1.5-1.5"/></svg>
@@ -3896,6 +3901,7 @@
       currentDetail = n;
       document.querySelectorAll('.detail-page').forEach(p => p.classList.remove('active'));
       document.getElementById('detail-page-' + n).classList.add('active');
+      setTimeout(initCaseStrips, 100);
       document.getElementById('detail-counter').textContent = '0' + n + ' / 05';
       document.getElementById('detail-title-bar').textContent = detailTitles[n - 1];
       document.getElementById('btn-prev').disabled = (n === 1);
@@ -4008,7 +4014,54 @@
       track.scrollBy({ left: direction * step, behavior: 'smooth' });
     }
 
-  </script>
+  
+    // Initialisation automatique des flèches discrètes sur les carrousels photos (case-strip)
+    function initCaseStrips() {
+      document.querySelectorAll('.case-strip').forEach(strip => {
+        if (strip.parentElement.classList.contains('case-strip-wrapper')) return;
+        
+        const wrapper = document.createElement('div');
+        wrapper.className = 'case-strip-wrapper';
+        strip.parentNode.insertBefore(wrapper, strip);
+        wrapper.appendChild(strip);
+
+        const btnRight = document.createElement('button');
+        btnRight.className = 'case-strip-arrow right';
+        btnRight.setAttribute('aria-label', 'Photos suivantes');
+        btnRight.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
+
+        const btnLeft = document.createElement('button');
+        btnLeft.className = 'case-strip-arrow left';
+        btnLeft.setAttribute('aria-label', 'Photos précédentes');
+        btnLeft.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>';
+
+        wrapper.appendChild(btnLeft);
+        wrapper.appendChild(btnRight);
+
+        btnRight.addEventListener('click', (e) => {
+          e.stopPropagation();
+          strip.scrollBy({ left: 380, behavior: 'smooth' });
+        });
+
+        btnLeft.addEventListener('click', (e) => {
+          e.stopPropagation();
+          strip.scrollBy({ left: -380, behavior: 'smooth' });
+        });
+
+        const updateArrows = () => {
+          const maxScroll = strip.scrollWidth - strip.clientWidth - 10;
+          btnLeft.style.display = strip.scrollLeft > 15 ? 'flex' : 'none';
+          btnRight.style.display = (strip.scrollWidth > strip.clientWidth && strip.scrollLeft < maxScroll) ? 'flex' : 'none';
+        };
+
+        strip.addEventListener('scroll', updateArrows);
+        window.addEventListener('resize', updateArrows);
+        setTimeout(updateArrows, 400);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', initCaseStrips);
+
+</script>
 
 
   <!-- ============================================================
@@ -4217,7 +4270,7 @@
             <div class="case-meta">
               <div class="case-meta-item"><span class="case-meta-label">Entreprise</span><span class="case-meta-value">Escales Polaires</span></div>
               <div class="case-meta-item"><span class="case-meta-label">Réseau</span><span class="case-meta-value">Instagram</span></div>
-              <div class="case-meta-item"><span class="case-meta-label">Résultat</span><span class="case-meta-value">+22% d'abonnés en 3 mois</span></div>
+              
             </div>
             <h3 class="case-title">Community management freelance</h3>
             <p class="case-desc">En mission freelance pour Escales Polaires, j'ai pris en charge la <strong>stratégie éditoriale et la gestion du compte Instagram</strong> : calendrier de publication, création de contenus natifs (visuels, captions, stories), animation de la communauté et analyse des performances. En 3 mois : <strong>+22% d'abonnés</strong>.</p>
