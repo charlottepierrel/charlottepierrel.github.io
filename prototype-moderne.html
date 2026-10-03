@@ -2792,12 +2792,14 @@
 
 
     
+    
     /* ══════════════════════════════════════════════════════
-       REFINED SAVOIR-FAIRE OVERLAYS (ÉPURÉ, SANS BLOCS LOURDS)
+       PRECISION ADJUSTMENTS SAVOIR-FAIRE
        ══════════════════════════════════════════════════════ */
     :root {
-      --peps: #D86B52; /* Terracotta corail chaleureux & peps */
-      --peps-light: #F7EAE6;
+      --peps: #C85A32; /* Corail / Terracotta affirmé */
+      --peps-soft: #FBF0EC;
+      --peps-border: rgba(200, 90, 50, 0.2);
     }
 
     .detail-overlay {
@@ -2806,78 +2808,75 @@
     .detail-topbar {
       height: 64px;
       padding: 0 40px;
-      background: rgba(250, 250, 249, 0.94) !important;
+      background: rgba(250, 250, 249, 0.96) !important;
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--sand);
     }
     .detail-hero {
-      padding: 56px 40px 32px !important;
+      padding: 52px 40px 28px !important;
       max-width: 960px;
       margin: 0 auto;
       text-align: left;
     }
+    /* SAVOIR-FAIRE sur fond beige/taupe doux */
     .detail-hero-label {
       font-size: 0.72rem !important;
-      letter-spacing: 0.14em !important;
+      letter-spacing: 0.12em !important;
       text-transform: uppercase;
       font-weight: 700;
-      color: var(--peps) !important;
-      background: var(--peps-light) !important;
+      color: var(--brand-dark) !important;
+      background: var(--sand) !important;
       display: inline-flex;
       align-items: center;
-      padding: 4px 14px;
+      padding: 5px 15px;
       border-radius: 9999px;
-      margin-bottom: 18px;
-      border: 1px solid rgba(216, 107, 82, 0.25) !important;
+      margin-bottom: 16px;
+      border: 1px solid var(--sand-mid) !important;
     }
     .detail-hero-title {
-      font-size: clamp(2rem, 3.8vw, 3rem) !important;
+      font-size: clamp(2rem, 3.6vw, 2.9rem) !important;
       font-weight: 750;
       line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 16px;
-      white-space: nowrap; /* Garde le titre sur une seule ligne sur grand écran */
+      white-space: nowrap;
     }
     @media (max-width: 900px) {
       .detail-hero-title { white-space: normal; }
     }
-    /* Sous-texte épuré : pas de boîte blanche, police fine et naturelle */
     .detail-hero-desc {
       font-size: 1rem !important;
       line-height: 1.75 !important;
       color: var(--ink-mid) !important;
-      max-width: 820px;
+      max-width: 840px;
       background: transparent !important;
       padding: 0 !important;
-      border-radius: 0 !important;
       border: none !important;
       box-shadow: none !important;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
-    /* Indicateur discret et élégant pour inviter à descendre */
+    /* Découvrir les projets : cliquable avec curseur pointeur et scroll fluide */
     .detail-scroll-cue {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 600;
       color: var(--peps);
       background: #FFFFFF;
-      padding: 6px 16px;
+      padding: 7px 18px;
       border-radius: 20px;
-      border: 1px solid var(--sand);
-      margin-top: 8px;
-      animation: bounceCue 2s infinite ease-in-out;
+      border: 1px solid var(--peps-border);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(200, 90, 50, 0.08);
     }
-    @keyframes bounceCue {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(4px); }
-    }
-
-    /* Supprime la barre de séparation agressive */
-    .detail-hero + .detail-cases {
-      border-top: none !important;
+    .detail-scroll-cue:hover {
+      background: var(--peps-soft);
+      transform: translateY(2px);
+      box-shadow: 0 3px 12px rgba(200, 90, 50, 0.15);
     }
 
     .detail-cases {
@@ -2889,44 +2888,40 @@
       gap: 36px;
     }
 
-    /* Etude de cas calme, pas de zoom agressif */
+    /* Etude de cas */
     .case-study {
       padding: 38px 40px !important;
       background: #FFFFFF;
       border-radius: 18px;
       border: 1px solid var(--sand);
-      box-shadow: 0 2px 12px rgba(20, 20, 20, 0.03);
-      transition: border-color 0.25s ease;
-    }
-    .case-study:hover {
-      border-color: var(--brand-light);
-      transform: none !important; /* Pas de tremblement ou de sursaut */
-      box-shadow: 0 4px 20px rgba(138, 114, 114, 0.06) !important;
+      box-shadow: 0 2px 10px rgba(20, 20, 20, 0.02);
     }
     .case-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px 20px;
+      gap: 12px 16px;
       padding-bottom: 16px;
       margin-bottom: 20px;
       border-bottom: 1px solid var(--cream-deep);
     }
+    /* Blocs Entreprise & Outils sous fond corail */
     .case-meta-item {
-      background: var(--cream-deep);
+      background: var(--peps-soft) !important;
+      border: 1px solid var(--peps-border) !important;
       padding: 6px 14px;
       border-radius: 8px;
-      border: 1px solid var(--sand);
     }
     .case-meta-label {
       font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.1em;
-      color: var(--ink-light);
+      color: var(--peps) !important;
+      opacity: 0.85;
     }
     .case-meta-value {
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--ink-mid);
+      color: var(--peps) !important;
     }
     .case-title {
       font-size: 1.55rem !important;
@@ -2942,52 +2937,52 @@
       margin-bottom: 22px;
     }
 
-    /* Features : adaptatif, pas de trous vides, remplissage harmonieux */
+    /* Features :
+       - fond blanc avec contour fin
+       - titres en corail
+       - pas de points/puces ni deux-points
+       - pas d'animation au survol
+       - disposition fluide qui s'adapte (3 items occupent 3 colonnes) */
     .case-features {
       display: grid !important;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-      gap: 14px !important;
-      margin: 20px 0 !important;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+      gap: 16px !important;
+      margin: 22px 0 !important;
       padding: 0 !important;
       list-style: none !important;
     }
     .case-features li {
-      background: var(--cream-deep) !important;
-      border: 1px solid var(--sand);
-      border-radius: 12px;
-      padding: 16px 18px !important;
+      background: #FFFFFF !important;
+      border: 1.5px solid var(--sand) !important;
+      border-radius: 14px;
+      padding: 20px 22px !important;
       font-size: 0.88rem !important;
       line-height: 1.6;
       color: var(--ink-mid);
       box-shadow: none !important;
-      transform: none !important; /* Pas de rebond */
-      transition: background 0.2s, border-color 0.2s;
+      transform: none !important;
+      transition: none !important; /* Pas d'animation au survol */
     }
     .case-features li:hover {
       background: #FFFFFF !important;
-      border-color: var(--peps) !important;
+      border-color: var(--sand) !important;
       transform: none !important;
+      box-shadow: none !important;
+    }
+    .case-features li::before {
+      display: none !important;
+      content: none !important;
     }
     .case-features li strong {
-      color: var(--ink);
-      font-size: 0.92rem;
+      color: var(--peps) !important; /* Titre en corail */
+      font-size: 0.94rem;
       font-weight: 700;
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      margin-bottom: 8px;
+      display: block;
     }
     .case-features li strong::before {
-      content: '•';
-      color: var(--peps);
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    /* Images : stables sans grossissement excessif */
-    .case-strip-item:hover {
-      transform: none !important;
-      border-color: var(--brand-light);
+      display: none !important;
+      content: none !important;
     }
 
 </style>
@@ -3996,7 +3991,7 @@
           <div class="detail-hero-label">Savoir-faire 01</div>
           <h2 class="detail-hero-title">Stratégie digitale et marketing</h2>
           <p class="detail-hero-desc">Développer une stratégie marketing efficace commence par définir des objectifs clairs. J'accorde une grande importance à l'identification précise de la cible, ce qui permet d'adapter le message et les actions avec justesse. Ensuite vient le choix des leviers : SEO, SEA, emailing, social ads... Une stratégie réussie repose sur une vision claire, une bonne lecture de l'audience et une utilisation cohérente de chaque canal.</p>
-          <div class="detail-scroll-cue"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
@@ -4008,9 +4003,9 @@
             <h3 class="case-title">Refonte de site web & Analyse de données</h3>
             <p class="case-desc">Pilotage complet de la présence web du Réseau AUXI'life, alliant design, acquisition naturelle et pilotage de la performance :</p>
             <ul class="case-features">
-              <li><strong>Refonte graphique & Refonte de l'expérience utilisateur (UX/UI)&nbsp;:</strong> modernisation complète de la charte graphique et de l'ergonomie pour valoriser l'image de marque, fluidifier les parcours utilisateurs et maximiser la conversion (notamment le tunnel de demande de devis).</li>
-              <li><strong>Stratégie SEO & contenu à fort impact (GEO / besoins usagers)&nbsp;:</strong> optimisation technique (structure Hn, maillage interne, balisage sémantique) et éditoriale, axée sur les besoins concrets des bénéficiaires et l'optimisation pour les nouveaux moteurs de recherche/réponses génératives (GEO). Pilotage régulier d'une production d'articles de blog experts pour asseoir l'autorité du domaine.</li>
-              <li><strong>Tableau de bord Analytics sur-mesure (Claude Code, GitHub & APIs Google)&nbsp;:</strong> conception et déploiement d'un dashboard de monitoring avancé connecté aux APIs Google (GA4, Google Tag Manager, PageSpeed Insights...) pour analyser en temps réel et dans le moindre détail les performances techniques, le trafic qualifié et le suivi du tunnel des demandes de devis.</li>
+              <li><strong>Refonte graphique & Refonte de l'expérience utilisateur (UX/UI)</strong> modernisation complète de la charte graphique et de l'ergonomie pour valoriser l'image de marque, fluidifier les parcours utilisateurs et maximiser la conversion (notamment le tunnel de demande de devis).</li>
+              <li><strong>Stratégie SEO & contenu à fort impact (GEO / besoins usagers)</strong> optimisation technique (structure Hn, maillage interne, balisage sémantique) et éditoriale, axée sur les besoins concrets des bénéficiaires et l'optimisation pour les nouveaux moteurs de recherche/réponses génératives (GEO). Pilotage régulier d'une production d'articles de blog experts pour asseoir l'autorité du domaine.</li>
+              <li><strong>Tableau de bord Analytics sur-mesure (Claude Code, GitHub & APIs Google)</strong> conception et déploiement d'un dashboard de monitoring avancé connecté aux APIs Google (GA4, Google Tag Manager, PageSpeed Insights...) pour analyser en temps réel et dans le moindre détail les performances techniques, le trafic qualifié et le suivi du tunnel des demandes de devis.</li>
             </ul>
             <div class="case-kpis">
               <div class="case-kpi">
@@ -4039,8 +4034,8 @@
             <h3 class="case-title">Campagnes SEA & Acquisition Google Ads</h3>
             <p class="case-desc">Gestion et optimisation stratégique de campagnes payantes avec des objectifs forts d'acquisition, de rentabilité et de notoriété :</p>
             <ul class="case-features">
-              <li><strong>Réseau AUXI'life (Génération de leads)&nbsp;:</strong> construction et pilotage de campagnes Search et locales pour capter des demandes de devis qualifiées et des leads au profit des agences du réseau, tout en soutenant les objectifs de notoriété et de recrutement.</li>
-              <li><strong>Terres d'aventure (Optimisation des départs & saisonnalité)&nbsp;:</strong> pilotage de campagnes Google Ads calquées sur le calendrier saisonnier pour soutenir la complétude des voyages, valoriser les départs confirmés et adapter les messages publicitaires aux temps forts de réservation.</li>
+              <li><strong>Réseau AUXI'life (Génération de leads)</strong> construction et pilotage de campagnes Search et locales pour capter des demandes de devis qualifiées et des leads au profit des agences du réseau, tout en soutenant les objectifs de notoriété et de recrutement.</li>
+              <li><strong>Terres d'aventure (Optimisation des départs & saisonnalité)</strong> pilotage de campagnes Google Ads calquées sur le calendrier saisonnier pour soutenir la complétude des voyages, valoriser les départs confirmés et adapter les messages publicitaires aux temps forts de réservation.</li>
             </ul>
           </div>
 
@@ -4053,10 +4048,10 @@
             <p style="font-size: 1.05rem; font-weight: 600; color: var(--brand); margin-bottom: 18px; font-family: var(--font-display);">Pilotage et optimisation de 65 fiches Google Business Profile</p>
             <p class="case-desc">Pour piloter efficacement la réputation et la visibilité des 65 agences du Réseau AUXI'life, j'ai conçu et mis en place une solution sur-mesure alliant SEO local, automatisation et intelligence artificielle :</p>
             <ul class="case-features">
-              <li><strong>Tableau de bord dynamique & Présence Management&nbsp;:</strong> conception et déploiement d'un dashboard connecté via l'API Claude Code et GitHub pour monitorer la visibilité locale et harmoniser les informations des 65 agences.</li>
-              <li><strong>Assistant IA pour le Feedback Management&nbsp;:</strong> automatisation du traitement des avis avec un assistant IA intelligent capable de générer des réponses personnalisées, bienveillantes et adaptées au secteur médico-social.</li>
-              <li><strong>Analyses croisées dynamiques & sémantiques&nbsp;:</strong> possibilité de filtrer par date et par agence, couplée à une analyse sémantique approfondie des retours clients pour identifier les signaux faibles et axes d'amélioration.</li>
-              <li><strong>Stratégie SEO locale&nbsp;:</strong> alimentation régulière des posts, optimisation des catégories/attributs et renforcement constant du référencement naturel sur les zones de chalandise.</li>
+              <li><strong>Tableau de bord dynamique & Présence Management</strong> conception et déploiement d'un dashboard connecté via l'API Claude Code et GitHub pour monitorer la visibilité locale et harmoniser les informations des 65 agences.</li>
+              <li><strong>Assistant IA pour le Feedback Management</strong> automatisation du traitement des avis avec un assistant IA intelligent capable de générer des réponses personnalisées, bienveillantes et adaptées au secteur médico-social.</li>
+              <li><strong>Analyses croisées dynamiques & sémantiques</strong> possibilité de filtrer par date et par agence, couplée à une analyse sémantique approfondie des retours clients pour identifier les signaux faibles et axes d'amélioration.</li>
+              <li><strong>Stratégie SEO locale</strong> alimentation régulière des posts, optimisation des catégories/attributs et renforcement constant du référencement naturel sur les zones de chalandise.</li>
             </ul>
             <div class="case-img">
               <img src="https://framerusercontent.com/images/EfQeKHUI725MoIYZj99ng49Yqck.png" alt="Google Business & Dashboard Présence Management" loading="lazy"/>
@@ -4088,7 +4083,7 @@
           <div class="detail-hero-label">Savoir-faire 02</div>
           <h2 class="detail-hero-title">Communication et création de contenu</h2>
           <p class="detail-hero-desc">La création de contenu s'inscrit toujours dans une stratégie de communication claire, répondant à des besoins identifiés et des objectifs précis. Elle demande une bonne compréhension de la cible, de la créativité, un regard graphique affûté et la capacité à transmettre le bon message au bon moment.</p>
-          <div class="detail-scroll-cue"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
@@ -4146,7 +4141,7 @@
           <div class="detail-hero-label">Savoir-faire 03</div>
           <h2 class="detail-hero-title">Community Management et Social Media</h2>
           <p class="detail-hero-desc">Gérer les réseaux sociaux ne se résume pas à publier du contenu : c'est construire une stratégie alignée avec les objectifs de la marque, définir un ton, une ligne éditoriale cohérente, et créer des contenus engageants pensés pour la cible. L'analyse des performances (taux d'engagement, portée, clics) est essentielle pour ajuster les actions et optimiser les résultats.</p>
-          <div class="detail-scroll-cue"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
@@ -4202,7 +4197,7 @@
           <div class="detail-hero-label">Savoir-faire 04</div>
           <h2 class="detail-hero-title">Gestion de projet et coordination</h2>
           <p class="detail-hero-desc">Intervenir sur des projets pluridisciplinaires où rigueur, coordination et respect des délais sont essentiels. Que ce soit pour un événement d'envergure ou une refonte de site, je m'implique de la définition du brief jusqu'à la livraison finale.</p>
-          <div class="detail-scroll-cue"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
@@ -4241,8 +4236,8 @@
             <p style="font-size: 1.05rem; font-weight: 600; color: var(--brand); margin-bottom: 18px; font-family: var(--font-display);">Stratégie de marque employeur et optimisation du recrutement</p>
             <p class="case-desc">Pour répondre aux enjeux majeurs de recrutement du réseau et attirer de nouveaux talents, j'ai piloté le projet de création du site carrière dédié :</p>
             <ul class="case-features">
-              <li><strong>Cadrage & Marque employeur&nbsp;:</strong> conception d'une plateforme dédiée au recrutement pour incarner les valeurs humaines de l'entreprise, valoriser les métiers du réseau et renforcer l'attractivité auprès des candidats.</li>
-              <li><strong>Parcours candidat & Conversion (UX/UI)&nbsp;:</strong> optimisation du tunnel de candidature pensée pour faciliter la prise de contact, lever les freins à la postulation et maximiser la conversion sur les offres d'emploi.</li>
+              <li><strong>Cadrage & Marque employeur</strong> conception d'une plateforme dédiée au recrutement pour incarner les valeurs humaines de l'entreprise, valoriser les métiers du réseau et renforcer l'attractivité auprès des candidats.</li>
+              <li><strong>Parcours candidat & Conversion (UX/UI)</strong> optimisation du tunnel de candidature pensée pour faciliter la prise de contact, lever les freins à la postulation et maximiser la conversion sur les offres d'emploi.</li>
             </ul>
             <div class="case-strip">
               <div class="case-strip-item"><img src="site-carriere-hero.jpg" alt="Page d'accueil site carrière AUXI'life" loading="lazy"></div>
@@ -4261,7 +4256,7 @@
           <div class="detail-hero-label">Savoir-faire 05</div>
           <h2 class="detail-hero-title">Intelligence artificielle appliquée au marketing</h2>
           <p class="detail-hero-desc">L'IA fait partie intégrante de ma façon de travailler, comme un levier concret de productivité. Je l'utilise au quotidien pour automatiser ce qui peut l'être, produire du contenu plus vite et plus juste, et concentrer mon énergie sur ce qui apporte de la vraie valeur. Pas un effet de mode, une réalité opérationnelle.</p>
-          <div class="detail-scroll-cue"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
