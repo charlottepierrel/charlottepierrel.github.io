@@ -2793,13 +2793,13 @@
 
     
     
+    
     /* ══════════════════════════════════════════════════════
-       PRECISION ADJUSTMENTS SAVOIR-FAIRE
+       SAVOIR-FAIRE : VERSION ÉPURÉE, MINIMALE ET CHIC
        ══════════════════════════════════════════════════════ */
     :root {
-      --peps: #C85A32; /* Corail / Terracotta affirmé */
-      --peps-soft: #FBF0EC;
-      --peps-border: rgba(200, 90, 50, 0.2);
+      --corail-accent: #D86B52; /* Touche discrète */
+      --corail-dot: #E07A5F;
     }
 
     .detail-overlay {
@@ -2813,12 +2813,11 @@
       border-bottom: 1px solid var(--sand);
     }
     .detail-hero {
-      padding: 52px 40px 28px !important;
+      padding: 52px 40px 24px !important;
       max-width: 960px;
       margin: 0 auto;
       text-align: left;
     }
-    /* SAVOIR-FAIRE sur fond beige/taupe doux */
     .detail-hero-label {
       font-size: 0.72rem !important;
       letter-spacing: 0.12em !important;
@@ -2856,33 +2855,31 @@
       margin-bottom: 24px;
     }
 
-    /* Découvrir les projets : cliquable avec curseur pointeur et scroll fluide */
     .detail-scroll-cue {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-size: 0.82rem;
       font-weight: 600;
-      color: var(--peps);
+      color: var(--corail-accent);
       background: #FFFFFF;
       padding: 7px 18px;
       border-radius: 20px;
-      border: 1px solid var(--peps-border);
+      border: 1px solid rgba(216, 107, 82, 0.25);
       cursor: pointer;
       user-select: none;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(200, 90, 50, 0.08);
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
     .detail-scroll-cue:hover {
-      background: var(--peps-soft);
+      background: #FFF7F5;
       transform: translateY(2px);
-      box-shadow: 0 3px 12px rgba(200, 90, 50, 0.15);
     }
 
     .detail-cases {
       max-width: 960px;
       margin: 0 auto;
-      padding: 24px 40px 70px !important;
+      padding: 20px 40px 70px !important;
       display: flex;
       flex-direction: column;
       gap: 36px;
@@ -2904,10 +2901,10 @@
       margin-bottom: 20px;
       border-bottom: 1px solid var(--cream-deep);
     }
-    /* Blocs Entreprise & Outils sous fond corail */
+    /* Blocs Entreprise & Outils : écriture gris/noir, fond sable doux neutre */
     .case-meta-item {
-      background: var(--peps-soft) !important;
-      border: 1px solid var(--peps-border) !important;
+      background: var(--cream-deep) !important;
+      border: 1px solid var(--sand) !important;
       padding: 6px 14px;
       border-radius: 8px;
     }
@@ -2915,13 +2912,14 @@
       font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.1em;
-      color: var(--peps) !important;
-      opacity: 0.85;
+      color: var(--ink-light) !important;
+      margin-bottom: 2px;
+      text-transform: uppercase;
     }
     .case-meta-value {
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--peps) !important;
+      color: var(--ink) !important; /* Ecriture gris noir nette */
     }
     .case-title {
       font-size: 1.55rem !important;
@@ -2934,55 +2932,53 @@
       font-size: 0.95rem !important;
       line-height: 1.7;
       color: var(--ink-mid);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
-    /* Features :
-       - fond blanc avec contour fin
-       - titres en corail
-       - pas de points/puces ni deux-points
-       - pas d'animation au survol
-       - disposition fluide qui s'adapte (3 items occupent 3 colonnes) */
+    /* Remis comme avant : liste verticale fluide, élégante, sans boîtes */
     .case-features {
-      display: grid !important;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+      display: flex !important;
+      flex-direction: column !important;
       gap: 16px !important;
-      margin: 22px 0 !important;
+      margin: 20px 0 28px 0 !important;
       padding: 0 !important;
       list-style: none !important;
     }
     .case-features li {
-      background: #FFFFFF !important;
-      border: 1.5px solid var(--sand) !important;
-      border-radius: 14px;
-      padding: 20px 22px !important;
-      font-size: 0.88rem !important;
-      line-height: 1.6;
-      color: var(--ink-mid);
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 0 0 26px !important;
+      position: relative !important;
+      font-size: 0.92rem !important;
+      line-height: 1.68 !important;
+      color: var(--ink-mid) !important;
       box-shadow: none !important;
       transform: none !important;
-      transition: none !important; /* Pas d'animation au survol */
     }
     .case-features li:hover {
-      background: #FFFFFF !important;
-      border-color: var(--sand) !important;
-      transform: none !important;
+      background: transparent !important;
+      border: none !important;
       box-shadow: none !important;
     }
+    /* Puce ronde discrète avec fine touche corail */
     .case-features li::before {
-      display: none !important;
-      content: none !important;
+      display: block !important;
+      content: '' !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 9px !important;
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+      background: var(--corail-dot) !important;
+      box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.18) !important;
     }
     .case-features li strong {
-      color: var(--peps) !important; /* Titre en corail */
-      font-size: 0.94rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      display: block;
-    }
-    .case-features li strong::before {
-      display: none !important;
-      content: none !important;
+      color: var(--ink) !important; /* Titre en gras gris/noir */
+      font-weight: 700 !important;
+      font-size: 0.93rem !important;
+      display: inline !important;
     }
 
 </style>
@@ -4003,9 +3999,9 @@
             <h3 class="case-title">Refonte de site web & Analyse de données</h3>
             <p class="case-desc">Pilotage complet de la présence web du Réseau AUXI'life, alliant design, acquisition naturelle et pilotage de la performance :</p>
             <ul class="case-features">
-              <li><strong>Refonte graphique & Refonte de l'expérience utilisateur (UX/UI)</strong> modernisation complète de la charte graphique et de l'ergonomie pour valoriser l'image de marque, fluidifier les parcours utilisateurs et maximiser la conversion (notamment le tunnel de demande de devis).</li>
-              <li><strong>Stratégie SEO & contenu à fort impact (GEO / besoins usagers)</strong> optimisation technique (structure Hn, maillage interne, balisage sémantique) et éditoriale, axée sur les besoins concrets des bénéficiaires et l'optimisation pour les nouveaux moteurs de recherche/réponses génératives (GEO). Pilotage régulier d'une production d'articles de blog experts pour asseoir l'autorité du domaine.</li>
-              <li><strong>Tableau de bord Analytics sur-mesure (Claude Code, GitHub & APIs Google)</strong> conception et déploiement d'un dashboard de monitoring avancé connecté aux APIs Google (GA4, Google Tag Manager, PageSpeed Insights...) pour analyser en temps réel et dans le moindre détail les performances techniques, le trafic qualifié et le suivi du tunnel des demandes de devis.</li>
+              <li><strong>Refonte graphique & Refonte de l'expérience utilisateur (UX/UI)</strong>&nbsp;: modernisation complète de la charte graphique et de l'ergonomie pour valoriser l'image de marque, fluidifier les parcours utilisateurs et maximiser la conversion (notamment le tunnel de demande de devis).</li>
+              <li><strong>Stratégie SEO & contenu à fort impact (GEO / besoins usagers)</strong>&nbsp;: optimisation technique (structure Hn, maillage interne, balisage sémantique) et éditoriale, axée sur les besoins concrets des bénéficiaires et l'optimisation pour les nouveaux moteurs de recherche/réponses génératives (GEO). Pilotage régulier d'une production d'articles de blog experts pour asseoir l'autorité du domaine.</li>
+              <li><strong>Tableau de bord Analytics sur-mesure (Claude Code, GitHub & APIs Google)</strong>&nbsp;: conception et déploiement d'un dashboard de monitoring avancé connecté aux APIs Google (GA4, Google Tag Manager, PageSpeed Insights...) pour analyser en temps réel et dans le moindre détail les performances techniques, le trafic qualifié et le suivi du tunnel des demandes de devis.</li>
             </ul>
             <div class="case-kpis">
               <div class="case-kpi">
@@ -4034,8 +4030,8 @@
             <h3 class="case-title">Campagnes SEA & Acquisition Google Ads</h3>
             <p class="case-desc">Gestion et optimisation stratégique de campagnes payantes avec des objectifs forts d'acquisition, de rentabilité et de notoriété :</p>
             <ul class="case-features">
-              <li><strong>Réseau AUXI'life (Génération de leads)</strong> construction et pilotage de campagnes Search et locales pour capter des demandes de devis qualifiées et des leads au profit des agences du réseau, tout en soutenant les objectifs de notoriété et de recrutement.</li>
-              <li><strong>Terres d'aventure (Optimisation des départs & saisonnalité)</strong> pilotage de campagnes Google Ads calquées sur le calendrier saisonnier pour soutenir la complétude des voyages, valoriser les départs confirmés et adapter les messages publicitaires aux temps forts de réservation.</li>
+              <li><strong>Réseau AUXI'life (Génération de leads)</strong>&nbsp;: construction et pilotage de campagnes Search et locales pour capter des demandes de devis qualifiées et des leads au profit des agences du réseau, tout en soutenant les objectifs de notoriété et de recrutement.</li>
+              <li><strong>Terres d'aventure (Optimisation des départs & saisonnalité)</strong>&nbsp;: pilotage de campagnes Google Ads calquées sur le calendrier saisonnier pour soutenir la complétude des voyages, valoriser les départs confirmés et adapter les messages publicitaires aux temps forts de réservation.</li>
             </ul>
           </div>
 
@@ -4048,10 +4044,10 @@
             <p style="font-size: 1.05rem; font-weight: 600; color: var(--brand); margin-bottom: 18px; font-family: var(--font-display);">Pilotage et optimisation de 65 fiches Google Business Profile</p>
             <p class="case-desc">Pour piloter efficacement la réputation et la visibilité des 65 agences du Réseau AUXI'life, j'ai conçu et mis en place une solution sur-mesure alliant SEO local, automatisation et intelligence artificielle :</p>
             <ul class="case-features">
-              <li><strong>Tableau de bord dynamique & Présence Management</strong> conception et déploiement d'un dashboard connecté via l'API Claude Code et GitHub pour monitorer la visibilité locale et harmoniser les informations des 65 agences.</li>
-              <li><strong>Assistant IA pour le Feedback Management</strong> automatisation du traitement des avis avec un assistant IA intelligent capable de générer des réponses personnalisées, bienveillantes et adaptées au secteur médico-social.</li>
-              <li><strong>Analyses croisées dynamiques & sémantiques</strong> possibilité de filtrer par date et par agence, couplée à une analyse sémantique approfondie des retours clients pour identifier les signaux faibles et axes d'amélioration.</li>
-              <li><strong>Stratégie SEO locale</strong> alimentation régulière des posts, optimisation des catégories/attributs et renforcement constant du référencement naturel sur les zones de chalandise.</li>
+              <li><strong>Tableau de bord dynamique & Présence Management</strong>&nbsp;: conception et déploiement d'un dashboard connecté via l'API Claude Code et GitHub pour monitorer la visibilité locale et harmoniser les informations des 65 agences.</li>
+              <li><strong>Assistant IA pour le Feedback Management</strong>&nbsp;: automatisation du traitement des avis avec un assistant IA intelligent capable de générer des réponses personnalisées, bienveillantes et adaptées au secteur médico-social.</li>
+              <li><strong>Analyses croisées dynamiques & sémantiques</strong>&nbsp;: possibilité de filtrer par date et par agence, couplée à une analyse sémantique approfondie des retours clients pour identifier les signaux faibles et axes d'amélioration.</li>
+              <li><strong>Stratégie SEO locale</strong>&nbsp;: alimentation régulière des posts, optimisation des catégories/attributs et renforcement constant du référencement naturel sur les zones de chalandise.</li>
             </ul>
             <div class="case-img">
               <img src="https://framerusercontent.com/images/EfQeKHUI725MoIYZj99ng49Yqck.png" alt="Google Business & Dashboard Présence Management" loading="lazy"/>
@@ -4236,8 +4232,8 @@
             <p style="font-size: 1.05rem; font-weight: 600; color: var(--brand); margin-bottom: 18px; font-family: var(--font-display);">Stratégie de marque employeur et optimisation du recrutement</p>
             <p class="case-desc">Pour répondre aux enjeux majeurs de recrutement du réseau et attirer de nouveaux talents, j'ai piloté le projet de création du site carrière dédié :</p>
             <ul class="case-features">
-              <li><strong>Cadrage & Marque employeur</strong> conception d'une plateforme dédiée au recrutement pour incarner les valeurs humaines de l'entreprise, valoriser les métiers du réseau et renforcer l'attractivité auprès des candidats.</li>
-              <li><strong>Parcours candidat & Conversion (UX/UI)</strong> optimisation du tunnel de candidature pensée pour faciliter la prise de contact, lever les freins à la postulation et maximiser la conversion sur les offres d'emploi.</li>
+              <li><strong>Cadrage & Marque employeur</strong>&nbsp;: conception d'une plateforme dédiée au recrutement pour incarner les valeurs humaines de l'entreprise, valoriser les métiers du réseau et renforcer l'attractivité auprès des candidats.</li>
+              <li><strong>Parcours candidat & Conversion (UX/UI)</strong>&nbsp;: optimisation du tunnel de candidature pensée pour faciliter la prise de contact, lever les freins à la postulation et maximiser la conversion sur les offres d'emploi.</li>
             </ul>
             <div class="case-strip">
               <div class="case-strip-item"><img src="site-carriere-hero.jpg" alt="Page d'accueil site carrière AUXI'life" loading="lazy"></div>
