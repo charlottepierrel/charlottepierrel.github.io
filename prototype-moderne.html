@@ -678,19 +678,20 @@
       bottom: 32px; right: 36px;
       width: 36px; height: 36px;
       border-radius: 50%;
-      border: 1.5px solid var(--sand);
+      background: rgba(216, 107, 82, 0.08);
+      border: 1.5px solid rgba(216, 107, 82, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: border-color .3s, background .3s, transform .3s;
     }
     .sf-card:hover .sf-card-arrow {
-      border-color: var(--brand);
-      background: var(--brand);
+      border-color: #D86B52;
+      background: #D86B52;
       transform: translate(2px, -2px);
     }
     .sf-card:hover .sf-card-arrow svg { stroke: #fff; }
-    .sf-card-arrow svg { stroke: var(--ink-faint); transition: stroke .3s; }
+    .sf-card-arrow svg { stroke: #D86B52; transition: stroke .3s; }
     .sf-tags {
       display: flex;
       flex-wrap: wrap;
@@ -930,10 +931,13 @@
     .skill-group-icon {
       width: 36px; height: 36px;
       border-radius: var(--radius-sm);
-      background: var(--brand-muted);
+      background: rgba(216, 107, 82, 0.10);
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .skill-group-icon svg {
+      stroke: #D86B52 !important;
     }
     .skill-group-title {
       font-size: .88rem;
@@ -1050,9 +1054,9 @@
       margin-left: auto;
       font-size: .72rem;
       font-weight: 500;
-      color: var(--brand-dark);
-      background: var(--brand-muted);
-      border: 1px solid var(--brand-light);
+      color: #D86B52;
+      background: rgba(216, 107, 82, 0.08);
+      border: 1px solid rgba(216, 107, 82, 0.28);
       padding: 3px 10px;
       border-radius: 100px;
       letter-spacing: .03em;
@@ -2734,18 +2738,22 @@
       bottom: 32px; right: 36px;
       width: 42px; height: 42px;
       border-radius: 50%;
-      background: var(--cream-deep);
-      border: 1.5px solid var(--sand);
+      background: rgba(216, 107, 82, 0.08);
+      border: 1.5px solid rgba(216, 107, 82, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
+    .sf-card-arrow svg {
+      stroke: #D86B52;
+      transition: stroke 0.3s;
+    }
     .sf-card:hover .sf-card-arrow {
-      background: var(--brand);
-      border-color: var(--brand);
+      background: #D86B52;
+      border-color: #D86B52;
       transform: translate(4px, -4px) scale(1.12);
-      box-shadow: 0 6px 16px rgba(138, 114, 114, 0.3);
+      box-shadow: 0 6px 16px rgba(216, 107, 82, 0.3);
     }
     .sf-card:hover .sf-card-arrow svg {
       stroke: #fff;
@@ -3317,7 +3325,7 @@
         <div class="sf-card reveal reveal-delay-5" onclick="openDetail(5)" role="button" tabindex="0" style="cursor:pointer; border-color: var(--brand-light); background: linear-gradient(160deg, var(--brand-muted) 0%, var(--cream) 60%);">
           <div class="sf-card-num" style="color: var(--brand);">05</div>
           <div class="sf-card-icon" style="background: var(--brand-muted);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M12 16a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2v-2a2 2 0 012-2z"/><path d="M2 12a2 2 0 012-2h2a2 2 0 012 2 2 2 0 01-2 2H4a2 2 0 01-2-2z"/><path d="M16 12a2 2 0 012-2h2a2 2 0 012 2 2 2 0 01-2 2h-2a2 2 0 01-2-2z"/><path d="M5.6 5.6l1.4 1.4M16.9 16.9l1.5 1.5M5.6 18.4l1.4-1.4M16.9 7.1l1.5-1.5"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D86B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M12 16a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2v-2a2 2 0 012-2z"/><path d="M2 12a2 2 0 012-2h2a2 2 0 012 2 2 2 0 01-2 2H4a2 2 0 01-2-2z"/><path d="M16 12a2 2 0 012-2h2a2 2 0 012 2 2 2 0 01-2 2h-2a2 2 0 01-2-2z"/><path d="M5.6 5.6l1.4 1.4M16.9 16.9l1.5 1.5M5.6 18.4l1.4-1.4M16.9 7.1l1.5-1.5"/></svg>
           </div>
           <h3 class="sf-card-title" style="color: var(--brand-dark);">Intelligence artificielle<br>appliquée au marketing</h3>
           <p class="sf-card-desc">L'IA fait partie intégrante de ma façon de travailler, comme un levier concret de productivité. J'automatise ce qui peut l'être, je produis du contenu plus vite et plus juste, et je concentre mon énergie sur ce qui apporte de la vraie valeur.</p>
@@ -3535,7 +3543,7 @@
         <div class="skill-group reveal reveal-delay-1">
           <div class="skill-group-header">
             <div class="skill-group-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D86B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
             <div class="skill-group-title">Stratégie et Acquisition digitale</div>
           </div>
@@ -3557,7 +3565,7 @@
         <div class="skill-group reveal reveal-delay-2">
           <div class="skill-group-header">
             <div class="skill-group-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D86B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             </div>
             <div class="skill-group-title">Création de contenu et Communication</div>
           </div>
@@ -3578,7 +3586,7 @@
         <div class="skill-group reveal reveal-delay-3">
           <div class="skill-group-header">
             <div class="skill-group-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D86B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
             </div>
             <div class="skill-group-title">Social Media et Community Management</div>
           </div>
@@ -3597,7 +3605,7 @@
         <div class="skill-group reveal reveal-delay-4">
           <div class="skill-group-header">
             <div class="skill-group-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D86B52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
             </div>
             <div class="skill-group-title">Pilotage de projet et Coordination</div>
           </div>
