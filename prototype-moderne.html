@@ -1012,11 +1012,11 @@
       font-size: 1rem;
     }
     .testimonial-text {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
+      font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
+      font-size: 1.08rem;
       font-weight: 400;
-      font-style: normal;
-      color: var(--ink-mid);
+      font-style: italic;
+      color: var(--ink);
       line-height: 1.75;
       margin-bottom: 28px;
       position: relative;
@@ -1486,20 +1486,38 @@
     .detail-page { display: none; }
     .detail-page.active { display: block; }
 
+
+    .detail-hero {
+      position: relative;
+      overflow: hidden;
+    }
+    .detail-hero-watermark {
+      position: absolute;
+      top: -15px;
+      right: 25px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(6.5rem, 14vw, 11rem);
+      line-height: 1;
+      color: var(--brand);
+      opacity: 0.06;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      letter-spacing: -0.04em;
+    }
+    .detail-hero > *:not(.detail-hero-watermark) {
+      position: relative;
+      z-index: 1;
+    }
+
     .detail-hero {
       padding: 72px 40px 52px;
       max-width: 860px;
       margin: 0 auto;
       border-bottom: none !important;
     }
-    .detail-hero-label {
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--brand);
-      margin-bottom: 16px;
-    }
+    
     .detail-hero-title {
       font-family: var(--font-display);
       font-size: clamp(2rem, 4vw, 3rem);
@@ -2824,20 +2842,7 @@
       margin: 0 auto;
       text-align: left;
     }
-    .detail-hero-label {
-      font-size: 0.72rem !important;
-      letter-spacing: 0.12em !important;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--brand-dark) !important;
-      background: var(--sand) !important;
-      display: inline-flex;
-      align-items: center;
-      padding: 5px 15px;
-      border-radius: 9999px;
-      margin-bottom: 16px;
-      border: 1px solid var(--sand-mid) !important;
-    }
+    
     .detail-hero-title {
       font-size: clamp(2rem, 3.6vw, 2.9rem) !important;
       font-weight: 750;
@@ -3463,8 +3468,8 @@
           </p>
           <div style="margin-top: 40px;" class="reveal reveal-delay-3">
             <div style="padding: 24px 28px; background: #FBF0EC; border-radius: var(--radius-md); border-left: 3.5px solid #D86B52; box-shadow: 0 2px 10px rgba(216, 107, 82, 0.06);">
-              <p style="font-family: 'Newsreader', 'Playfair Display', Georgia, serif; font-style: italic; font-size: 1.15rem; color: var(--ink); line-height: 1.7; font-weight: 400; letter-spacing: 0.01em;">
-                "Ce qui me motive ? Trouver le bon angle, construire une stratégie solide et voir les résultats arriver. Pas de formule magique : de la rigueur, de la curiosité et beaucoup d'énergie."
+              <p style="font-family: 'Newsreader', 'Playfair Display', Georgia, serif; font-style: italic; font-size: 1.15rem; color: var(--ink); line-height: 1.65; font-weight: 400; letter-spacing: 0.01em;">
+                "<strong style="font-weight: 700; font-style: normal; color: var(--brand-dark);">Ce qui me motive ?</strong> Trouver le bon angle, bâtir une stratégie solide et voir les résultats arriver. Pas de formule magique : de la rigueur, de la curiosité et de l'énergie."
               </p>
             </div>
           </div>
@@ -4204,10 +4209,10 @@
       <!-- ── PAGE 1 : Stratégie digitale ── -->
       <div class="detail-page" id="detail-page-1">
         <div class="detail-hero">
-          <div class="detail-hero-label">Savoir-faire 01</div>
+          <div aria-hidden="true" class="detail-hero-watermark">01</div>
           <h2 class="detail-hero-title">Stratégie digitale et marketing</h2>
           <p class="detail-hero-desc">Développer une stratégie marketing efficace commence par définir des objectifs clairs. J'accorde une grande importance à l'identification précise de la cible, ce qui permet d'adapter le message et les actions avec justesse. Ensuite vient le choix des leviers : SEO, SEA, emailing, social ads... Une stratégie réussie repose sur une vision claire, une bonne lecture de l'audience et une utilisation cohérente de chaque canal.</p>
-          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const p = this.closest('.detail-page'); const c = p ? p.querySelector('.case-study') : null; if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
@@ -4296,10 +4301,10 @@
       <!-- ── PAGE 2 : Communication et contenu ── -->
       <div class="detail-page" id="detail-page-2">
         <div class="detail-hero">
-          <div class="detail-hero-label">Savoir-faire 02</div>
+          <div aria-hidden="true" class="detail-hero-watermark">02</div>
           <h2 class="detail-hero-title">Communication et création de contenu</h2>
           <p class="detail-hero-desc">La création de contenu s'inscrit toujours dans une stratégie de communication claire, répondant à des besoins identifiés et des objectifs précis. Elle demande une bonne compréhension de la cible, de la créativité, un regard graphique affûté et la capacité à transmettre le bon message au bon moment.</p>
-          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const p = this.closest('.detail-page'); const c = p ? p.querySelector('.case-study') : null; if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
@@ -4354,10 +4359,10 @@
       <!-- ── PAGE 3 : Community Management ── -->
       <div class="detail-page" id="detail-page-3">
         <div class="detail-hero">
-          <div class="detail-hero-label">Savoir-faire 03</div>
+          <div aria-hidden="true" class="detail-hero-watermark">03</div>
           <h2 class="detail-hero-title">Community Management et Social Media</h2>
           <p class="detail-hero-desc">Gérer les réseaux sociaux ne se résume pas à publier du contenu : c'est construire une stratégie alignée avec les objectifs de la marque, définir un ton, une ligne éditoriale cohérente, et créer des contenus engageants pensés pour la cible. L'analyse des performances (taux d'engagement, portée, clics) est essentielle pour ajuster les actions et optimiser les résultats.</p>
-          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const p = this.closest('.detail-page'); const c = p ? p.querySelector('.case-study') : null; if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
@@ -4410,10 +4415,10 @@
       <!-- ── PAGE 4 : Gestion de projet ── -->
       <div class="detail-page" id="detail-page-4">
         <div class="detail-hero">
-          <div class="detail-hero-label">Savoir-faire 04</div>
+          <div aria-hidden="true" class="detail-hero-watermark">04</div>
           <h2 class="detail-hero-title">Gestion de projet et coordination</h2>
           <p class="detail-hero-desc">Intervenir sur des projets pluridisciplinaires où rigueur, coordination et respect des délais sont essentiels. Que ce soit pour un événement d'envergure ou une refonte de site, je m'implique de la définition du brief jusqu'à la livraison finale.</p>
-          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const p = this.closest('.detail-page'); const c = p ? p.querySelector('.case-study') : null; if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
@@ -4469,10 +4474,10 @@
       <!-- ── PAGE 5 : IA appliquée ── -->
       <div class="detail-page" id="detail-page-5">
         <div class="detail-hero">
-          <div class="detail-hero-label">Savoir-faire 05</div>
+          <div aria-hidden="true" class="detail-hero-watermark">05</div>
           <h2 class="detail-hero-title">Intelligence artificielle appliquée au marketing</h2>
           <p class="detail-hero-desc">L'IA fait partie intégrante de ma façon de travailler, comme un levier concret de productivité. Je l'utilise au quotidien pour automatiser ce qui peut l'être, produire du contenu plus vite et plus juste, et concentrer mon énergie sur ce qui apporte de la vraie valeur. Pas un effet de mode, une réalité opérationnelle.</p>
-          <div class="detail-scroll-cue" onclick="const c = this.closest('.detail-overlay').querySelector('.case-study'); if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
+          <div class="detail-scroll-cue" onclick="const p = this.closest('.detail-page'); const c = p ? p.querySelector('.case-study') : null; if(c) c.scrollIntoView({behavior:'smooth'});"><span>Découvrir les projets</span> ↓</div>
         </div>
         <div class="detail-cases">
 
