@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Raleway:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Raleway:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================================
@@ -170,19 +170,21 @@
     .nav-links a:hover { color: var(--ink); }
     .nav-links a:hover::after { width: 100%; }
     .nav-cta {
-      background: var(--ink);
-      color: var(--cream) !important;
+      background: var(--brand);
+      color: #fff !important;
       padding: 9px 22px;
       border-radius: 100px;
       font-size: .825rem !important;
       font-weight: 500 !important;
       letter-spacing: .04em !important;
-      transition: background .25s, transform .2s !important;
+      transition: transform .25s ease, box-shadow .25s ease !important;
+      box-shadow: 0 2px 10px rgba(138, 114, 114, 0.2);
     }
     .nav-cta::after { display: none !important; }
     .nav-cta:hover {
       background: var(--brand) !important;
-      transform: translateY(-1px);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 20px rgba(138, 114, 114, 0.35);
     }
     .nav-hamburger {
       display: none;
@@ -512,7 +514,7 @@
     .section-desc {
       font-size: 1rem;
       color: var(--ink-light);
-      max-width: 760px;
+      max-width: 100%;
       line-height: 1.75;
       margin-top: 16px;
     }
@@ -3087,7 +3089,7 @@
       <div class="hero-text">
         <p class="hero-subtitle reveal">Marketing · Communication · Digital</p>
         <h1 class="hero-title reveal reveal-delay-1">
-          Charlotte<br><em>Pierrel</em>
+          Charlotte <em>Pierrel</em>
         </h1>
         <div class="hero-stats reveal reveal-delay-2">
           <a href="#experiences" class="hero-stat hero-stat-link"><strong>3 ans</strong> d'expérience 360°</a>
@@ -3420,7 +3422,7 @@
           </p>
           <div style="margin-top: 40px;" class="reveal reveal-delay-3">
             <div style="padding: 24px 28px; background: #FBF0EC; border-radius: var(--radius-md); border-left: 3.5px solid #D86B52; box-shadow: 0 2px 10px rgba(216, 107, 82, 0.06);">
-              <p style="font-family: 'Caveat', cursive, sans-serif; font-size: 1.32rem; color: #4A3E3D; line-height: 1.5; font-weight: 600; letter-spacing: 0.01em;">
+              <p style="font-family: 'Newsreader', 'Playfair Display', Georgia, serif; font-style: italic; font-size: 1.15rem; color: var(--ink); line-height: 1.7; font-weight: 400; letter-spacing: 0.01em;">
                 "Ce qui me motive ? Trouver le bon angle, construire une stratégie solide et voir les résultats arriver. Pas de formule magique : de la rigueur, de la curiosité et beaucoup d'énergie."
               </p>
             </div>
