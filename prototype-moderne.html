@@ -203,7 +203,7 @@
        HERO
        ============================================================ */
     #hero {
-      padding: 105px 24px 80px;
+      padding: 96px 24px 80px;
       display: flex;
       align-items: center;
       min-height: 100svh;
@@ -1172,28 +1172,29 @@
     }
 
     /* ============================================================
-       FOOTER CTA
+       FOOTER CTA & CONTACT (Warm Coral Refinement)
        ============================================================ */
     #contact {
-      padding: 70px 24px;
-      background: linear-gradient(135deg, var(--accent) 0%, #524744 100%);
+      padding: 72px 24px 64px;
+      background: linear-gradient(135deg, #CF6249 0%, #C4553C 50%, #B84B33 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
+      color: #fff;
     }
     #contact::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 20% 50%, rgba(138,114,114,.14) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 50%, rgba(138,114,114,.08) 0%, transparent 50%);
+        radial-gradient(ellipse at 25% 40%, rgba(255,255,255,.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 75% 60%, rgba(0,0,0,.08) 0%, transparent 60%);
       pointer-events: none;
     }
     .contact-inner {
       position: relative;
       z-index: 1;
-      max-width: 680px;
+      max-width: 700px;
       margin: 0 auto;
     }
     .contact-eyebrow {
@@ -1201,8 +1202,8 @@
       font-weight: 600;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--vivid-light);
-      margin-bottom: 24px;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1212,27 +1213,32 @@
     .contact-eyebrow::after {
       content: '';
       height: 1px;
-      width: 40px;
-      background: rgba(245,196,184,.35);
+      width: 36px;
+      background: rgba(255,255,255,.4);
     }
     .contact-title {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      font-size: clamp(2.1rem, 3.4vw, 3rem);
       font-weight: 800;
-      color: #fff;
-      line-height: 1.08;
+      color: #FFFFFF;
+      line-height: 1.1;
       letter-spacing: -.03em;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .contact-title em {
-      font-style: normal;
-      color: var(--vivid-light);
+      font-style: italic;
+      color: #FFEAE4;
+      font-family: 'Newsreader', 'Playfair Display', serif;
+      font-weight: 500;
     }
     .contact-desc {
-      font-size: 1rem;
-      color: rgba(255,255,255,.5);
+      font-size: 1.02rem;
+      color: rgba(255,255,255,.92);
       line-height: 1.75;
-      margin-bottom: 44px;
+      margin-bottom: 40px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .contact-actions {
       display: flex;
@@ -1240,45 +1246,51 @@
       justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 56px;
+      margin-bottom: 48px;
     }
     .btn-cta-main {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--brand);
-      color: #fff;
-      padding: 16px 36px;
+      background: #FFFFFF;
+      color: #B84B33 !important;
+      padding: 15px 34px;
       border-radius: 100px;
-      font-size: .95rem;
+      font-size: .92rem;
       font-weight: 600;
-      letter-spacing: .03em;
-      transition: transform .25s, box-shadow .25s, background .25s;
-      box-shadow: 0 6px 28px rgba(138,114,114,.4);
+      letter-spacing: .02em;
+      transition: transform .25s, box-shadow .25s, background .25s, color .25s;
+      box-shadow: 0 6px 24px rgba(0,0,0,.15);
     }
     .btn-cta-main:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 40px rgba(138,114,114,.55);
-      background: var(--brand-dark);
+      box-shadow: 0 10px 32px rgba(0,0,0,.22);
+      background: #FFF5F2;
+      color: #A33D27 !important;
     }
+    .btn-cta-main svg { stroke: #B84B33; }
     .btn-cta-outline {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: transparent;
-      color: rgba(255,255,255,.75);
-      padding: 15px 32px;
+      background: rgba(255,255,255,.12);
+      color: #FFFFFF !important;
+      padding: 14px 30px;
       border-radius: 100px;
-      border: 1.5px solid rgba(255,255,255,.15);
+      border: 1.5px solid rgba(255,255,255,.45);
       font-size: .9rem;
-      font-weight: 400;
-      transition: border-color .25s, color .25s, transform .25s;
+      font-weight: 500;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: border-color .25s, background .25s, transform .25s;
     }
     .btn-cta-outline:hover {
-      border-color: rgba(255,255,255,.5);
-      color: #fff;
+      border-color: #FFFFFF;
+      background: rgba(255,255,255,.22);
+      color: #FFFFFF !important;
       transform: translateY(-2px);
     }
+    .btn-cta-outline svg { stroke: #FFFFFF; }
     .contact-links {
       display: flex;
       align-items: center;
@@ -1290,19 +1302,20 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: .82rem;
-      color: rgba(255,255,255,.45);
-      transition: color .25s;
+      font-size: .86rem;
+      color: rgba(255,255,255,.88);
+      transition: color .25s, transform .2s;
     }
-    .contact-link:hover { color: rgba(255,255,255,.85); }
-    .contact-link svg { flex-shrink: 0; }
+    .contact-link:hover { color: #FFFFFF; transform: translateY(-1px); }
+    .contact-link svg { flex-shrink: 0; stroke: rgba(255,255,255,.85); }
 
     /* ============================================================
        FOOTER BAR
        ============================================================ */
     footer {
-      padding: 24px;
-      background: #4A403C;
+      padding: 24px 32px;
+      background: #A63F28;
+      border-top: 1px solid rgba(255,255,255,.14);
       text-align: center;
     }
     .footer-inner {
@@ -1317,21 +1330,23 @@
     .footer-logo {
       font-family: var(--font-display);
       font-size: 1rem;
-      color: rgba(255,255,255,.3);
+      font-weight: 600;
+      color: rgba(255,255,255,.8);
+      letter-spacing: .02em;
     }
     .footer-links {
       display: flex;
       gap: 24px;
     }
     .footer-links a {
-      font-size: .78rem;
-      color: rgba(255,255,255,.25);
+      font-size: .82rem;
+      color: rgba(255,255,255,.75);
       transition: color .25s;
     }
-    .footer-links a:hover { color: rgba(255,255,255,.6); }
+    .footer-links a:hover { color: #FFFFFF; }
     .footer-copy {
-      font-size: .75rem;
-      color: rgba(255,255,255,.18);
+      font-size: .78rem;
+      color: rgba(255,255,255,.6);
     }
 
     /* ============================================================
@@ -1512,7 +1527,7 @@
     }
 
     .detail-hero {
-      padding: 72px 40px 52px;
+      padding: 64px 40px 48px;
       max-width: 860px;
       margin: 0 auto;
       border-bottom: none !important;
@@ -4751,7 +4766,7 @@
       <!-- ── HERO ── -->
       <div class="page-hero-section page-hero-split">
         <div>
-          <h1 class="page-hero-title" style="margin-top:0;">Carnet de voyage</h1>
+          <h1 class="page-hero-title">Carnet de voyage</h1>
           <p class="page-hero-desc">Le voyage m'accompagne depuis toujours, sous toutes ses formes. Albums créatifs sur Canva, vidéos immersives sur TikTok, expériences professionnelles sur le terrain, expatriations, immersions culturelles&hellip;</p>
           <p class="page-hero-desc">Chaque aventure devient pour moi un projet vivant à raconter, à transmettre, à faire évoluer. Cette passion du voyage s'ancre dans mon quotidien à travers les activités que je pratique : la randonnée, le ski, le yoga, la course à pied&hellip; J'aime bouger, explorer, respirer en pleine nature.</p>
           <p class="page-hero-desc">C'est cet équilibre entre curiosité, mouvement et rencontre qui me guide autant dans mes choix personnels que professionnels. Voyager me permet de rester engagée, adaptable, à l'écoute du monde et des autres.</p>
@@ -5121,406 +5136,6 @@
           Ça m'a permis de vivre le voyage autrement, de l'intérieur, côté coulisses.
           Une expérience qui a renforcé ma conviction&nbsp;:
           <strong>une passion peut devenir un vrai moteur de projet.</strong>&nbsp;&raquo;
-        </blockquote>
-      </div>
-
-    </div><!-- /voyage-body -->
-  </div><!-- /voyage-overlay -->
-
-
-  <!-- ═══════════════════════════════════════════
-       PHOTOGRAPHIE PAGE OVERLAY
-       ═══════════════════════════════════════════ -->
-  <div id="photo-overlay" class="page-overlay" role="dialog" aria-modal="true" aria-label="Photographie">
-    <div class="page-topbar">
-      <button class="page-back-btn" onclick="closePage('photo-overlay')" aria-label="Retour">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </button>
-      <span class="page-topbar-title">Photographie</span>
-    </div>
-    <div class="page-body" id="photo-body">
-
-      <div class="page-hero">
-        <span class="page-hero-eyebrow">Univers personnel</span>
-        <h1>Une passion nourrie par l'exploration</h1>
-        <p>Sur mon temps personnel, je pratique la photographie en tant qu'amatrice. Cette activité s'est enrichie au fil de mes expériences, notamment lors de ma collaboration avec <strong>Megaptera</strong>, où j'ai eu l'opportunité de capturer des images saisissantes de cétacés dans leur environnement naturel.</p>
-        <p>Mes voyages sont une source constante d'inspiration. Chaque destination m'offre de nouvelles perspectives : des paysages singuliers, des lumières changeantes, et des cultures riches qui nourrissent mon regard créatif. À travers mes photos, j'essaie de retranscrire la beauté et l'authenticité de ces instants.</p>
-      </div>
-
-      <div class="photo-masonry">
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/iFBDNiut2VOEH12rjxcmZ8Y8AEw.jpg?width=800" alt="Photo 1" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/XjS11mDUsA3EAR5aZaWh3lFH3I.jpg?width=800" alt="Photo 2" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/mrQRS3wmRQsypx53Y5XUOv7vtGE.jpeg?width=800" alt="Photo 3" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/LNElGnZaNR4PSyA1uigiCmEIcc.jpg?width=800" alt="Photo 4" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/cytyDJydYuts9tYhfpi7C4terXI.jpg?width=800" alt="Photo 5" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/QzqANeHpWjl52uHmrKqYGGwpi4.jpg?width=800" alt="Photo 6" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/v9AZ4tIc19W6LON9ZYID5btq8.jpg?width=800" alt="Photo 7" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/tI5HmAWoNuCeZNfrVEfJf9A6ag.jpg?width=800" alt="Photo 8" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/LqknTmAMjd2Lde1nBZsTI5HI.jpg?width=800" alt="Photo 9" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/TA0cxqKjawXfeGM2KKeM35hjr4.jpg?width=800" alt="Photo 10" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/Djfut695WNa8qTUlflmwy7cY.jpg?width=800" alt="Photo 11" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/i2rO8kAX5KIssX57HNI0vboWsA.jpg?width=800" alt="Photo 12" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/ECzjcLq3y2nDsNrIrVTlGpVFPY.jpg?width=800" alt="Photo 13" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/B3NDwHa5xkzEtt9k1cd5gR273g.jpg?width=800" alt="Photo 14" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/DhJU3ZoBEO9ro39imzz3HhpxtVM.jpg?width=800" alt="Photo 15" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/FcZ4UXRcUVuhE0sKpIvSO6R9ScY.jpg?width=800" alt="Photo 16" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/weYMzE3sxUhXLkl5qMcjvJfGEjA.jpg?width=800" alt="Photo 17" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/kA2EIdpFKJY2346OmO3DQSD1Ws.jpg?width=800" alt="Photo 18" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/X953FB2B6WmoHJmMkufGWZd3qk.jpg?width=800" alt="Photo 19" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/TFpm1qyjfv3mqdLBqfMZqGA.jpg?width=800" alt="Photo 20" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/xPq11HMB5r4C77qzo329hITrns.jpg?width=800" alt="Photo 21" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/kgpy38XRwqh33CxMJDYX7tO0stU.jpg?width=800" alt="Photo 22" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/1DSHK8tkTwk99dPgC8xREjRw34.jpg?width=800" alt="Photo 23" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/qdPtdub9Iadc1NRZLPJEw48XgU.jpg?width=800" alt="Photo 24" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/ZAbBsbnfBpDaDFmh23ssuwQ9SHs.jpg?width=800" alt="Photo 25" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/hj60t59kZI9S2XLV54shkFRK0o.jpg?width=800" alt="Photo 26" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/ufgEqEP9PuiBgWjj8Avt4czHJIU.jpg?width=800" alt="Photo 27" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/hOdL6HiBSS4IAytIBM6TEeVnXWw.jpg?width=800" alt="Photo 28" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/nPlNrGoQ0wdJyF9C3L0CWMKZk.jpg?width=800" alt="Photo 29" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/SDsGBTmRa8C2IJk3o6x6yBRNgCE.jpg?width=800" alt="Photo 30" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/I6JzAFQf1FjiaqfYm5RXPrfeQ58.jpg?width=800" alt="Photo 31" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/ADYeg9KokBOqFkZvAVhrLZAeki0.jpg?width=800" alt="Photo 32" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/37ZU7C5xUNFQfwKlW5qcRS6KYW0.jpg?width=800" alt="Photo 33" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/NgOILZAorWTbF9hOEqMGOiA1qAw.jpg?width=800" alt="Photo 34" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/A05I6IMrWE9qwgLu9JjgIQpeop4.jpg?width=800" alt="Photo 35" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/4gKlfvaDQCoUUUkWWMSRHbojMDw.jpg?width=800" alt="Photo 36" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/6sjQeInS5O0yNiUmodhDnYjtpQ.jpg?width=800" alt="Photo 37" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/KUK1h7euLS5Ga8ibZM924kuiM.jpg?width=800" alt="Photo 38" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/nUzhCT0vJXSUjYjzFFSfurg6Oc.jpg?width=800" alt="Photo 39" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/KnRaeNYss4iMYPjxaiGefMM52WM.jpg?width=800" alt="Photo 40" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/kKLwfGgzLsrir0gq5SmAJLGLTJ4.jpg?width=800" alt="Photo 41" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/GwU3HFNgnY0wevBz3aYQRF4ncc0.jpg?width=800" alt="Photo 42" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/LtEVY65lgS7x9ruRutFwVowQ.jpg?width=800" alt="Photo 43" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/SKjsfiymcYJH04CMaw8rrKdu8.jpg?width=800" alt="Photo 44" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/XHArRuVK1uVilWnXuzFXmI6TUA.jpg?width=800" alt="Photo 45" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/5ABywx7Wu5Hidc025K3qo4cMrYs.jpg?width=800" alt="Photo 46" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/Tot7JFaQsWKSplIB6xro5UjIyc.jpg?width=800" alt="Photo 47" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/G5bpDGncZ08dpo1nfWESIvJfHps.jpg?width=800" alt="Photo 48" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/rhjrVP1GSpV0x3T2aBeY8aht14k.jpg?width=800" alt="Photo 49" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/Fz8E1209QfDhZ6JE14RX6zcoVQ.jpg?width=800" alt="Photo 50" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/FSrYYCoKDp70D0gTbjHUZeyK8JU.jpg?width=800" alt="Photo 51" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/FnOiu0vP0SyWdgxaikZW5djJk1A.jpg?width=800" alt="Photo 52" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/oo9Qif0nTxvPJZLE4jXii5x39ME.jpg?width=800" alt="Photo 53" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/ZewFZZzNgnMcX6XpxsjRWfeFoA.jpg?width=800" alt="Photo 54" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/0IjrTWcaGVNPfKFNeIBnMYGDOTs.jpg?width=800" alt="Photo 55" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/of7uWcSvKvAJ3wLQTPnnJvMzJQ.jpg?width=800" alt="Photo 56" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/3NLyLIoMjHgULJUo6KlvxTDaAo.jpg?width=800" alt="Photo 57" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/RwQ7pvit7SaOOFiPPZ83Jig1Lo.jpg?width=800" alt="Photo 58" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/NIEXixvJYrWzwM6VpkzYiK2JL60.jpg?width=800" alt="Photo 59" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/MKjOGX177FIAbiu9pWkSVa7fuDg.jpg?width=800" alt="Photo 60" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/G8cT65AaT57gOUPn41T3ExgmVk.jpg?width=800" alt="Photo 61" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/DHMKsIrvLeBWq6Lh1wBlYa57ws.jpg?width=800" alt="Photo 62" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/Yfx7dnU0bUM5OYQGvGgwkwYkk8.jpg?width=800" alt="Photo 63" loading="lazy">
-          </div>
-          <div class="pm-item" onclick="openLightbox(this.querySelector('img').src)">
-            <img src="https://framerusercontent.com/images/bY7g2ccW6YwzzFAexcA7Vg0XfI.jpg?width=800" alt="Photo 64" loading="lazy">
-          </div>
-      </div>
-
-    </div><!-- /photo-body -->
-  </div><!-- /photo-overlay -->
-
-  <!-- Lightbox -->
-  <div id="photo-lightbox" onclick="closeLightbox()">
-    <button id="photo-lightbox-close" onclick="closeLightbox()" aria-label="Fermer">&times;</button>
-    <img id="photo-lightbox-img" src="" alt="Photo agrandie">
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       CARNET DE VOYAGE PAGE OVERLAY
-       ═══════════════════════════════════════════ -->
-  <div id="voyage-overlay" class="page-overlay" role="dialog" aria-modal="true" aria-label="Carnet de voyage">
-    <div class="page-topbar">
-      <button class="page-back-btn" onclick="closePage('voyage-overlay')" aria-label="Retour">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </button>
-      <span class="page-topbar-title">Carnet de voyage</span>
-    </div>
-    <div class="page-body" id="voyage-body">
-
-      <!-- ── Hero ── -->
-      <div class="voyage-hero-grid">
-        <div class="voyage-hero-text">
-          <span class="page-hero-eyebrow">Univers personnel</span>
-          <h1 style="font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight:700; color:var(--ink); line-height:1.15; margin:0 0 20px;">Carnet<br>de voyage</h1>
-          <p style="font-size:1.02rem; line-height:1.75; color:var(--ink-light); margin:0 0 14px;">Le voyage m'accompagne depuis toujours, sous toutes ses formes. Albums créatifs sur Canva, vidéos immersives sur TikTok, expériences professionnelles sur le terrain, expatriations, immersions culturelles…</p>
-          <p style="font-size:1.02rem; line-height:1.75; color:var(--ink-light); margin:0 0 14px;">Chaque aventure devient pour moi un projet vivant à raconter, à transmettre, à faire évoluer. Cette passion du voyage s'ancre dans mon quotidien à travers les activités que je pratique : la randonnée, le ski, le yoga, la course à pied… J'aime bouger, explorer, respirer en pleine nature.</p>
-          <p style="font-size:1.02rem; line-height:1.75; color:var(--ink-light); margin:0;"><strong style="color:var(--ink);">C'est une énergie qui nourrit mes projets, ma façon de penser et d'agir, avec détermination et sens.</strong></p>
-        </div>
-        <div class="voyage-hero-img">
-          <img src="https://framerusercontent.com/images/Eh5dPed3ogvbL78gA9iYBPXfm0.jpeg?width=800" alt="Carnet de voyage" loading="lazy">
-        </div>
-      </div>
-
-      <!-- ── Travel gallery ── -->
-      <div class="page-section">
-        <h2 class="page-section-title">Aperçu en images</h2>
-        <div class="travel-grid">
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/8vzxh7m4GLW7x46ztIVjnu3aNs.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/eOzmnGrdIExtfF5Jah2Xa3BLJdg.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/56PGdcYaA4EbdT6gj3tMaJDacIc.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/ykcJGSiPmw34BptQWX4btHDwVQU.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/32p8NJIjjbQYRhHi4Sws6wgKn3Q.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/GXK6xR51MocEY4qKdUWXjwdnw.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/d0UlYfy29z81GOfvjNtm9Iv8o4.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/uYELP7LmSGKBDOx7p26DZaNTc.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        <div class="travel-grid-item">
-          <img src="https://framerusercontent.com/images/wqCChqc3GmjSrtGxyynkmvem38.png" alt="Carnet de voyage" loading="lazy">
-        </div>
-        </div>
-      </div>
-
-      <!-- ── Expériences marquantes ── -->
-      <div class="page-section">
-        <h2 class="page-section-title">Mes expériences marquantes</h2>
-        <div class="exp-cards">
-          <div class="exp-card">
-            <div class="exp-card-img">
-              <img src="https://framerusercontent.com/images/rlT6kNSXW8mM73UJEjCvVe8wc.jpeg?width=800" alt="Fille au pair dans l'Ouest canadien" loading="lazy">
-            </div>
-            <div class="exp-card-body">
-              <h4 class="exp-card-title">Fille au pair dans l'Ouest canadien</h4>
-              <p class="exp-card-desc">Une immersion humaine et linguistique au cœur du quotidien, qui m'a permis de gagner en autonomie et de renforcer mes bases en anglais.</p>
-            </div>
-          </div>
-          <div class="exp-card">
-            <div class="exp-card-img">
-              <img src="https://framerusercontent.com/images/qtZLfTMP10zQoqfOdOzCzuEzjwo.jpeg?width=800" alt="Éco-volontaire · Megaptera" loading="lazy">
-            </div>
-            <div class="exp-card-body">
-              <h4 class="exp-card-title">Éco-volontaire · Megaptera</h4>
-              <p class="exp-card-desc">Un engagement concret en faveur de la biodiversité marine, alliant mission de terrain, sensibilisation et apprentissage scientifique.</p>
-            </div>
-          </div>
-          <div class="exp-card">
-            <div class="exp-card-img">
-              <img src="https://framerusercontent.com/images/gisZmQ53pyF0jUQubnw7muhdVI.jpeg?width=800" alt="Expatriation étudiante" loading="lazy">
-            </div>
-            <div class="exp-card-body">
-              <h4 class="exp-card-title">Expatriation étudiante</h4>
-              <p class="exp-card-desc">Études au Canada, stages à Montréal et Saint-Martin : des expériences qui m'ont appris à m'adapter, m'ouvrir et gagner en autonomie.</p>
-            </div>
-          </div>
-          <div class="exp-card">
-            <div class="exp-card-img">
-              <img src="https://framerusercontent.com/images/FGYnEYZwl4TSAz5NUAxXZhkOwu8.jpeg?width=800" alt="Safari au Kenya" loading="lazy">
-            </div>
-            <div class="exp-card-body">
-              <h4 class="exp-card-title">Safari au Kenya</h4>
-              <p class="exp-card-desc">Une immersion au cœur de la nature sauvage et d'une culture fascinante, marquée par la rencontre, le respect et l'émerveillement.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ── Création & partage ── -->
-      <div class="page-section">
-        <h2 class="page-section-title">Création et partage</h2>
-
-        <!-- Albums Canva -->
-        <p style="font-size:.9rem; font-weight:600; color:var(--ink); margin:0 0 12px;">Albums Canva — je crée mes propres carnets visuels pour garder une trace de chaque aventure.</p>
-        <div class="album-row">
-          <div class="album-row-item">
-            <img src="https://framerusercontent.com/images/ttlsCh8bnpjWQQ1wuFsk5NEgJa4.png" alt="Album Canva" loading="lazy">
-          </div>
-          <div class="album-row-item">
-            <img src="https://framerusercontent.com/images/213yfM0uuE7lyvSXnmdgcebus.png" alt="Album Canva" loading="lazy">
-          </div>
-          <div class="album-row-item">
-            <img src="https://framerusercontent.com/images/9DtKdgDFfKcKpBTvY4nkAsKOIw.png" alt="Album Canva" loading="lazy">
-          </div>
-          <div class="album-row-item">
-            <img src="https://framerusercontent.com/images/Eybuqat6Tu3BgiywJkIam4NMYDg.png" alt="Album Canva" loading="lazy">
-          </div>
-          <div class="album-row-item">
-            <img src="https://framerusercontent.com/images/qWrmKipKVdZbJWpRA4JQgy0uo0.png" alt="Album Canva" loading="lazy">
-          </div>
-          <div class="album-row-item">
-            <img src="https://framerusercontent.com/images/5JdXLEKMpAfwmwuIdG8YvWe9eQ.png" alt="Album Canva" loading="lazy">
-          </div>
-          <div class="album-row-item">
-            <img src="https://framerusercontent.com/images/7oUQuGjVBxtRdPvxgE8miNtxU8.png" alt="Album Canva" loading="lazy">
-          </div>
-          <div class="album-row-item">
-            <img src="https://framerusercontent.com/images/wkqW8vAKpzLto1EaQFP0BL4dSEE.png" alt="Album Canva" loading="lazy">
-          </div>
-        </div>
-
-        <div style="height: 40px;"></div>
-
-        <!-- TikTok -->
-        <div class="tiktok-block">
-          <div class="tiktok-desc">
-            <h3>TikTok @charliandlou</h3>
-            <p>Avec ma sœur, on a créé un compte TikTok dédié à notre passion commune pour le voyage. On y partage des bons plans, des idées d'escapades et une bonne dose d'inspiration pour tous les amoureux d'aventure.</p>
-            <a href="https://www.tiktok.com/@charliandlou" target="_blank" rel="noopener" class="tiktok-link-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/></svg>
-              Voir @charliandlou
-            </a>
-          </div>
-          <div class="tiktok-phones">
-            <div class="tiktok-phone">
-              <img src="https://framerusercontent.com/images/DLmfIxDfQTb75ouhsuBw7NtmxI.png" alt="TikTok @charliandlou" loading="lazy">
-            </div>
-            <div class="tiktok-phone">
-              <img src="https://framerusercontent.com/images/Ma0KWMMIr7yx7KyUr57pb8xOGk.png" alt="TikTok @charliandlou" loading="lazy">
-            </div>
-            <div class="tiktok-phone">
-              <img src="https://framerusercontent.com/images/x8Weg3DsiPn64gWbz9mXDoIBGE.png" alt="TikTok @charliandlou" loading="lazy">
-            </div>
-            <div class="tiktok-phone">
-              <img src="https://framerusercontent.com/images/jiwvD4d1XhBrvqw9JbNCWLJYMmE.png" alt="TikTok @charliandlou" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── Quote ── -->
-      <div class="page-quote-section">
-        <blockquote>
-          "J'ai eu l'opportunité de faire mon stage en marketing chez <strong>Terres d'Aventure Canada</strong> et <strong>Karavaniers</strong> (<em>Voyageurs du Monde</em>). Ça m'a permis de vivre le voyage autrement, de l'intérieur, côté coulisses. Une expérience qui a renforcé ma conviction : <strong>une passion peut devenir un vrai moteur de projet</strong>."
         </blockquote>
       </div>
 
