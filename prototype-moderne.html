@@ -4976,25 +4976,7 @@
       }
     }
 
-    // old toggleOffreFaq(btn) {
-      const item = btn.closest('.accordion-item');
-      const body = item.querySelector('.accordion-body');
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      
-      // Close all accordion items
-      document.querySelectorAll('#offres-accordion .accordion-item').forEach(other => {
-        other.classList.remove('active');
-        other.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
-        other.querySelector('.accordion-body').style.maxHeight = null;
-      });
 
-      // If it was not open, open it
-      if (!isExpanded) {
-        item.classList.add('active');
-        btn.setAttribute('aria-expanded', 'true');
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
-    }
 
     function copyContactEmail(btn) {
       const email = 'charlottepierrel@outlook.fr';
