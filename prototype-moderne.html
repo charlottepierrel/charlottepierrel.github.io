@@ -3245,158 +3245,11 @@
 
   
     
-    /* Tabs navigation for Pillars */
-    .offres-tab-nav {
-      display: inline-flex;
-      background: var(--sand);
-      padding: 6px;
-      border-radius: 999px;
-      gap: 6px;
-      margin-top: 28px;
-      max-width: 100%;
-    }
-    .offres-tab-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--ink-mid);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: all .25s ease;
-      white-space: nowrap;
-    }
-    .offres-tab-btn:hover {
-      color: var(--ink);
-    }
-    .offres-tab-btn.active {
-      background: #FFFFFF;
-      color: var(--ink);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-    .offres-pillar-section {
-      display: none;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 40px;
-      animation: fadeIn .35s ease;
-    }
-    .offres-pillar-section.active {
-      display: block;
-    }
-    .pillar-header {
-      text-align: center;
-      max-width: 820px;
-      margin: 0 auto 48px;
-    }
-    .pillar-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--coral);
-      margin-bottom: 14px;
-    }
-    .pillar-num {
-      display: inline-block;
-      background: var(--coral-soft);
-      border: 1px solid var(--coral-border);
-      border-radius: 999px;
-      padding: 2px 8px;
-      font-size: 0.72rem;
-    }
-    .pillar-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.25;
-      margin: 0 0 12px;
-    }
-    .pillar-subtitle {
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--coral);
-      margin: 0 0 18px;
-    }
-    .pillar-pitch {
-      font-size: 1.02rem;
-      color: var(--ink-light);
-      line-height: 1.7;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .offres-grid-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-    .offres-grid-1col {
-      display: flex;
-      justify-content: center;
-    }
-    .offre-card-wide {
-      max-width: 820px;
-      width: 100%;
-    }
-    .offre-features-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 28px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .offre-features-grid li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.96rem;
-      color: var(--ink-mid);
-      line-height: 1.5;
-    }
-    .offre-features-grid li svg {
-      color: var(--coral);
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-    @media (max-width: 768px) {
-      .offres-tab-nav {
-        flex-direction: column;
-        border-radius: 20px;
-        width: 100%;
-      }
-      .offres-tab-btn {
-        width: 100%;
-        justify-content: center;
-        white-space: normal;
-        text-align: center;
-        padding: 10px 14px;
-        font-size: 0.85rem;
-      }
-      .offres-pillar-section {
-        padding: 0 20px;
-      }
-      .offres-grid-2col {
-        grid-template-columns: 1fr;
-      }
-      .offre-features-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     /* ============================================================
-       DOUBLE ENTRÉE PORTAL & SECTION OFFRES
+       DOUBLE ENTRÉE (DESIGN ÉPURÉ, RELIEF & TYPOGRAPHIE UNIFIÉE)
        ============================================================ */
     .dual-portal {
-      padding: 0 40px 60px;
+      padding: 0 40px 64px;
       position: relative;
       z-index: 2;
     }
@@ -3409,63 +3262,162 @@
     }
     .portal-card {
       background: #FFFFFF;
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-lg);
-      padding: 36px 36px 32px;
+      border: 1px solid rgba(214, 204, 196, 0.65);
+      border-radius: 20px;
+      padding: 34px 34px 28px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      text-decoration: none;
+      color: inherit;
       position: relative;
-      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s ease, border-color .3s ease;
     }
     .portal-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.05);
-      border-color: var(--sand-mid);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07), 0 4px 12px rgba(0, 0, 0, 0.02);
+      border-color: rgba(138, 114, 114, 0.35);
     }
-    .portal-card-featured {
-      background: linear-gradient(135deg, #FFFFFF 0%, rgba(216, 107, 82, 0.04) 100%);
-      border: 1px solid rgba(216, 107, 82, 0.35);
-      box-shadow: 0 8px 24px rgba(216, 107, 82, 0.06);
+    .portal-card-freelance {
+      background: linear-gradient(150deg, #FFFFFF 0%, #FCFAF9 100%);
+      border: 1.5px solid rgba(216, 107, 82, 0.28);
+      box-shadow: 0 6px 20px rgba(216, 107, 82, 0.06);
     }
-    .portal-card-featured:hover {
+    .portal-card-freelance:hover {
       border-color: var(--coral);
-      box-shadow: 0 16px 36px rgba(216, 107, 82, 0.12);
+      box-shadow: 0 22px 44px rgba(216, 107, 82, 0.12);
     }
-    .portal-card-badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--brand-dark);
-      background: var(--brand-muted);
-      padding: 5px 12px;
-      border-radius: 999px;
+    .portal-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 18px;
     }
-    .portal-badge-coral {
+    .portal-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      background: var(--sand);
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+    .portal-tag-coral {
       color: var(--coral);
       background: var(--coral-soft);
       border: 1px solid var(--coral-border);
     }
-    .portal-card-title {
+    .portal-icon-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--cream-deep);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .3s ease;
+    }
+    .portal-icon-coral {
+      background: var(--coral-soft);
+      color: var(--coral);
+    }
+    .portal-card:hover .portal-icon-circle {
+      transform: scale(1.08);
+    }
+    .portal-title {
       font-family: 'Raleway', sans-serif;
-      font-size: 1.55rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin: 0 0 8px;
+    }
+    .portal-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.98rem;
+      color: var(--ink-light);
+      line-height: 1.55;
+      margin: 0 0 22px;
+      flex-grow: 1;
+    }
+    .portal-desc strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .portal-footer {
+      padding-top: 16px;
+      border-top: 1px solid rgba(214, 204, 196, 0.45);
+    }
+    .portal-link-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap .25s ease;
+    }
+    .portal-card:hover .portal-link-text {
+      gap: 12px;
+    }
+    .portal-link-coral {
+      color: var(--coral);
+    }
+
+    /* ============================================================
+       SECTION OFFRES : DESIGN HAUT RELIEF & TYPOGRAPHIE MAÎTRISÉE
+       ============================================================ */
+    .offres-header-clean {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px 32px;
+      text-align: center;
+    }
+    .offres-kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--coral);
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .offres-main-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
       font-weight: 700;
       color: var(--ink);
       line-height: 1.2;
-      margin: 0 0 10px;
+      margin: 0 0 14px;
     }
-    .portal-card-desc {
-      font-size: 1.02rem;
+    .offres-lead {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
       color: var(--ink-light);
-      line-height: 1.5;
-      margin: 0 0 24px;
-      flex-grow: 1;
+      margin: 0 0 32px;
     }
-    .portal-card-btn {
+
+    /* Segmented Switcher (Relief tactile Apple/Linear) */
+    .pillar-switcher-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .pillar-switcher {
+      display: inline-flex;
+      background: #EAE3DE;
+      padding: 5px;
+      border-radius: 999px;
+      gap: 6px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+      max-width: 100%;
+    }
+    .switcher-btn {
+      font-family: 'DM Sans', sans-serif;
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -3473,458 +3425,592 @@
       border-radius: 999px;
       font-size: 0.94rem;
       font-weight: 600;
-      text-decoration: none;
-      transition: all .25s ease;
-      cursor: pointer;
-    }
-    .portal-card-btn-outline {
+      color: var(--ink-mid);
       background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all .25s ease;
+      white-space: nowrap;
+    }
+    .switcher-btn:hover {
       color: var(--ink);
-      border: 1.5px solid var(--ink);
     }
-    .portal-card-btn-outline:hover {
-      background: var(--ink);
-      color: #FFFFFF;
+    .switcher-btn.active {
+      background: #FFFFFF;
+      color: var(--ink);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
     }
-    .portal-card-btn-coral {
-      background: var(--coral);
-      color: #FFFFFF;
-      border: 1.5px solid var(--coral);
-      box-shadow: 0 4px 14px rgba(216, 107, 82, 0.28);
+    .switcher-num {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: rgba(0,0,0,0.06);
+      color: var(--ink);
+      padding: 2px 8px;
+      border-radius: 999px;
     }
-    .portal-card-btn-coral:hover {
-      background: var(--coral-dark);
-      border-color: var(--coral-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(216, 107, 82, 0.35);
+    .switcher-btn.active .switcher-num {
+      background: var(--coral-soft);
+      color: var(--coral);
     }
 
-    /* ── Offres Page Overlay ── */
-    .offres-hero {
-      padding: 72px 40px 48px;
-      text-align: center;
-      max-width: 920px;
+    /* Panes */
+    .pillar-pane {
+      display: none;
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 0 32px 50px;
+      animation: fadeIn .3s ease;
     }
-    .offres-tagline-badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--coral);
-      background: var(--coral-soft);
-      border: 1px solid var(--coral-border);
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 20px;
+    .pillar-pane.active {
+      display: block;
     }
-    .offres-hero-title {
+
+    /* Chapeau synthétique */
+    .pillar-summary-box {
+      background: #FFFFFF;
+      border: 1px solid rgba(214, 204, 196, 0.65);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .summary-headline h3 {
       font-family: 'Raleway', sans-serif;
-      font-size: clamp(2rem, 3.8vw, 3rem);
-      font-weight: 800;
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--ink);
-      line-height: 1.18;
-      margin: 0 0 16px;
-      letter-spacing: -0.02em;
-    }
-    .offres-hero-subtitle {
-      font-family: 'Newsreader', Georgia, serif;
-      font-style: italic;
-      font-size: clamp(1.2rem, 2vw, 1.55rem);
-      color: var(--brand-dark);
-      margin: 0 0 24px;
+      margin: 0 0 8px;
       line-height: 1.35;
     }
-    .offres-hero-pitch {
-      background: #FFFFFF;
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
-      padding: 24px 32px;
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: var(--ink-mid);
-      text-align: left;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    .summary-headline p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.98rem;
+      color: var(--ink-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .summary-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(214, 204, 196, 0.4);
+    }
+    .summary-chip {
+      font-family: 'DM Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--cream);
+      border: 1px solid rgba(214, 204, 196, 0.7);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+    .summary-chip svg {
+      color: var(--coral);
     }
 
-    /* Grille d'offres */
-    .offres-grid-wrap {
-      max-width: var(--max-w);
-      margin: 40px auto 0;
-      padding: 0 40px;
-    }
-    .offres-grid {
+    /* Grille de cartes & relief */
+    .cards-duo {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 28px;
+      margin-bottom: 28px;
       align-items: stretch;
     }
-    .offre-card {
+    .card-single-wrap {
+      max-width: 860px;
+      margin: 0 auto 28px;
+    }
+    .pricing-card {
       background: #FFFFFF;
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-lg);
-      padding: 36px 30px 32px;
+      border: 1px solid rgba(214, 204, 196, 0.7);
+      border-radius: 22px;
+      padding: 36px 34px 30px;
       display: flex;
       flex-direction: column;
       position: relative;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.02);
       transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     }
-    .offre-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
-      border-color: var(--sand-mid);
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 42px rgba(0,0,0,0.07);
+      border-color: rgba(138, 114, 114, 0.4);
     }
-    .offre-card-highlight {
-      border: 2px solid var(--coral);
-      background: linear-gradient(180deg, #FFFFFF 0%, rgba(216, 107, 82, 0.03) 100%);
-      box-shadow: 0 12px 32px rgba(216, 107, 82, 0.1);
+    .pricing-card-featured {
+      border: 1.5px solid var(--coral);
+      box-shadow: 0 12px 36px rgba(216, 107, 82, 0.10);
     }
-    .offre-highlight-pill {
+    .pricing-card-featured:hover {
+      box-shadow: 0 24px 48px rgba(216, 107, 82, 0.16);
+    }
+    .featured-ribbon {
       position: absolute;
       top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
+      right: 28px;
       background: var(--coral);
       color: #FFFFFF;
-      font-size: 0.72rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.74rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       padding: 4px 14px;
       border-radius: 999px;
-      box-shadow: 0 4px 10px rgba(216, 107, 82, 0.35);
-      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(216, 107, 82, 0.3);
     }
-    .offre-badge {
+    .card-head {
+      margin-bottom: 22px;
+    }
+    .card-badge {
+      font-family: 'DM Sans', sans-serif;
       display: inline-block;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--brand-dark);
-      background: var(--brand-muted);
-      padding: 4px 10px;
+      color: var(--ink-mid);
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
-    .offre-badge-coral {
+    .card-badge-coral {
       color: var(--coral);
       background: var(--coral-soft);
-      border: 1px solid var(--coral-border);
+      border-color: var(--coral-border);
     }
-    .offre-title {
+    .card-title {
       font-family: 'Raleway', sans-serif;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--ink);
       line-height: 1.25;
-      margin: 0 0 16px;
-      min-height: 3.4rem;
-      display: flex;
-      align-items: flex-start;
+      margin: 0 0 12px;
     }
-    .offre-price {
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .price-val {
       font-family: 'Raleway', sans-serif;
-      font-size: 1.85rem;
+      font-size: 2.3rem;
       font-weight: 800;
       color: var(--ink);
       line-height: 1;
-      margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--sand);
     }
-    .offre-price-unit {
+    .price-freq {
+      font-family: 'DM Sans', sans-serif;
       font-size: 0.92rem;
-      font-weight: 500;
       color: var(--ink-light);
+      font-weight: 500;
     }
-    .offre-card-content {
+    .card-body {
       flex-grow: 1;
-      margin-bottom: 28px;
-    }
-    .offre-desc {
-      font-size: 0.96rem;
-      line-height: 1.65;
-      color: var(--ink-mid);
-      margin: 0 0 20px;
-    }
-    .offre-pack-mention {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(138, 114, 114, 0.08);
-      border: 1px solid rgba(138, 114, 114, 0.2);
-      color: var(--brand-dark);
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 8px;
-    }
-    .offre-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      justify-content: space-between;
     }
-    .offre-list li {
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+    .checklist li {
+      font-family: 'DM Sans', sans-serif;
       display: flex;
       align-items: flex-start;
       gap: 12px;
       font-size: 0.94rem;
-      line-height: 1.5;
       color: var(--ink-mid);
+      line-height: 1.5;
     }
-    .offre-list li svg {
+    .checklist li svg {
       color: var(--coral);
       flex-shrink: 0;
-      margin-top: 3px;
+      margin-top: 2px;
     }
-    .offre-action-btn {
+    .checklist li strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .checklist-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 32px;
+      margin-bottom: 22px;
+    }
+    .pack-badge {
+      font-family: 'DM Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cream);
+      border: 1px dashed var(--sand-mid);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+    .pack-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+    .card-foot {
+      padding-top: 18px;
+      border-top: 1px solid rgba(214, 204, 196, 0.4);
+    }
+    .btn-card-action {
+      font-family: 'DM Sans', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
       padding: 13px 20px;
       border-radius: 999px;
       font-size: 0.92rem;
       font-weight: 600;
       text-decoration: none;
-      border: 1.5px solid var(--ink);
+      background: #FFFFFF;
       color: var(--ink);
-      background: transparent;
+      border: 1.5px solid var(--ink);
       transition: all .25s ease;
+      cursor: pointer;
     }
-    .offre-action-btn:hover {
+    .btn-card-action:hover {
       background: var(--ink);
       color: #FFFFFF;
     }
-    .offre-btn-coral {
+    .btn-card-coral {
       background: var(--coral);
-      border-color: var(--coral);
       color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(216, 107, 82, 0.25);
+      border-color: var(--coral);
+      box-shadow: 0 4px 14px rgba(216, 107, 82, 0.28);
     }
-    .offre-btn-coral:hover {
+    .btn-card-coral:hover {
       background: var(--coral-dark);
       border-color: var(--coral-dark);
-      box-shadow: 0 6px 18px rgba(216, 107, 82, 0.35);
-      color: #FFFFFF;
+      box-shadow: 0 6px 20px rgba(216, 107, 82, 0.38);
+      transform: translateY(-1px);
     }
 
-    /* Section Wrapper */
-    .offres-section-wrap {
-      max-width: 880px;
-      margin: 48px auto 0;
-      padding: 0 40px;
-    }
-
-    /* Bloc engagement */
-    .offres-engagement-card {
-      background: #FFFFFF;
-      border: 1px solid var(--sand);
-      border-left: 4px solid var(--coral);
-      border-radius: var(--radius-md);
-      padding: 24px 30px;
+    /* Micro réassurance */
+    .micro-reassurance {
+      font-family: 'DM Sans', sans-serif;
       display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      background: #FFFFFF;
+      border: 1px solid rgba(214, 204, 196, 0.5);
+      border-radius: 999px;
+      padding: 12px 24px;
+      margin: 0 auto;
+      max-width: 680px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
-    .engagement-badge-icon {
+    .micro-reassurance svg {
       color: var(--coral);
       flex-shrink: 0;
-      margin-top: 2px;
     }
-    .engagement-title {
-      font-family: 'Raleway', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
+    .micro-reassurance strong {
       color: var(--ink);
-      margin: 0 0 6px;
-    }
-    .engagement-text {
-      font-size: 0.96rem;
-      line-height: 1.6;
-      color: var(--ink-mid);
-      margin: 0;
+      font-weight: 600;
     }
 
-    /* FAQ */
-    .offres-faq-container {
-      margin-top: 36px;
+    /* FAQ Clean */
+    .offres-faq-clean {
+      padding: 56px 32px 48px;
+      max-width: 820px;
+      margin: 0 auto;
     }
-    .offres-faq-header {
-      margin-bottom: 24px;
+    .faq-inner-container {
+      width: 100%;
+    }
+    .faq-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--coral);
+      display: block;
       text-align: center;
+      margin-bottom: 8px;
     }
-    .offres-faq-title {
+    .faq-main-title {
       font-family: 'Raleway', sans-serif;
-      font-size: 1.85rem;
+      font-size: 1.8rem;
       font-weight: 700;
       color: var(--ink);
-      margin: 8px 0 0;
+      text-align: center;
+      margin: 0 0 32px;
     }
-    .offres-accordion {
+    .clean-accordion {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-    .accordion-item {
+    .clean-accordion-item {
       background: #FFFFFF;
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-md);
+      border: 1px solid rgba(214, 204, 196, 0.6);
+      border-radius: 14px;
       overflow: hidden;
-      transition: border-color .2s ease;
+      transition: border-color .25s ease, box-shadow .25s ease;
     }
-    .accordion-item:hover {
-      border-color: var(--sand-mid);
+    .clean-accordion-item:hover {
+      border-color: rgba(138, 114, 114, 0.35);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
     }
-    .accordion-trigger {
+    .clean-accordion-header {
+      font-family: 'Raleway', sans-serif;
       width: 100%;
-      background: none;
-      border: none;
-      padding: 20px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      padding: 20px 24px;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: transparent;
+      border: none;
       cursor: pointer;
       text-align: left;
     }
-    .accordion-q {
-      font-family: 'Raleway', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.4;
-    }
-    .accordion-icon {
+    .faq-icon {
+      font-size: 1.3rem;
+      font-weight: 400;
       color: var(--coral);
-      flex-shrink: 0;
-      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform .3s ease;
+      line-height: 1;
     }
-    .accordion-item.active .accordion-icon {
-      transform: rotate(180deg);
+    .clean-accordion-item.active .faq-icon {
+      transform: rotate(45deg);
     }
-    .accordion-body {
+    .clean-accordion-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height .35s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: max-height .35s ease, padding .35s ease;
+      padding: 0 24px;
     }
-    .accordion-body-inner {
-      padding: 0 24px 22px;
-      font-size: 0.98rem;
-      line-height: 1.7;
+    .clean-accordion-item.active .clean-accordion-content {
+      max-height: 250px;
+      padding: 0 24px 20px;
+    }
+    .clean-accordion-content p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
       color: var(--ink-mid);
-      border-top: 1px solid rgba(0, 0, 0, 0.04);
-      padding-top: 14px;
+      line-height: 1.65;
+      margin: 0;
     }
 
-    /* Final CTA */
-    .offres-cta-card {
-      background: linear-gradient(135deg, var(--cream-deep) 0%, #FFFFFF 100%);
-      border: 1px solid var(--sand);
-      border-radius: var(--radius-lg);
-      padding: 48px 36px;
+    /* CTA Card Elevated */
+    .offres-cta-clean {
+      padding: 24px 32px 80px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .cta-card-elevated {
+      background: linear-gradient(145deg, #FFFFFF 0%, #FAF7F5 100%);
+      border: 1.5px solid rgba(216, 107, 82, 0.25);
+      border-radius: 24px;
+      padding: 44px 36px 36px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
     }
-    .offres-cta-heading {
+    .cta-title {
       font-family: 'Raleway', sans-serif;
-      font-size: 1.85rem;
-      font-weight: 800;
+      font-size: 1.8rem;
+      font-weight: 700;
       color: var(--ink);
-      margin: 0 0 12px;
+      margin: 0 0 10px;
     }
-    .offres-cta-subheading {
-      font-size: 1.05rem;
+    .cta-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
       color: var(--ink-light);
-      max-width: 580px;
-      margin: 0 auto 32px;
-      line-height: 1.6;
+      margin: 0 0 32px;
     }
-    .offres-cta-buttons {
+    .cta-btn-group {
       display: flex;
-      align-items: center;
       justify-content: center;
       gap: 16px;
-      margin-bottom: 28px;
       flex-wrap: wrap;
+      margin-bottom: 24px;
     }
-    .offres-email-copy-bar {
+    .btn-primary-elevated {
+      font-family: 'DM Sans', sans-serif;
       display: inline-flex;
       align-items: center;
-      gap: 14px;
-      background: #FFFFFF;
-      border: 1px solid var(--sand);
-      padding: 8px 18px;
+      gap: 10px;
+      background: var(--coral);
+      color: #FFFFFF;
+      padding: 14px 28px;
       border-radius: 999px;
-      font-size: 0.92rem;
-    }
-    .offres-plain-email {
-      font-family: 'DM Sans', sans-serif;
+      font-size: 0.96rem;
       font-weight: 600;
-      color: var(--ink);
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(216, 107, 82, 0.32);
+      transition: all .25s ease;
     }
-    .btn-copy-address {
+    .btn-primary-elevated:hover {
+      background: var(--coral-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(216, 107, 82, 0.42);
+    }
+    .btn-secondary-elevated {
+      font-family: 'DM Sans', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFFFFF;
+      color: var(--ink);
+      border: 1.5px solid var(--ink);
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .25s ease;
+    }
+    .btn-secondary-elevated:hover {
+      background: var(--ink);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+    .cta-copy-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(214, 204, 196, 0.25);
+      border: 1px solid rgba(214, 204, 196, 0.5);
+      border-radius: 999px;
+      padding: 6px 14px 6px 18px;
+    }
+    .email-address {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+    }
+    .btn-copy-chip {
+      font-family: 'DM Sans', sans-serif;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--cream);
-      border: 1px solid var(--sand-mid);
-      color: var(--ink-mid);
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
+      background: #FFFFFF;
+      color: var(--ink);
+      border: 1px solid var(--sand);
+      border-radius: 999px;
+      padding: 5px 12px;
       cursor: pointer;
       transition: all .2s ease;
     }
-    .btn-copy-address:hover {
+    .btn-copy-chip:hover {
       background: var(--ink);
-      border-color: var(--ink);
       color: #FFFFFF;
     }
 
-    @media (max-width: 992px) {
-      .offres-grid {
+    @media (max-width: 768px) {
+      .dual-portal {
+        padding: 0 20px 48px;
+      }
+      .dual-portal-inner {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 16px;
       }
-      .offre-title {
-        min-height: auto;
+      .portal-card {
+        padding: 26px 22px 22px;
       }
-      .offres-hero {
-        padding: 48px 24px 32px;
+      .portal-title {
+        font-size: 1.3rem;
       }
-      .offres-grid-wrap,
-      .offres-section-wrap {
-        padding: 0 20px;
+      .offres-header-clean {
+        padding: 40px 16px 24px;
       }
-    }
-
-    @media (max-width: 600px) {
-      .offres-cta-buttons {
+      .pillar-switcher {
         flex-direction: column;
+        border-radius: 18px;
         width: 100%;
       }
-      .offres-cta-buttons .portal-card-btn {
+      .switcher-btn {
+        width: 100%;
+        justify-content: center;
+        white-space: normal;
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 0.88rem;
+      }
+      .pillar-pane {
+        padding: 0 16px 36px;
+      }
+      .pillar-summary-box {
+        padding: 24px 20px;
+      }
+      .cards-duo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .pricing-card {
+        padding: 28px 22px 24px;
+      }
+      .checklist-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .micro-reassurance {
+        border-radius: 14px;
+        padding: 12px 16px;
+        text-align: left;
+      }
+      .offres-faq-clean {
+        padding: 36px 16px 28px;
+      }
+      .clean-accordion-header {
+        padding: 16px 18px;
+        font-size: 0.95rem;
+      }
+      .offres-cta-clean {
+        padding: 16px 16px 60px;
+      }
+      .cta-card-elevated {
+        padding: 32px 20px 24px;
+      }
+      .cta-btn-group {
+        flex-direction: column;
+      }
+      .btn-primary-elevated,
+      .btn-secondary-elevated {
         width: 100%;
         justify-content: center;
       }
-      .offres-email-copy-bar {
+      .cta-copy-row {
         flex-direction: column;
         gap: 8px;
-        border-radius: 12px;
-        padding: 12px;
-        width: 100%;
+        padding: 10px 14px;
       }
     }
-
+  
   </style>
 </head>
 <body>
@@ -4003,29 +4089,42 @@
   <section id="double-entree" class="dual-portal">
     <div class="dual-portal-inner">
       <!-- Carte 1 : Recrutement -->
-      <div class="portal-card">
-        <span class="portal-card-badge">Recrutement &middot; CDI / CDD</span>
-        <h3 class="portal-card-title">Vous recrutez ?</h3>
-        <p class="portal-card-desc">Mon parcours, mes compétences, mon CV</p>
-        <a href="#experiences" class="portal-card-btn portal-card-btn-outline">
-          Voir mon profil
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+      <a href="#experiences" class="portal-card portal-card-recrutement">
+        <div class="portal-card-top">
+          <span class="portal-tag">Recrutement &middot; CDI / CDD</span>
+          <div class="portal-icon-circle">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+        </div>
+        <h3 class="portal-title">Vous recrutez ?</h3>
+        <p class="portal-desc">Découvrez mon parcours 360°, mes réalisations et mon CV complet.</p>
+        <div class="portal-footer">
+          <span class="portal-link-text">
+            Consulter mon parcours
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
 
       <!-- Carte 2 : Freelance -->
-      <div class="portal-card portal-card-featured">
-        <span class="portal-card-badge portal-badge-coral">Freelance &middot; Missions</span>
-        <h3 class="portal-card-title">Vous cherchez une freelance ?</h3>
-        <p class="portal-card-desc">2 expertises au choix : <strong>SEO, GEO &amp; Rédaction</strong> ou <strong>Stratégie Réseaux Sociaux</strong>.</p>
-        <a href="#offres" onclick="openPage('offres-overlay'); return false;" class="portal-card-btn portal-card-btn-coral">
-          Découvrir les offres
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+      <a href="#offres" onclick="openPage('offres-overlay'); return false;" class="portal-card portal-card-freelance">
+        <div class="portal-card-top">
+          <span class="portal-tag portal-tag-coral">Missions &middot; Freelance</span>
+          <div class="portal-icon-circle portal-icon-coral">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+        </div>
+        <h3 class="portal-title">Vous cherchez une freelance ?</h3>
+        <p class="portal-desc">Prestations ciblées : <strong>SEO &amp; Visibilité IA</strong> ou <strong>Réseaux Sociaux</strong>.</p>
+        <div class="portal-footer">
+          <span class="portal-link-text portal-link-coral">
+            Découvrir les offres
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
     </div>
   </section>
-
 
   <!-- ============================================================
        MARQUEE LOGOS
@@ -4877,7 +4976,7 @@
       }
     }
 
-    function toggleOffreFaq(btn) {
+    // old toggleOffreFaq(btn) {
       const item = btn.closest('.accordion-item');
       const body = item.querySelector('.accordion-body');
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
@@ -5105,6 +5204,25 @@
       });
     }
 
+  
+    function switchOffresTab(tab) {
+      document.querySelectorAll('.switcher-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('tab-btn-' + tab);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      document.querySelectorAll('.pillar-pane').forEach(sec => sec.classList.remove('active'));
+      const activeSec = document.getElementById('pillar-' + tab + '-section');
+      if (activeSec) activeSec.classList.add('active');
+    }
+
+    function toggleOffreFaq(headerBtn) {
+      const item = headerBtn.closest('.clean-accordion-item');
+      const isOpen = item.classList.contains('active');
+      document.querySelectorAll('.clean-accordion-item').forEach(el => el.classList.remove('active'));
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    }
   </script>
 
 
@@ -5450,233 +5568,223 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         Retour au portfolio
       </button>
-      <span class="page-topbar-title">Offres Freelance &middot; Charlotte Pierrel</span>
+      <span class="page-topbar-title">Offres &amp; Tarifs Freelance</span>
     </div>
 
     <div class="page-body" id="offres-body">
-      <!-- En-tête général & sélecteur de piliers -->
-      <div class="offres-hero">
-        <div class="offres-hero-inner">
-          <span class="offres-badge">Prestations &middot; 2 Piliers d'intervention</span>
-          <h1 class="offres-hero-title">Choisissez l'expertise adaptée à vos objectifs.</h1>
-          <p class="offres-hero-subtitle">Des offres indépendantes, transparentes et sans engagement.</p>
-          
-          <!-- Filtres / Onglets pour basculer facilement -->
-          <div class="offres-tab-nav" role="tablist">
-            <button class="offres-tab-btn active" id="tab-btn-seo" onclick="switchOffresTab('seo')" role="tab" aria-selected="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              Pilier 1 : Visibilité Search &amp; IA (SEO / GEO)
+      <!-- En-tête aéré & épuré -->
+      <div class="offres-header-clean">
+        <span class="offres-kicker">Expertises &amp; Tarifs</span>
+        <h1 class="offres-main-title">Des offres claires, sans surprise ni engagement.</h1>
+        <p class="offres-lead">Choisissez l'expertise qui correspond à vos priorités actuelles :</p>
+
+        <!-- Sélecteur d'onglets (Pill switcher) -->
+        <div class="pillar-switcher-wrap">
+          <div class="pillar-switcher">
+            <button class="switcher-btn active" id="tab-btn-seo" onclick="switchOffresTab('seo')">
+              <span class="switcher-num">01</span>
+              <span>Visibilité Search &amp; IA (SEO / GEO)</span>
             </button>
-            <button class="offres-tab-btn" id="tab-btn-social" onclick="switchOffresTab('social')" role="tab" aria-selected="false">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              Pilier 2 : Réseaux Sociaux &amp; Image de marque
+            <button class="switcher-btn" id="tab-btn-social" onclick="switchOffresTab('social')">
+              <span class="switcher-num">02</span>
+              <span>Réseaux Sociaux</span>
             </button>
           </div>
         </div>
       </div>
 
       <!-- ══════════════════════════════════════════════════════════
-           PILIER 1 : SEO, GEO & RÉDACTION WEB
+           PILIER 1 : SEO & VISIBILITÉ IA (GEO)
            ══════════════════════════════════════════════════════════ -->
-      <div id="pillar-seo-section" class="offres-pillar-section active">
-        <div class="pillar-header">
-          <div class="pillar-label"><span class="pillar-num">01</span> Visibilité Search &amp; IA</div>
-          <h2 class="pillar-title">Faites-vous trouver par vos futurs clients, sur Google comme sur ChatGPT.</h2>
-          <p class="pillar-subtitle">Rédaction web, SEO &amp; GEO (Generative Engine Optimization)</p>
-          <div class="pillar-pitch">
-            <p>Vos futurs clients ne cherchent plus seulement sur Google : ils posent aussi leurs questions à ChatGPT ou Perplexity. Si votre site n'apparaît pas dans ces réponses, ce sont vos concurrents qui sont recommandés. J'écris des contenus qui vous rendent visibles et qui donnent envie de vous choisir.</p>
+      <div id="pillar-seo-section" class="pillar-pane active">
+        <!-- Chapeau synthétique (accroche percutante en 3 points rapides) -->
+        <div class="pillar-summary-box">
+          <div class="summary-headline">
+            <h3>Faites-vous trouver par vos futurs clients, sur Google comme sur ChatGPT.</h3>
+            <p>Vos futurs clients posent leurs questions à l'IA et aux moteurs. J'écris des contenus qui vous rendent visibles et qui donnent envie de vous choisir.</p>
+          </div>
+          <div class="summary-chips">
+            <span class="summary-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Recherche &amp; Mots-clés</span>
+            <span class="summary-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Storytelling &amp; Rédaction</span>
+            <span class="summary-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Référencement Google &amp; Moteurs IA</span>
           </div>
         </div>
 
-        <div class="offres-grid offres-grid-2col">
-          <!-- Offre 1 : Article de blog -->
-          <div class="offre-card">
-            <div class="offre-card-header">
-              <span class="offre-tag">À la carte</span>
-              <h3 class="offre-title">Article de blog optimisé</h3>
-              <div class="offre-price">dès 190 € <span class="offre-price-unit">l'article</span></div>
-            </div>
-            <div class="offre-card-body">
-              <p class="offre-desc">Article de 1 200 à 1 500 mots : recherche de mots-clés, rédaction avec storytelling, structure optimisée SEO et GEO (FAQ, réponses claires, maillage interne), méta-description et suggestions d'images.</p>
-              <div class="offre-pack-pill">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                Pack de 3 articles : 520 €.
+        <!-- Cartes d'offres SEO (2 colonnes) -->
+        <div class="cards-duo">
+          <!-- Offre 1 -->
+          <div class="pricing-card">
+            <div class="card-head">
+              <span class="card-badge">À la carte</span>
+              <h4 class="card-title">Article de blog optimisé</h4>
+              <div class="price-row">
+                <span class="price-val">190 €</span>
+                <span class="price-freq">dès / article</span>
               </div>
             </div>
-            <div class="offre-card-footer">
-              <a href="#" onclick="openMailto('Demande d’information – Article de blog optimisé'); return false;" class="offre-btn">
+
+            <div class="card-body">
+              <ul class="checklist">
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>1 200 à 1 500 mots</strong> rédigés avec storytelling</span></li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Recherche de mots-clés</strong> ciblée</span></li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Structure optimisée SEO &amp; GEO</strong> (FAQ, maillage)</span></li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Méta-description</strong> &amp; suggestions d'images</span></li>
+              </ul>
+              
+              <div class="pack-badge">
+                <span class="pack-dot"></span>
+                <span>Pack 3 articles : <strong>520 €</strong></span>
+              </div>
+            </div>
+
+            <div class="card-foot">
+              <a href="#" onclick="openMailto('Demande d’information – Article de blog optimisé'); return false;" class="btn-card-action">
                 Me contacter pour cette offre
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
 
-          <!-- Offre 2 : Accompagnement mensuel -->
-          <div class="offre-card offre-card-highlight">
-            <div class="offre-popular-badge">Recommandé</div>
-            <div class="offre-card-header">
-              <span class="offre-tag offre-tag-coral">Mensuel</span>
-              <h3 class="offre-title">Accompagnement rédactionnel mensuel</h3>
-              <div class="offre-price">dès 490 € <span class="offre-price-unit">/mois</span></div>
+          <!-- Offre 2 : Highlighted -->
+          <div class="pricing-card pricing-card-featured">
+            <div class="featured-ribbon">Formule recommandée</div>
+            <div class="card-head">
+              <span class="card-badge card-badge-coral">Accompagnement mensuel</span>
+              <h4 class="card-title">Accompagnement rédactionnel</h4>
+              <div class="price-row">
+                <span class="price-val">490 €</span>
+                <span class="price-freq">dès / mois</span>
+              </div>
             </div>
-            <div class="offre-card-body">
-              <ul class="offre-features">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>2 articles optimisés</strong> par mois</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>Calendrier éditorial</strong> adapté à la saisonnalité de votre activité</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>Optimisation de 2 pages existantes</strong> par mois</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>Suivi mensuel :</strong> positions Google, trafic, visibilité dans les réponses IA (Google, ChatGPT, Perplexity)</span>
-                </li>
+
+            <div class="card-body">
+              <ul class="checklist">
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>2 articles optimisés</strong> par mois</span></li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Calendrier éditorial</strong> adapté à votre saisonnalité</span></li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Optimisation de 2 pages</strong> existantes par mois</span></li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Suivi mensuel :</strong> positions Google, trafic, visibilité IA (ChatGPT, Perplexity)</span></li>
               </ul>
             </div>
-            <div class="offre-card-footer">
-              <a href="#" onclick="openMailto('Demande d’information – Accompagnement rédactionnel mensuel'); return false;" class="offre-btn offre-btn-coral">
+
+            <div class="card-foot">
+              <a href="#" onclick="openMailto('Demande d’information – Accompagnement rédactionnel mensuel'); return false;" class="btn-card-action btn-card-coral">
                 Me contacter pour cette offre
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Bloc engagement SEO -->
-        <div class="offres-engagement-wrap">
-          <div class="offres-engagement">
-            <div class="engagement-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="engagement-text">
-              <h4 class="engagement-title">Engagement (offres mensuelles)</h4>
-              <p class="engagement-desc">Sans engagement. Le premier mois sert de période d'essai. Ensuite, l'accompagnement peut être arrêté à tout moment avec un préavis de 2 mois.</p>
-            </div>
-          </div>
+        <!-- Micro réassurance engagement -->
+        <div class="micro-reassurance">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span><strong>Sans engagement :</strong> 1er mois d'essai &middot; Arrêt possible à tout moment avec préavis de 2 mois.</span>
         </div>
       </div>
 
       <!-- ══════════════════════════════════════════════════════════
-           PILIER 2 : RÉSEAUX SOCIAUX & IMAGE DE MARQUE
+           PILIER 2 : RÉSEAUX SOCIAUX
            ══════════════════════════════════════════════════════════ -->
-      <div id="pillar-social-section" class="offres-pillar-section">
-        <div class="pillar-header">
-          <div class="pillar-label"><span class="pillar-num">02</span> Social Media &amp; Image de marque</div>
-          <h2 class="pillar-title">Développez une communauté engagée et renforcez votre image de marque.</h2>
-          <p class="pillar-subtitle">Stratégie éditoriale, création de contenus et modération active</p>
-          <div class="pillar-pitch">
-            <p>Les réseaux sociaux ne servent pas qu'à poster régulièrement : ils installent votre autorité, humanisent votre entreprise et créent un lien de confiance direct avec votre audience. Je prends en charge votre présence de A à Z avec une approche calibrée pour vos cibles.</p>
+      <div id="pillar-social-section" class="pillar-pane">
+        <!-- Chapeau synthétique Social -->
+        <div class="pillar-summary-box">
+          <div class="summary-headline">
+            <h3>Développez votre communauté et humanisez votre marque.</h3>
+            <p>Une présence active et professionnelle sur vos réseaux sociaux pour fédérer votre audience et générer de l'engagement qualifié.</p>
+          </div>
+          <div class="summary-chips">
+            <span class="summary-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Stratégie de contenu</span>
+            <span class="summary-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Copywriting &amp; Storytelling</span>
+            <span class="summary-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Modération &amp; Statistiques</span>
           </div>
         </div>
 
-        <div class="offres-grid offres-grid-1col">
-          <!-- Offre 3 : Réseaux sociaux -->
-          <div class="offre-card offre-card-wide">
-            <div class="offre-card-header">
-              <span class="offre-tag offre-tag-coral">Accompagnement Mensuel</span>
-              <h3 class="offre-title">Réseaux sociaux</h3>
-              <div class="offre-price">dès 500 € <span class="offre-price-unit">/mois</span></div>
+        <!-- Carte Social (format focalisé) -->
+        <div class="card-single-wrap">
+          <div class="pricing-card pricing-card-social">
+            <div class="card-head">
+              <span class="card-badge card-badge-coral">Accompagnement mensuel</span>
+              <h4 class="card-title">Gestion des réseaux sociaux</h4>
+              <div class="price-row">
+                <span class="price-val">500 €</span>
+                <span class="price-freq">dès / mois</span>
+              </div>
             </div>
-            <div class="offre-card-body">
-              <ul class="offre-features-grid">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>Stratégie éditoriale</strong> et calendrier mensuel</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>4 publications</strong> par mois</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>Légendes optimisées</strong> (storytelling, hashtags, appel à l'action)</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>Publication</strong> sur 2 réseaux au choix</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>Modération</strong> des commentaires</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span><strong>Reporting mensuel</strong> et analyse des performances</span>
-                </li>
-              </ul>
+
+            <div class="card-body">
+              <div class="checklist-grid-2">
+                <ul class="checklist">
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Stratégie éditoriale</strong> et calendrier mensuel</span></li>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>4 publications</strong> par mois</span></li>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Légendes optimisées</strong> (storytelling, hashtags, CTA)</span></li>
+                </ul>
+                <ul class="checklist">
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Publication</strong> sur 2 réseaux au choix</span></li>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Modération</strong> des commentaires</span></li>
+                  <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Reporting mensuel</strong> d'engagement</span></li>
+                </ul>
+              </div>
             </div>
-            <div class="offre-card-footer" style="padding-top: 24px; border-top: 1px solid var(--sand);">
-              <a href="#" onclick="openMailto('Demande d’information – Réseaux sociaux'); return false;" class="offre-btn offre-btn-coral" style="max-width: 320px;">
+
+            <div class="card-foot" style="text-align: center;">
+              <a href="#" onclick="openMailto('Demande d’information – Réseaux sociaux'); return false;" class="btn-card-action btn-card-coral" style="max-width: 320px; margin: 0 auto;">
                 Me contacter pour cette offre
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Bloc engagement Social -->
-        <div class="offres-engagement-wrap">
-          <div class="offres-engagement">
-            <div class="engagement-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div class="engagement-text">
-              <h4 class="engagement-title">Engagement (offres mensuelles)</h4>
-              <p class="engagement-desc">Sans engagement. Le premier mois sert de période d'essai. Ensuite, l'accompagnement peut être arrêté à tout moment avec un préavis de 2 mois.</p>
-            </div>
-          </div>
+        <!-- Micro réassurance engagement Social -->
+        <div class="micro-reassurance">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span><strong>Sans engagement :</strong> 1er mois d'essai &middot; Arrêt possible à tout moment avec préavis de 2 mois.</span>
         </div>
       </div>
 
-      <!-- FAQ Commune -->
-      <div class="offres-faq-wrap">
-        <div class="offres-faq-inner">
-          <span class="section-label">Questions &amp; Réponses</span>
-          <h2 class="offres-faq-title">Foire aux questions</h2>
-          
-          <div class="accordion" id="offres-faq-accordion">
-            <div class="accordion-item">
-              <button class="accordion-header" onclick="toggleOffreFaq(this)" aria-expanded="false">
+      <!-- FAQ Compacte & Épurée -->
+      <div class="offres-faq-clean">
+        <div class="faq-inner-container">
+          <span class="faq-label">Questions fréquentes</span>
+          <h3 class="faq-main-title">Tout ce qu'il faut savoir</h3>
+
+          <div class="clean-accordion">
+            <div class="clean-accordion-item">
+              <button class="clean-accordion-header" onclick="toggleOffreFaq(this)">
                 <span>Le SEO, ça prend du temps, non ?</span>
-                <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <span class="faq-icon">+</span>
               </button>
-              <div class="accordion-content">
+              <div class="clean-accordion-content">
                 <p>Oui, les premiers effets se voient en général après 3 à 6 mois. C'est un investissement durable : un bon article continue d'attirer des visiteurs pendant des années.</p>
               </div>
             </div>
 
-            <div class="accordion-item">
-              <button class="accordion-header" onclick="toggleOffreFaq(this)" aria-expanded="false">
+            <div class="clean-accordion-item">
+              <button class="clean-accordion-header" onclick="toggleOffreFaq(this)">
                 <span>C'est quoi exactement, le GEO ?</span>
-                <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <span class="faq-icon">+</span>
               </button>
-              <div class="accordion-content">
+              <div class="clean-accordion-content">
                 <p>C'est l'optimisation de vos contenus pour qu'ils soient repris et cités par les assistants IA (ChatGPT, Perplexity, Google). De plus en plus de clients préparent leurs achats avec ces outils.</p>
               </div>
             </div>
 
-            <div class="accordion-item">
-              <button class="accordion-header" onclick="toggleOffreFaq(this)" aria-expanded="false">
+            <div class="clean-accordion-item">
+              <button class="clean-accordion-header" onclick="toggleOffreFaq(this)">
                 <span>Et si je n'ai pas de visuels ?</span>
-                <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <span class="faq-icon">+</span>
               </button>
-              <div class="accordion-content">
+              <div class="clean-accordion-content">
                 <p>Je travaille à partir de votre banque d'images. Si besoin, je peux aussi créer des visuels sur mesure grâce à l'IA générative.</p>
               </div>
             </div>
 
-            <div class="accordion-item">
-              <button class="accordion-header" onclick="toggleOffreFaq(this)" aria-expanded="false">
+            <div class="clean-accordion-item">
+              <button class="clean-accordion-header" onclick="toggleOffreFaq(this)">
                 <span>Travaillez-vous avec la Suisse ?</span>
-                <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <span class="faq-icon">+</span>
               </button>
-              <div class="accordion-content">
+              <div class="clean-accordion-content">
                 <p>Oui, entièrement à distance, avec une facturation en EUR ou en CHF.</p>
               </div>
             </div>
@@ -5684,36 +5792,34 @@
         </div>
       </div>
 
-      <!-- Appel à l'action final -->
-      <div class="offres-cta-wrap">
-        <div class="offres-cta-box">
-          <h3 class="offres-cta-title">Prêt à développer votre visibilité ?</h3>
-          <p class="offres-cta-desc">Discutons de vos objectifs et trouvons ensemble le format idéal pour vos contenus.</p>
-          
-          <div class="offres-cta-actions">
-            <a href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 1rem; padding: 14px 28px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <!-- Bloc CTA Final Sobre & Efficace -->
+      <div class="offres-cta-clean">
+        <div class="cta-card-elevated">
+          <h3 class="cta-title">Un projet ou une question ?</h3>
+          <p class="cta-subtitle">Échangeons 30 minutes de vive voix ou envoyez-moi un message direct.</p>
+
+          <div class="cta-btn-group">
+            <a href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer" class="btn-primary-elevated">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               Réserver un appel de 30 min
             </a>
-            <a href="#" onclick="openMailto('Demande d’information – Projet de contenu'); return false;" class="btn-secondary" style="font-size: 1rem; padding: 14px 28px;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="#" onclick="openMailto('Demande d’information – Projet de contenu'); return false;" class="btn-secondary-elevated">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               M'écrire un mail
             </a>
           </div>
 
-          <div class="offres-copy-email">
-            <span class="email-text">charlottepierrel@outlook.fr</span>
-            <button type="button" class="btn-copy-email" onclick="copyContactEmail(this)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <div class="cta-copy-row">
+            <span class="email-address">charlottepierrel@outlook.fr</span>
+            <button type="button" class="btn-copy-chip" onclick="copyContactEmail(this)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Copier l'adresse
             </button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- ══ PHOTOGRAPHIE OVERLAY ══ -->
+  </div>\n\n  <!-- ══ PHOTOGRAPHIE OVERLAY ══ -->
   <div id="photo-overlay" class="page-overlay" role="dialog" aria-modal="true">
     <div class="page-topbar">
       <button class="page-back" onclick="closePage('photo-overlay')">
