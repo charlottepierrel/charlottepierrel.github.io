@@ -3244,6 +3244,154 @@
     }
 
   
+    
+    /* Tabs navigation for Pillars */
+    .offres-tab-nav {
+      display: inline-flex;
+      background: var(--sand);
+      padding: 6px;
+      border-radius: 999px;
+      gap: 6px;
+      margin-top: 28px;
+      max-width: 100%;
+    }
+    .offres-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink-mid);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all .25s ease;
+      white-space: nowrap;
+    }
+    .offres-tab-btn:hover {
+      color: var(--ink);
+    }
+    .offres-tab-btn.active {
+      background: #FFFFFF;
+      color: var(--ink);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .offres-pillar-section {
+      display: none;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 40px;
+      animation: fadeIn .35s ease;
+    }
+    .offres-pillar-section.active {
+      display: block;
+    }
+    .pillar-header {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 48px;
+    }
+    .pillar-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 14px;
+    }
+    .pillar-num {
+      display: inline-block;
+      background: var(--coral-soft);
+      border: 1px solid var(--coral-border);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+    }
+    .pillar-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+    .pillar-subtitle {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--coral);
+      margin: 0 0 18px;
+    }
+    .pillar-pitch {
+      font-size: 1.02rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .offres-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .offres-grid-1col {
+      display: flex;
+      justify-content: center;
+    }
+    .offre-card-wide {
+      max-width: 820px;
+      width: 100%;
+    }
+    .offre-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 28px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .offre-features-grid li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.96rem;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+    .offre-features-grid li svg {
+      color: var(--coral);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    @media (max-width: 768px) {
+      .offres-tab-nav {
+        flex-direction: column;
+        border-radius: 20px;
+        width: 100%;
+      }
+      .offres-tab-btn {
+        width: 100%;
+        justify-content: center;
+        white-space: normal;
+        text-align: center;
+        padding: 10px 14px;
+        font-size: 0.85rem;
+      }
+      .offres-pillar-section {
+        padding: 0 20px;
+      }
+      .offres-grid-2col {
+        grid-template-columns: 1fr;
+      }
+      .offre-features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ============================================================
        DOUBLE ENTRÉE PORTAL & SECTION OFFRES
        ============================================================ */
@@ -3869,7 +4017,7 @@
       <div class="portal-card portal-card-featured">
         <span class="portal-card-badge portal-badge-coral">Freelance &middot; Missions</span>
         <h3 class="portal-card-title">Vous cherchez une freelance ?</h3>
-        <p class="portal-card-desc">Rédaction web, SEO, GEO et réseaux sociaux</p>
+        <p class="portal-card-desc">2 expertises au choix : <strong>SEO, GEO &amp; Rédaction</strong> ou <strong>Stratégie Réseaux Sociaux</strong>.</p>
         <a href="#offres" onclick="openPage('offres-overlay'); return false;" class="portal-card-btn portal-card-btn-coral">
           Découvrir les offres
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -4705,6 +4853,30 @@
       window.location.href = buildMailto(subject, body);
     }
 
+    
+    function switchOffresTab(tabName) {
+      const btnSeo = document.getElementById('tab-btn-seo');
+      const btnSocial = document.getElementById('tab-btn-social');
+      const secSeo = document.getElementById('pillar-seo-section');
+      const secSocial = document.getElementById('pillar-social-section');
+      
+      if (tabName === 'seo') {
+        btnSeo.classList.add('active');
+        btnSeo.setAttribute('aria-selected', 'true');
+        btnSocial.classList.remove('active');
+        btnSocial.setAttribute('aria-selected', 'false');
+        secSeo.classList.add('active');
+        secSocial.classList.remove('active');
+      } else {
+        btnSocial.classList.add('active');
+        btnSocial.setAttribute('aria-selected', 'true');
+        btnSeo.classList.remove('active');
+        btnSeo.setAttribute('aria-selected', 'false');
+        secSocial.classList.add('active');
+        secSeo.classList.remove('active');
+      }
+    }
+
     function toggleOffreFaq(btn) {
       const item = btn.closest('.accordion-item');
       const body = item.querySelector('.accordion-body');
@@ -5276,242 +5448,268 @@
     <div class="page-topbar">
       <button class="page-back" onclick="closePage('offres-overlay')">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Retour
+        Retour au portfolio
       </button>
-      <span class="page-topbar-title">Offres &middot; Charlotte Pierrel</span>
+      <span class="page-topbar-title">Offres Freelance &middot; Charlotte Pierrel</span>
     </div>
-    
+
     <div class="page-body" id="offres-body">
-      <!-- Hero Offres -->
+      <!-- En-tête général & sélecteur de piliers -->
       <div class="offres-hero">
         <div class="offres-hero-inner">
-          <span class="offres-tagline-badge">Prestations &middot; Freelance</span>
-          <h1 class="offres-hero-title">Faites-vous trouver par vos futurs clients, sur Google comme sur ChatGPT.</h1>
-          <p class="offres-hero-subtitle">Rédaction web, SEO, GEO et réseaux sociaux.</p>
-          <div class="offres-hero-pitch">
-            <p>Vos futurs clients ne cherchent plus seulement sur Google : ils posent aussi leurs questions à ChatGPT ou Perplexity. Si votre site n'apparaît pas dans ces réponses, ce sont vos concurrents qui sont recommandés. J'écris des contenus qui vous rendent visibles et qui donnent envie de vous choisir.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Grille 3 Offres -->
-      <div class="offres-grid-wrap">
-        <div class="offres-grid">
-          <!-- Offre 1 -->
-          <div class="offre-card">
-            <div class="offre-card-top">
-              <span class="offre-badge">À l'unité</span>
-              <h3 class="offre-title">Article de blog optimisé</h3>
-              <div class="offre-price">dès 190 € <span class="offre-price-unit">l'article</span></div>
-            </div>
-            <div class="offre-card-content">
-              <p class="offre-desc">Article de 1 200 à 1 500 mots : recherche de mots-clés, rédaction avec storytelling, structure optimisée SEO et GEO (FAQ, réponses claires, maillage interne), méta-description et suggestions d'images.</p>
-              <div class="offre-pack-mention">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                Pack de 3 articles : 520 €.
-              </div>
-            </div>
-            <div class="offre-card-action">
-              <a href="#" onclick="openMailto('Demande d'information – Article de blog optimisé'); return false;" class="offre-action-btn">
-                Me contacter pour cette offre
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Offre 2 (Mise en avant) -->
-          <div class="offre-card offre-card-highlight">
-            <div class="offre-highlight-pill">Formule recommandée</div>
-            <div class="offre-card-top">
-              <span class="offre-badge offre-badge-coral">Accompagnement mensuel</span>
-              <h3 class="offre-title">Accompagnement rédactionnel mensuel</h3>
-              <div class="offre-price">dès 490 € <span class="offre-price-unit">/mois</span></div>
-            </div>
-            <div class="offre-card-content">
-              <ul class="offre-list">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>2 articles optimisés par mois</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Calendrier éditorial adapté à la saisonnalité de votre activité</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Optimisation de 2 pages existantes par mois</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Suivi mensuel : positions Google, trafic, visibilité dans les réponses IA (Google, ChatGPT, Perplexity)</span>
-                </li>
-              </ul>
-            </div>
-            <div class="offre-card-action">
-              <a href="#" onclick="openMailto('Demande d'information – Accompagnement rédactionnel mensuel'); return false;" class="offre-action-btn offre-btn-coral">
-                Me contacter pour cette offre
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Offre 3 -->
-          <div class="offre-card">
-            <div class="offre-card-top">
-              <span class="offre-badge">Social Media</span>
-              <h3 class="offre-title">Réseaux sociaux</h3>
-              <div class="offre-price">dès 500 € <span class="offre-price-unit">/mois</span></div>
-            </div>
-            <div class="offre-card-content">
-              <ul class="offre-list">
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Stratégie éditoriale et calendrier mensuel</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>4 publications par mois</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Légendes optimisées (storytelling, hashtags, appel à l'action)</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Publication sur 2 réseaux au choix</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Modération des commentaires</span>
-                </li>
-                <li>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Reporting mensuel</span>
-                </li>
-              </ul>
-            </div>
-            <div class="offre-card-action">
-              <a href="#" onclick="openMailto('Demande d'information – Réseaux sociaux'); return false;" class="offre-action-btn">
-                Me contacter pour cette offre
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloc Engagement -->
-      <div class="offres-section-wrap">
-        <div class="offres-engagement-card">
-          <div class="engagement-badge-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div class="engagement-content">
-            <h4 class="engagement-title">Engagement (offres mensuelles)</h4>
-            <p class="engagement-text">Sans engagement. Le premier mois sert de période d'essai. Ensuite, l'accompagnement peut être arrêté à tout moment avec un préavis de 2 mois.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ Section -->
-      <div class="offres-section-wrap">
-        <div class="offres-faq-container">
-          <div class="offres-faq-header">
-            <span class="section-label">Questions &amp; Réponses</span>
-            <h2 class="offres-faq-title">Foire aux questions</h2>
-          </div>
+          <span class="offres-badge">Prestations &middot; 2 Piliers d'intervention</span>
+          <h1 class="offres-hero-title">Choisissez l'expertise adaptée à vos objectifs.</h1>
+          <p class="offres-hero-subtitle">Des offres indépendantes, transparentes et sans engagement.</p>
           
-          <div class="offres-accordion" id="offres-accordion">
-            <!-- Q1 -->
-            <div class="accordion-item">
-              <button class="accordion-trigger" onclick="toggleOffreFaq(this)" aria-expanded="false">
-                <span class="accordion-q">Le SEO, ça prend du temps, non ?</span>
-                <span class="accordion-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-              <div class="accordion-body">
-                <div class="accordion-body-inner">
-                  <p>Oui, les premiers effets se voient en général après 3 à 6 mois. C'est un investissement durable : un bon article continue d'attirer des visiteurs pendant des années.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Q2 -->
-            <div class="accordion-item">
-              <button class="accordion-trigger" onclick="toggleOffreFaq(this)" aria-expanded="false">
-                <span class="accordion-q">C'est quoi exactement, le GEO ?</span>
-                <span class="accordion-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-              <div class="accordion-body">
-                <div class="accordion-body-inner">
-                  <p>C'est l'optimisation de vos contenus pour qu'ils soient repris et cités par les assistants IA (ChatGPT, Perplexity, Google). De plus en plus de clients préparent leurs achats avec ces outils.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Q3 -->
-            <div class="accordion-item">
-              <button class="accordion-trigger" onclick="toggleOffreFaq(this)" aria-expanded="false">
-                <span class="accordion-q">Et si je n'ai pas de visuels ?</span>
-                <span class="accordion-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-              <div class="accordion-body">
-                <div class="accordion-body-inner">
-                  <p>Je travaille à partir de votre banque d'images. Si besoin, je peux aussi créer des visuels sur mesure grâce à l'IA générative.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Q4 -->
-            <div class="accordion-item">
-              <button class="accordion-trigger" onclick="toggleOffreFaq(this)" aria-expanded="false">
-                <span class="accordion-q">Travaillez-vous avec la Suisse ?</span>
-                <span class="accordion-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                </span>
-              </button>
-              <div class="accordion-body">
-                <div class="accordion-body-inner">
-                  <p>Oui, entièrement à distance, avec une facturation en EUR ou en CHF.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bloc Appel à l'action final -->
-      <div class="offres-section-wrap" style="margin-top: 56px;">
-        <div class="offres-cta-card">
-          <h3 class="offres-cta-heading">Prêt à développer votre visibilité ?</h3>
-          <p class="offres-cta-subheading">Réservez un échange de 30 minutes ou écrivez-moi directement pour détailler votre projet.</p>
-          
-          <div class="offres-cta-buttons">
-            <a href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer" class="portal-card-btn portal-card-btn-coral" style="padding: 14px 28px; font-size: 1rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Réserver un appel de 30 min
-            </a>
-            <a href="#" onclick="openMailto('Demande d'information – Projet de contenu'); return false;" class="portal-card-btn portal-card-btn-outline" style="padding: 14px 28px; font-size: 1rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              M'écrire un mail
-            </a>
-          </div>
-
-          <div class="offres-email-copy-bar">
-            <span class="offres-plain-email">charlottepierrel@outlook.fr</span>
-            <button type="button" class="btn-copy-address" onclick="copyContactEmail(this)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              <span>Copier l'adresse</span>
+          <!-- Filtres / Onglets pour basculer facilement -->
+          <div class="offres-tab-nav" role="tablist">
+            <button class="offres-tab-btn active" id="tab-btn-seo" onclick="switchOffresTab('seo')" role="tab" aria-selected="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Pilier 1 : Visibilité Search &amp; IA (SEO / GEO)
+            </button>
+            <button class="offres-tab-btn" id="tab-btn-social" onclick="switchOffresTab('social')" role="tab" aria-selected="false">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Pilier 2 : Réseaux Sociaux &amp; Image de marque
             </button>
           </div>
         </div>
       </div>
 
+      <!-- ══════════════════════════════════════════════════════════
+           PILIER 1 : SEO, GEO & RÉDACTION WEB
+           ══════════════════════════════════════════════════════════ -->
+      <div id="pillar-seo-section" class="offres-pillar-section active">
+        <div class="pillar-header">
+          <div class="pillar-label"><span class="pillar-num">01</span> Visibilité Search &amp; IA</div>
+          <h2 class="pillar-title">Faites-vous trouver par vos futurs clients, sur Google comme sur ChatGPT.</h2>
+          <p class="pillar-subtitle">Rédaction web, SEO &amp; GEO (Generative Engine Optimization)</p>
+          <div class="pillar-pitch">
+            <p>Vos futurs clients ne cherchent plus seulement sur Google : ils posent aussi leurs questions à ChatGPT ou Perplexity. Si votre site n'apparaît pas dans ces réponses, ce sont vos concurrents qui sont recommandés. J'écris des contenus qui vous rendent visibles et qui donnent envie de vous choisir.</p>
+          </div>
+        </div>
+
+        <div class="offres-grid offres-grid-2col">
+          <!-- Offre 1 : Article de blog -->
+          <div class="offre-card">
+            <div class="offre-card-header">
+              <span class="offre-tag">À la carte</span>
+              <h3 class="offre-title">Article de blog optimisé</h3>
+              <div class="offre-price">dès 190 € <span class="offre-price-unit">l'article</span></div>
+            </div>
+            <div class="offre-card-body">
+              <p class="offre-desc">Article de 1 200 à 1 500 mots : recherche de mots-clés, rédaction avec storytelling, structure optimisée SEO et GEO (FAQ, réponses claires, maillage interne), méta-description et suggestions d'images.</p>
+              <div class="offre-pack-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Pack de 3 articles : 520 €.
+              </div>
+            </div>
+            <div class="offre-card-footer">
+              <a href="#" onclick="openMailto('Demande d’information – Article de blog optimisé'); return false;" class="offre-btn">
+                Me contacter pour cette offre
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Offre 2 : Accompagnement mensuel -->
+          <div class="offre-card offre-card-highlight">
+            <div class="offre-popular-badge">Recommandé</div>
+            <div class="offre-card-header">
+              <span class="offre-tag offre-tag-coral">Mensuel</span>
+              <h3 class="offre-title">Accompagnement rédactionnel mensuel</h3>
+              <div class="offre-price">dès 490 € <span class="offre-price-unit">/mois</span></div>
+            </div>
+            <div class="offre-card-body">
+              <ul class="offre-features">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>2 articles optimisés</strong> par mois</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Calendrier éditorial</strong> adapté à la saisonnalité de votre activité</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Optimisation de 2 pages existantes</strong> par mois</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Suivi mensuel :</strong> positions Google, trafic, visibilité dans les réponses IA (Google, ChatGPT, Perplexity)</span>
+                </li>
+              </ul>
+            </div>
+            <div class="offre-card-footer">
+              <a href="#" onclick="openMailto('Demande d’information – Accompagnement rédactionnel mensuel'); return false;" class="offre-btn offre-btn-coral">
+                Me contacter pour cette offre
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloc engagement SEO -->
+        <div class="offres-engagement-wrap">
+          <div class="offres-engagement">
+            <div class="engagement-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="engagement-text">
+              <h4 class="engagement-title">Engagement (offres mensuelles)</h4>
+              <p class="engagement-desc">Sans engagement. Le premier mois sert de période d'essai. Ensuite, l'accompagnement peut être arrêté à tout moment avec un préavis de 2 mois.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════════════
+           PILIER 2 : RÉSEAUX SOCIAUX & IMAGE DE MARQUE
+           ══════════════════════════════════════════════════════════ -->
+      <div id="pillar-social-section" class="offres-pillar-section">
+        <div class="pillar-header">
+          <div class="pillar-label"><span class="pillar-num">02</span> Social Media &amp; Image de marque</div>
+          <h2 class="pillar-title">Développez une communauté engagée et renforcez votre image de marque.</h2>
+          <p class="pillar-subtitle">Stratégie éditoriale, création de contenus et modération active</p>
+          <div class="pillar-pitch">
+            <p>Les réseaux sociaux ne servent pas qu'à poster régulièrement : ils installent votre autorité, humanisent votre entreprise et créent un lien de confiance direct avec votre audience. Je prends en charge votre présence de A à Z avec une approche calibrée pour vos cibles.</p>
+          </div>
+        </div>
+
+        <div class="offres-grid offres-grid-1col">
+          <!-- Offre 3 : Réseaux sociaux -->
+          <div class="offre-card offre-card-wide">
+            <div class="offre-card-header">
+              <span class="offre-tag offre-tag-coral">Accompagnement Mensuel</span>
+              <h3 class="offre-title">Réseaux sociaux</h3>
+              <div class="offre-price">dès 500 € <span class="offre-price-unit">/mois</span></div>
+            </div>
+            <div class="offre-card-body">
+              <ul class="offre-features-grid">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Stratégie éditoriale</strong> et calendrier mensuel</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>4 publications</strong> par mois</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Légendes optimisées</strong> (storytelling, hashtags, appel à l'action)</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Publication</strong> sur 2 réseaux au choix</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Modération</strong> des commentaires</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Reporting mensuel</strong> et analyse des performances</span>
+                </li>
+              </ul>
+            </div>
+            <div class="offre-card-footer" style="padding-top: 24px; border-top: 1px solid var(--sand);">
+              <a href="#" onclick="openMailto('Demande d’information – Réseaux sociaux'); return false;" class="offre-btn offre-btn-coral" style="max-width: 320px;">
+                Me contacter pour cette offre
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloc engagement Social -->
+        <div class="offres-engagement-wrap">
+          <div class="offres-engagement">
+            <div class="engagement-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="engagement-text">
+              <h4 class="engagement-title">Engagement (offres mensuelles)</h4>
+              <p class="engagement-desc">Sans engagement. Le premier mois sert de période d'essai. Ensuite, l'accompagnement peut être arrêté à tout moment avec un préavis de 2 mois.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Commune -->
+      <div class="offres-faq-wrap">
+        <div class="offres-faq-inner">
+          <span class="section-label">Questions &amp; Réponses</span>
+          <h2 class="offres-faq-title">Foire aux questions</h2>
+          
+          <div class="accordion" id="offres-faq-accordion">
+            <div class="accordion-item">
+              <button class="accordion-header" onclick="toggleOffreFaq(this)" aria-expanded="false">
+                <span>Le SEO, ça prend du temps, non ?</span>
+                <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-content">
+                <p>Oui, les premiers effets se voient en général après 3 à 6 mois. C'est un investissement durable : un bon article continue d'attirer des visiteurs pendant des années.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" onclick="toggleOffreFaq(this)" aria-expanded="false">
+                <span>C'est quoi exactement, le GEO ?</span>
+                <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-content">
+                <p>C'est l'optimisation de vos contenus pour qu'ils soient repris et cités par les assistants IA (ChatGPT, Perplexity, Google). De plus en plus de clients préparent leurs achats avec ces outils.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" onclick="toggleOffreFaq(this)" aria-expanded="false">
+                <span>Et si je n'ai pas de visuels ?</span>
+                <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-content">
+                <p>Je travaille à partir de votre banque d'images. Si besoin, je peux aussi créer des visuels sur mesure grâce à l'IA générative.</p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button class="accordion-header" onclick="toggleOffreFaq(this)" aria-expanded="false">
+                <span>Travaillez-vous avec la Suisse ?</span>
+                <svg class="accordion-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-content">
+                <p>Oui, entièrement à distance, avec une facturation en EUR ou en CHF.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appel à l'action final -->
+      <div class="offres-cta-wrap">
+        <div class="offres-cta-box">
+          <h3 class="offres-cta-title">Prêt à développer votre visibilité ?</h3>
+          <p class="offres-cta-desc">Discutons de vos objectifs et trouvons ensemble le format idéal pour vos contenus.</p>
+          
+          <div class="offres-cta-actions">
+            <a href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 1rem; padding: 14px 28px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Réserver un appel de 30 min
+            </a>
+            <a href="#" onclick="openMailto('Demande d’information – Projet de contenu'); return false;" class="btn-secondary" style="font-size: 1rem; padding: 14px 28px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              M'écrire un mail
+            </a>
+          </div>
+
+          <div class="offres-copy-email">
+            <span class="email-text">charlottepierrel@outlook.fr</span>
+            <button type="button" class="btn-copy-email" onclick="copyContactEmail(this)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copier l'adresse
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
