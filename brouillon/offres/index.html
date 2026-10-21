@@ -1196,7 +1196,7 @@
 
       <div class="faq-list">
         <div class="faq-item active">
-          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <div class="faq-question" onclick="toggleFaq(this)">
             <span>Le SEO, ça prend du temps, non ?</span>
             <div class="faq-icon">+</div>
           </div>
@@ -1206,7 +1206,7 @@
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <div class="faq-question" onclick="toggleFaq(this)">
             <span>C'est quoi exactement, le GEO (Generative Engine Optimization) ?</span>
             <div class="faq-icon">+</div>
           </div>
@@ -1216,7 +1216,7 @@
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <div class="faq-question" onclick="toggleFaq(this)">
             <span>Vos tarifs sont-ils fixes ou proposez-vous du sur-mesure ?</span>
             <div class="faq-icon">+</div>
           </div>
@@ -1226,7 +1226,7 @@
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <div class="faq-question" onclick="toggleFaq(this)">
             <span>Comment se déroule la collaboration, de l'échange initial à la livraison ?</span>
             <div class="faq-icon">+</div>
           </div>
@@ -1236,7 +1236,7 @@
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <div class="faq-question" onclick="toggleFaq(this)">
             <span>Et si je n'ai pas de visuels pour mes articles ou mes réseaux ?</span>
             <div class="faq-icon">+</div>
           </div>
@@ -1315,6 +1315,20 @@
     }
 
     // Toggle card details
+        // Accordion FAQ: quand une question s'ouvre, les autres se ferment
+    function toggleFaq(questionEl) {
+      const item = questionEl.closest('.faq-item');
+      const isAlreadyActive = item.classList.contains('active');
+      
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      if (!isAlreadyActive) {
+        item.classList.add('active');
+      }
+    }
+
     function toggleCardDetails(btn) {
       const drawer = btn.nextElementSibling;
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
