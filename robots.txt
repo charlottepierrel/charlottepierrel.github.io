@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /brouillon/
 Allow: /
 
 Sitemap: https://charlottepierrel.github.io/sitemap.xml
