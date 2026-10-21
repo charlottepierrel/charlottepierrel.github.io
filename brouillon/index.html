@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Charlotte Pierrel · Bienvenue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..600;1,9..40,400..600&family=Raleway:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:       #FAFAF9;
+      --sand:        #EAE2DC;
+      --sand-mid:    #D6CCC4;
+      --ink:         #242220;
+      --ink-mid:     #4A4543;
+      --ink-light:   #7A7471;
+      --taupe:       #8A7272;
+      --coral:       #D86B52;
+      --coral-dark:  #C2563F;
+      --coral-light: #FBF0EC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px 32px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top bar */
+    .top-bar {
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+    .top-contact {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .top-contact:hover { color: var(--coral); }
+
+    /* Center Stage */
+    .portal-stage {
+      max-width: 980px;
+      margin: auto;
+      width: 100%;
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    .kicker {
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .main-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(2.1rem, 4vw, 3.1rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .main-title em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--coral);
+    }
+
+    .lead-text {
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      max-width: 540px;
+      margin: 0 auto 46px;
+      line-height: 1.5;
+    }
+
+    /* Clean simplified cards */
+    .cards-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      text-align: left;
+    }
+
+    .simple-card {
+      background: #FFFFFF;
+      border: 1px solid var(--sand);
+      border-radius: 22px;
+      padding: 42px 38px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+    .simple-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+      border-color: var(--sand-mid);
+    }
+
+    /* Featured subtle tint for offers */
+    .simple-card-featured {
+      border-color: rgba(216, 107, 82, 0.35);
+      background: #FFFAF8;
+    }
+    .simple-card-featured:hover {
+      border-color: var(--coral);
+      box-shadow: 0 16px 40px rgba(216, 107, 82, 0.10);
+    }
+
+    .card-label {
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-bottom: 14px;
+    }
+    .label-coral {
+      color: var(--coral);
+    }
+
+    .card-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .card-summary {
+      font-size: 0.98rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+      margin-bottom: 34px;
+      min-height: 72px;
+    }
+
+    /* Buttons */
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.94rem;
+      transition: all .25s ease;
+      text-decoration: none;
+    }
+
+    /* Portfolio button: gentle outline, warm charcoal text */
+    .btn-soft-outline {
+      background: #FFFFFF;
+      color: var(--ink-mid);
+      border: 1.5px solid var(--sand-mid);
+    }
+    .simple-card:hover .btn-soft-outline {
+      background: var(--sand);
+      border-color: var(--sand-mid);
+      color: var(--ink);
+    }
+
+    /* Offers button: warm coral */
+    .btn-coral-soft {
+      background: var(--coral);
+      color: #FFFFFF;
+      border: 1.5px solid var(--coral);
+      box-shadow: 0 4px 14px rgba(216, 107, 82, 0.22);
+    }
+    .simple-card-featured:hover .btn-coral-soft {
+      background: var(--coral-dark);
+      border-color: var(--coral-dark);
+      box-shadow: 0 6px 18px rgba(216, 107, 82, 0.32);
+    }
+
+    /* Bottom footer */
+    .bottom-bar {
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--ink-light);
+      padding-top: 20px;
+      border-top: 1px solid var(--sand);
+    }
+    .bottom-bar a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    .bottom-bar a:hover { color: var(--coral); }
+
+    @media (max-width: 768px) {
+      body { padding: 24px 20px; }
+      .cards-duo { grid-template-columns: 1fr; gap: 16px; }
+      .simple-card { padding: 30px 24px 26px; }
+      .card-summary { min-height: auto; margin-bottom: 24px; }
+      .bottom-bar { flex-direction: column; gap: 10px; text-align: center; }
+      .bottom-bar a { margin: 0 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <a href="/brouillon/" class="logo">
+      <span>Charlotte Pierrel</span>
+      <span class="logo-dot"></span>
+    </a>
+    <a href="mailto:charlottepierrel@outlook.fr" class="top-contact">Me contacter</a>
+  </header>
+
+  <main class="portal-stage">
+    <span class="kicker">Espace d'accueil</span>
+    <h1 class="main-title">Deux manières de <em>collaborer</em>.</h1>
+    <p class="lead-text">Sélectionnez l'espace qui correspond à votre projet :</p>
+
+    <div class="cards-duo">
+      <!-- Carte Portfolio -->
+      <a href="/brouillon/portfolio/" class="simple-card">
+        <div>
+          <div class="card-label">Compétences &amp; Réalisations</div>
+          <h2 class="card-title">Voir le Portfolio</h2>
+          <p class="card-summary">Explorez mes réalisations en communication et marketing digital, mes études de cas détaillées ainsi que mon univers photographique.</p>
+        </div>
+        <div class="card-btn btn-soft-outline">
+          <span>Accéder au portfolio</span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <!-- Carte Offres -->
+      <a href="/brouillon/offres/" class="simple-card simple-card-featured">
+        <div>
+          <div class="card-label label-coral">Communication, Marketing &amp; Acquisition</div>
+          <h2 class="card-title">Voir les Prestations</h2>
+          <p class="card-summary">Développez votre visibilité et convertissez votre audience grâce à une stratégie sur-mesure : SEO &amp; GEO (référencement sur moteurs IA), réseaux sociaux et création de contenu.</p>
+        </div>
+        <div class="card-btn btn-coral-soft">
+          <span>Découvrir les offres</span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="bottom-bar">
+    <span>&copy; 2026 Charlotte Pierrel &middot; France &amp; Remote</span>
+    <div>
+      <a href="https://linkedin.com/in/charlotte-pierrel" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:charlottepierrel@outlook.fr">Email direct</a>
+    </div>
+  </footer>
+
+</body>
+</html>
