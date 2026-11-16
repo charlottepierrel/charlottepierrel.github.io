@@ -34,7 +34,7 @@
         "name": "Vos tarifs sont-ils fixes ou proposez-vous du sur-mesure ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Les formules présentées (490 €/mois pour l'accompagnement rédactionnel et dès 500 €/mois pour les réseaux sociaux) constituent des bases transparentes et modulables. Selon vos objectifs précis (fréquence de publication, thématiques, nombre de réseaux ou combinaison des deux), nous établissons ensemble un devis personnalisé lors de notre appel de cadrage."
+          "text": "Les formules démarrent à 150 € (un coup de pouce ponctuel, ou un rythme mensuel léger). Selon vos objectifs précis, nous établissons ensemble un devis personnalisé lors de notre appel de cadrage."
         }
       },
       {
@@ -406,9 +406,15 @@
     }
 
     /* Grille de 3 offres d'égale importance visuelle */
+    .offers-availability {
+      margin-top: 28px;
+      text-align: center;
+      font-size: .92rem;
+      color: var(--ink-light);
+    }
     .offers-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 28px;
       align-items: stretch;
     }
@@ -1039,84 +1045,85 @@
   <section id="offres">
     <div class="container">
 <div class="offers-grid">
-        <!-- Offre 2 : Accompagnement rédactionnel -->
+        <div class="offer-card offer-card-1">
+          <div>
+            <div class="offer-header">
+              <h3 class="offer-title">Un coup de pouce</h3>
+              <div class="offer-price-row">
+                <span class="offer-from">à partir de</span>
+                <span class="offer-price">150 €</span>
+                <span class="offer-period">/ projet</span>
+              </div>
+              <div class="offer-mention">Livraison sous quelques jours</div>
+            </div>
+            <div class="offer-body">
+              <p class="offer-desc">Un article, une page de présentation ou une fiche d’activité, pour être visible sur Google et clair pour vos futurs clients.</p>
+              <ul class="offer-features">
+                                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Un contenu rédigé et optimisé SEO</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Un échange de cadrage de 20 min</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Une session d’ajustements incluse</li>
+              </ul>
+            </div>
+          </div>
+          <a href="mailto:charlottepierrel@outlook.fr?subject=Demande%20Coup%20de%20pouce" class="btn-card-action">
+            <span>Demander un devis</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
         <div class="offer-card offer-card-2">
           <div>
             <div class="offer-header">
-              <h3 class="offer-title">Accompagnement rédactionnel</h3>
+              <h3 class="offer-title">Un rythme régulier</h3>
               <div class="offer-price-row">
-                <span class="offer-price">490 €</span>
+                <span class="offer-from">à partir de</span>
+                <span class="offer-price">150 €</span>
                 <span class="offer-period">/ mois</span>
               </div>
-              <div class="offer-mention">Suivi régulier &middot; Sans engagement</div>
+              <div class="offer-mention">Sans engagement au-delà d’un mois</div>
             </div>
             <div class="offer-body">
-              <p class="offer-desc">Un rythme de publication régulier pour installer durablement votre marque dans les moteurs de recherche.</p>
+              <p class="offer-desc">Une présence régulière, sans y penser chaque semaine : des contenus publiés à votre rythme.</p>
               <ul class="offer-features">
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2 articles optimisés par mois (SEO &amp; GEO)</li>
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Calendrier éditorial adapté à la saisonnalité</li>
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Suivi mensuel : Google, trafic &amp; visibilité IA (ChatGPT, Perplexity)</li>
+                                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2 contenus optimisés par mois</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Un suivi mensuel simple</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Places limitées chaque mois</li>
               </ul>
-              <button type="button" class="offer-toggle-btn" onclick="toggleCardDetails(this)" aria-expanded="false">
-                <span class="toggle-text">Voir les détails de la formule</span>
-                <svg class="toggle-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-              <div class="offer-details-drawer">
-                <div class="offer-details-inner">
-                  <div class="detail-group">
-                    <h5>Cadrage &amp; Stratégie</h5>
-                    <p>Échange mensuel de 30 min pour prioriser les opportunités, adapter les thématiques et anticiper les requêtes de vos futurs clients.</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-          <a href="mailto:charlottepierrel@outlook.fr?subject=Demande%20Accompagnement%20mensuel" class="btn-card-action">
-            <span>Choisir cette formule</span>
+          <a href="mailto:charlottepierrel@outlook.fr?subject=Demande%20Rythme%20regulier" class="btn-card-action">
+            <span>Demander un devis</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="offer-card offer-card-3">
+          <div>
+            <div class="offer-header">
+              <h3 class="offer-title">Sur mesure</h3>
+              <div class="offer-price-row">
+                
+                <span class="offer-price">Sur devis</span>
+                
+              </div>
+              <div class="offer-mention">Après un échange de 30 minutes</div>
+            </div>
+            <div class="offer-body">
+              <p class="offer-desc">Un projet plus large, ou un besoin qui ne rentre pas dans les formules : on le cadre ensemble.</p>
+              <ul class="offer-features">
+                                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Analyse de votre besoin en 30 min</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Proposition chiffrée sur mesure</li>
+                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Calendrier adapté à vos disponibilités</li>
+              </ul>
+            </div>
+          </div>
+          <a href="https://calendly.com/charlottepierrel/30min" class="btn-card-action">
+            <span>Réserver un appel de 30 min</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
 
-        <!-- Offre 3 : Réseaux sociaux -->
-        <div class="offer-card offer-card-3">
-          <div>
-            <div class="offer-header">
-              <h3 class="offer-title">Réseaux sociaux</h3>
-              <div class="offer-price-row">
-                <span class="offer-from">dès</span>
-                <span class="offer-price">500 €</span>
-                <span class="offer-period">/ mois</span>
-              </div>
-              <div class="offer-mention">Stratégie de contenu &middot; 2 réseaux</div>
-            </div>
-            <div class="offer-body">
-              <p class="offer-desc">Animation et valorisation de votre marque pour fédérer une communauté active et engagée.</p>
-              <ul class="offer-features">
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Stratégie éditoriale et calendrier mensuel</li>
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4 publications soignées par mois</li>
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Légendes optimisées (storytelling, hashtags, CTA)</li>
-                <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Publication sur 2 réseaux, modération &amp; reporting mensuel</li>
-              </ul>
-              <button type="button" class="offer-toggle-btn" onclick="toggleCardDetails(this)" aria-expanded="false">
-                <span class="toggle-text">Voir les détails de la formule</span>
-                <svg class="toggle-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </button>
-              <div class="offer-details-drawer">
-                <div class="offer-details-inner">
-                  <div class="detail-group">
-                    <h5>Plateformes &amp; Formats</h5>
-                    <p>Au choix : LinkedIn, Instagram, Facebook ou TikTok. Posts éditoriaux, carrousels visuels, légendes soignées &amp; CTA engageants.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a href="mailto:charlottepierrel@outlook.fr?subject=Demande%20Reseaux%20sociaux" class="btn-card-action">
-            <span>Choisir cette formule</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
       </div>
+
+      <p class="offers-availability">Disponible en fin de journée et le week-end. Nombre de places limité chaque mois.</p>
 
       <!-- Bloc Engagement -->
       <div id="engagement" class="engagement-box">
@@ -1124,8 +1131,8 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="engagement-text">
-          <h4>Engagement (offres mensuelles)</h4>
-          <p>Sans engagement. Le premier mois sert de période d'essai. Ensuite, l'accompagnement peut être arrêté à tout moment avec un préavis de 2 mois.</p>
+          <h4>Engagement</h4>
+          <p>Sans engagement de durée. Un abonnement mensuel peut être arrêté à la fin de chaque mois, sur simple message.</p>
         </div>
       </div>
 
@@ -1183,7 +1190,7 @@
             <div class="faq-icon">+</div>
           </div>
           <div class="faq-answer">
-            Les formules présentées (490 €/mois pour l'accompagnement rédactionnel et dès 500 €/mois pour les réseaux sociaux) constituent des bases transparentes et modulables. Selon vos objectifs précis (fréquence de publication, thématiques, nombre de réseaux ou combinaison des deux), nous établissons ensemble un devis personnalisé lors de notre appel de cadrage.
+            Les formules démarrent à 150 € (un coup de pouce ponctuel, ou un rythme mensuel léger). Selon vos objectifs précis, nous établissons ensemble un devis personnalisé lors de notre appel de cadrage.
           </div>
         </div>
 
