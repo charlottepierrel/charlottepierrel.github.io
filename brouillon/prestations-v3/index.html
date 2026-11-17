@@ -1217,6 +1217,73 @@
     .v3-link{font-size:.9rem;margin-top:18px}
     @media (max-width:900px){.v3-stage{height:320px;justify-self:center;max-width:360px}.mo-card{width:170px!important;font-size:.72rem;padding:12px}.mo-img{height:60px}.mo-review{right:0}.mo-glow{width:180px;height:180px;margin:-90px 0 0 -90px}.v3-about{grid-template-columns:150px 1fr}}
     @media (prefers-reduced-motion:reduce){.mo-card,.mo-glow,.mo-burst,.mo-tag,.mo-check,.mo-img::after{animation:none!important;opacity:1}.mo-burst{opacity:0}}
+
+    /* ===== v7 : scènes lisibles, équilibre des couleurs, cycle plus long ===== */
+    .v3-stage{height:430px;max-width:440px;justify-self:end;width:100%}
+    .m2-plate{position:absolute;left:50%;top:50%;width:380px;height:380px;margin:-190px 0 0 -190px;border-radius:50%;background:radial-gradient(circle,#E7DED6 0%,rgba(231,222,214,0) 70%);animation:m2-breathe 6s ease-in-out infinite}
+    @keyframes m2-breathe{0%,100%{transform:scale(.95)}50%{transform:scale(1.05)}}
+    .m2-panel{position:absolute;left:50%;top:50%;width:330px;transform:translate(-50%,-50%);background:#FFFFFF;border:1px solid #E6DED8;border-radius:20px;padding:18px 18px 16px;box-shadow:0 30px 60px -26px rgba(36,34,32,.35);opacity:0;animation:m2-scene 18s ease-in-out infinite;color:#242220;font-size:.8rem}
+    .m2-s1{animation-delay:0s}
+    .m2-s2{animation-delay:6s}
+    .m2-s3{animation-delay:12s}
+    /* 18 s : visible environ 6,5 s, puis fondu */
+    @keyframes m2-scene{
+      0%{opacity:0;transform:translate(-50%,-44%) scale(.96)}
+      4%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+      34%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+      40%{opacity:0;transform:translate(-50%,-56%) scale(.98)}
+      100%{opacity:0;transform:translate(-50%,-44%) scale(.96)}
+    }
+    .m2-caption{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid #EFE9E4;font-size:.72rem;font-weight:700;letter-spacing:.04em;color:#6E6361;text-transform:uppercase}
+    .m2-dot{width:7px;height:7px;border-radius:50%;background:#8A7272}
+    /* Scène 1 : Google */
+    .m2-chrome{display:flex;align-items:center;gap:10px}
+    .m2-g{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;background:linear-gradient(90deg,#4285F4 0 25%,#EA4335 25% 50%,#FBBC05 50% 75%,#34A853 75%);-webkit-background-clip:text;color:transparent}
+    .m2-search{flex:1;border:1px solid #DADCE0;border-radius:999px;padding:7px 14px;font-size:.78rem;color:#202124;white-space:nowrap;overflow:hidden;position:relative}
+    .m2-search i{position:absolute;right:12px;top:50%;width:11px;height:11px;border:2px solid #5F6368;border-radius:50%;transform:translateY(-50%)}
+    .m2-tabs{display:flex;gap:14px;margin:12px 0 4px;font-size:.72rem;color:#5F6368;border-bottom:1px solid #E8EAED;padding-bottom:6px}
+    .m2-tabs .on{color:#242220;font-weight:700;border-bottom:2px solid #242220;padding-bottom:5px}
+    .m2-res{display:flex;gap:10px;padding:10px 6px;border-radius:12px;margin:0 -6px}
+    .m2-res small{display:block;font-size:.7rem;color:#5F6368}
+    .m2-res b{display:block;font-size:.86rem;color:#1A0DAB;font-weight:600;margin-top:2px}
+    .m2-stars{font-size:.72rem;color:#8A7272;display:block;margin-top:3px}
+    .m2-stars em{font-style:normal;color:#5F6368}
+    .m2-stars.grey{color:#9AA0A6}
+    .m2-hl{background:#F7F3F0;animation:m2-hl 18s infinite;animation-delay:0s}
+    @keyframes m2-hl{0%,8%{background:#FFFFFF}12%,34%{background:#F7F3F0}40%,100%{background:#FFFFFF}}
+    .m2-pos{width:22px;height:22px;border-radius:50%;background:#242220;color:#fff;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .m2-pos.grey{background:#D9D2CC;color:#242220}
+    /* Scène 2 : Instagram */
+    .m2-ig-head{display:flex;align-items:center;gap:8px;font-size:.8rem}
+    .m2-ig-head b{font-size:.8rem}
+    .m2-ig-head em{margin-left:auto;font-style:normal;color:#0095F6;font-weight:700;font-size:.75rem}
+    .m2-ring{width:28px;height:28px;border-radius:50%;background:conic-gradient(#8A7272,#D86B52,#E9A08C,#8A7272);padding:2px;box-sizing:border-box}
+    .m2-ig-img{margin:10px 0;height:150px;border-radius:12px;background:linear-gradient(140deg,#2E2A28 0%,#8A7272 60%,#D86B52 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .m2-ig-img span{color:#fff;font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:.02em;animation:m2-title 18s infinite;animation-delay:6s}
+    @keyframes m2-title{0%,8%{opacity:0;transform:translateY(12px)}14%,34%{opacity:1;transform:none}40%,100%{opacity:0}}
+    .m2-ig-img::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-100%);animation:m2-shine 18s infinite;animation-delay:6s}
+    @keyframes m2-shine{0%,10%{transform:translateX(-100%)}22%,100%{transform:translateX(100%)}}
+    .m2-ig-actions{display:flex;gap:14px;font-size:1.05rem;color:#242220}
+    .m2-ig-actions span:first-child{color:#D86B52}
+    .m2-ig-likes{margin-top:8px;font-size:.8rem;color:#242220;opacity:0;animation:m2-fade 18s infinite;animation-delay:6s}
+    @keyframes m2-fade{0%,12%{opacity:0}18%,34%{opacity:1}40%,100%{opacity:0}}
+    .m2-ig-cap{margin-top:4px;font-size:.78rem;color:#4A4543;line-height:1.45}
+    .m2-burst{position:absolute;right:26px;top:150px;color:#D86B52;font-style:normal;font-size:1.2rem;opacity:0;animation:m2-burst 18s infinite;animation-delay:8s;pointer-events:none}
+    .m2-burst.b2{right:52px;animation-delay:8.4s}.m2-burst.b3{right:12px;animation-delay:8.8s}
+    @keyframes m2-burst{0%{opacity:0;transform:translate(0,0) scale(.5)}4%{opacity:1}22%{opacity:0;transform:translate(16px,-60px) scale(1.2)}100%{opacity:0}}
+    /* Scène 3 : e-mail */
+    .m2-mail-bar{display:flex;align-items:center;gap:5px;margin-bottom:12px}
+    .m2-mail-bar i{width:8px;height:8px;border-radius:50%;background:#D9D2CC;display:inline-block}
+    .m2-mail-bar span{margin-left:auto;font-size:.7rem;color:#6E6361;font-weight:700}
+    .m2-mail-row{display:flex;gap:12px;padding:7px 0;border-bottom:1px solid #EFE9E4;font-size:.8rem}
+    .m2-mail-row span{width:44px;color:#8A8380;flex-shrink:0}
+    .m2-mail-row b{color:#242220;font-weight:600}
+    .m2-mail-body{margin:14px 0;display:grid;gap:8px}
+    .m2-mail-body span{display:block;height:8px;border-radius:4px;background:#EFE9E4}
+    .m2-mail-body span.short{width:60%}
+    .m2-mail-btn{display:inline-block;background:#242220;color:#FAFAF9;font-size:.78rem;font-weight:700;padding:9px 16px;border-radius:999px}
+    @media (max-width:900px){.v3-stage{height:360px;max-width:340px}.m2-panel{width:280px;font-size:.72rem;padding:14px}.m2-ig-img{height:110px}.m2-burst{top:118px}.m2-plate{width:300px;height:300px;margin:-150px 0 0 -150px}}
+    @media (prefers-reduced-motion:reduce){.m2-panel,.m2-plate,.m2-hl,.m2-ig-img span,.m2-ig-likes,.m2-burst,.m2-ig-img::after{animation:none!important}.m2-s2,.m2-s3,.m2-s1{opacity:0}.m2-s1{opacity:1;transform:translate(-50%,-50%)}}
   </style>
 </head>
 <body>
@@ -1260,26 +1327,40 @@
           </div>
         </div>
         <div class="v3-stage v3-in d4" aria-hidden="true">
-          <div class="mo-glow"></div>
-          <div class="mo-card mo-serp">
-            <div class="mo-bar"><i></i><span>Votre activité près de chez vous</span></div>
-            <div class="mo-res"><span class="mo-pos">1</span><div><b>Votre entreprise</b><small>★★★★★ 5,0 · 48 avis</small></div></div>
-            <em class="mo-tag">En tête des résultats</em>
+          <div class="m2-plate"></div>
+
+          <!-- Scène 1 : résultats Google -->
+          <div class="m2-panel m2-s1">
+            <div class="m2-chrome"><span class="m2-g">G</span><div class="m2-search">meilleur plombier près de chez moi<i></i></div></div>
+            <div class="m2-tabs"><span class="on">Tous</span><span>Maps</span><span>Actualités</span><span>Images</span></div>
+            <div class="m2-res m2-hl">
+              <span class="m2-pos">1</span>
+              <div><small>votre-site.fr</small><b>Votre entreprise, plombier à proximité</b><span class="m2-stars">★★★★★ <em>5,0 · 48 avis</em></span></div>
+            </div>
+            <div class="m2-res"><span class="m2-pos grey">2</span><div><small>autre-site.fr</small><b>Plomberie générale et dépannage</b><span class="m2-stars grey">★★★★☆ <em>4,2 · 19 avis</em></span></div></div>
+            <div class="m2-res"><span class="m2-pos grey">3</span><div><small>annuaire.fr</small><b>Trouver un plombier</b><span class="m2-stars grey">Annuaire</span></div></div>
+            <div class="m2-caption"><span class="m2-dot"></span>Recherche Google</div>
           </div>
-          <div class="mo-card mo-review">
-            <div class="mo-stars">★★★★★</div>
-            <p>« Très professionnel, résultats rapides. »</p>
-            <small>Nouvel avis Google</small>
+
+          <!-- Scène 2 : publication Instagram -->
+          <div class="m2-panel m2-s2">
+            <div class="m2-ig-head"><span class="m2-ring"></span><b>votre_compte</b><em>Suivre</em></div>
+            <div class="m2-ig-img"><span>Motion design</span></div>
+            <div class="m2-ig-actions"><span>♡</span><span>💬</span><span>➤</span></div>
+            <div class="m2-ig-likes">Aimé par <b>248 personnes</b></div>
+            <div class="m2-ig-cap"><b>votre_compte</b> Ce que je peux faire pour votre marque.</div>
+            <i class="m2-burst">♥</i><i class="m2-burst b2">♥</i><i class="m2-burst b3">♥</i>
+            <div class="m2-caption"><span class="m2-dot"></span>Publication Instagram</div>
           </div>
-          <div class="mo-card mo-insta">
-            <div class="mo-head"><span class="mo-av"></span><span>votre_compte</span></div>
-            <div class="mo-img"><span class="mo-reel">▶</span></div>
-            <div class="mo-likes"><span class="mo-heart">♥</span> <b>248</b> j'aime</div>
-            <i class="mo-burst b1">♥</i><i class="mo-burst b2">♥</i><i class="mo-burst b3">♥</i>
-          </div>
-          <div class="mo-card mo-mail">
-            <div class="mo-mail-top"><span class="mo-check">✓</span><b>Message envoyé</b></div>
-            <small>Demande reçue · Réponse sous 24 h</small>
+
+          <!-- Scène 3 : newsletter par e-mail -->
+          <div class="m2-panel m2-s3">
+            <div class="m2-mail-bar"><i></i><i></i><i></i><span>Nouveau message</span></div>
+            <div class="m2-mail-row"><span>De</span><b>Charlotte Pierrel</b></div>
+            <div class="m2-mail-row"><span>Objet</span><b>Votre newsletter du mois</b></div>
+            <div class="m2-mail-body"><span></span><span></span><span class="short"></span></div>
+            <div class="m2-mail-btn">Réserver un échange</div>
+            <div class="m2-caption"><span class="m2-dot"></span>Newsletter par e-mail</div>
           </div>
         </div>
       </div>
