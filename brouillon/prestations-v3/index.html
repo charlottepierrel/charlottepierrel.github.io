@@ -1151,6 +1151,20 @@
     .v3-h2 em{background:linear-gradient(transparent 62%,rgba(216,107,82,.2) 62%);font-style:normal;color:#D86B52}
     @media (max-width:900px){.v3-steps{grid-template-columns:1fr}.v3-about{grid-template-columns:1fr;gap:32px}.v3-photo{aspect-ratio:16/10}.v3-need{grid-template-columns:1fr;gap:6px}}
     @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+    /* ===== v5 : une ligne, monogrammes, photo ===== */
+    .v3-pain-item h3{white-space:nowrap;font-size:1.15rem}
+    .v3-need p{white-space:nowrap;max-width:none}
+    .v3-band .v3-lead{white-space:nowrap}
+    .v3-need{grid-template-columns:150px 1fr;padding:30px 0}
+    .v3-need .n{font-family:'Raleway',sans-serif;font-weight:800;font-size:5.5rem;line-height:.9;letter-spacing:-.05em;color:rgba(216,107,82,.22);}
+    .v3-need:hover .n{color:rgba(216,107,82,.4)}
+    .v3-need h3{white-space:nowrap}
+    .v3-steps .v3-step .n{display:block;width:auto;height:auto;background:none;color:rgba(216,107,82,.22);font-family:'Raleway',sans-serif;font-weight:800;font-size:5.5rem;line-height:.9;letter-spacing:-.05em;margin-bottom:10px;border-radius:0}
+    .v3-step h3{white-space:nowrap;font-size:1.3rem}
+    .v3-photo{background:#EFE9E4;padding:0}
+    .v3-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    @media (max-width:900px){.v3-band .v3-lead,.v3-need p,.v3-pain-item h3,.v3-step h3,.v3-need h3{white-space:normal}.v3-steps .v3-step .n,.v3-need .n{font-size:4rem}}
   </style>
 </head>
 <body>
@@ -1187,10 +1201,10 @@
       <div class="v3-hero-grid">
         <div>
           <h1 class="v3-title v3-in d1"><span>Plus de clients,</span><span><span class="c">durablement</span>.</span></h1>
-          <p class="v3-sub v3-in d2">Je vous aide à atteindre vos objectifs commerciaux : gagner en visibilité, attirer davantage de prospects et développer votre notoriété, avec des méthodes concrètes adaptées à votre situation.</p>
+          <p class="v3-sub v3-in d2">Visibilité, prospects, notoriété : chaque objectif a ses leviers, et chacun peut être traité séparément, avec des actions concrètes et adaptées.</p>
           <div class="v3-cta v3-in d3">
             <a class="btn btn-primary" href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer"><span>Prendre rendez-vous</span></a>
-            <a class="btn btn-outline" href="#contact">Me décrire mon projet</a>
+            <a class="btn btn-outline" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet">Expliquer mon besoin par e-mail</a>
           </div>
         </div>
         <div class="v3-stage v3-in d4" aria-hidden="true">
@@ -1204,11 +1218,11 @@
   <section class="v3-band v3-band-soft rv">
     <div class="container">
       <span class="v3-kicker">Le point de départ</span>
-      <h2 class="v3-h2">Vous savez ce qu'il faut faire.<br><em>Pas le temps de le faire.</em></h2>
+      <h2 class="v3-h2">Pas le temps. <em>Pas toujours la méthode.</em></h2>
       <div class="v3-pain">
-        <div class="v3-pain-item rv d1"><span class="v3-ico">01</span><h3>Google ne vous met pas en avant</h3><p>Fiche Google, avis, référencement : sans méthode, on ne sait pas par où commencer.</p></div>
+        <div class="v3-pain-item rv d1"><span class="v3-ico">01</span><h3>Pas assez visible sur Google</h3><p>Fiche Google, avis, référencement : sans méthode, on ne sait pas par où commencer.</p></div>
         <div class="v3-pain-item rv d2"><span class="v3-ico">02</span><h3>Vous n'avez pas le temps</h3><p>Entre votre activité et la gestion quotidienne, la visibilité passe toujours après.</p></div>
-        <div class="v3-pain-item rv d3"><span class="v3-ico">03</span><h3>Vous ne savez pas comment vous y prendre</h3><p>Trop d'outils, trop de conseils contradictoires, et aucun plan clair.</p></div>
+        <div class="v3-pain-item rv d3"><span class="v3-ico">03</span><h3>Pas de plan clair</h3><p>Trop d'outils, trop de conseils contradictoires, et aucun cap défini.</p></div>
       </div>
     </div>
   </section>
@@ -1218,12 +1232,12 @@
     <div class="container">
       <span class="v3-kicker">Ce que nous pouvons faire ensemble</span>
       <h2 class="v3-h2">Des leviers concrets pour <em>vos objectifs</em>.</h2>
-      <p class="v3-lead">Visibilité, trafic, notoriété, acquisition : je mets en place les actions qui correspondent à ce que vous voulez atteindre.</p>
+      <p class="v3-lead">Chaque levier répond à un objectif précis, à traiter seul ou combiné.</p>
       <div class="v3-needs">
-        <div class="v3-need rv"><span class="n">01</span><div><h3>Gagner en visibilité sur Google</h3><p>Fiche Google et avis clients, référencement naturel, mots-clés, méta-descriptions, articles de blog.</p><span class="v3-tags">Visibilité · Trafic</span></div></div>
-        <div class="v3-need rv"><span class="n">02</span><div><h3>Être recommandé par les IA</h3><p>Contenus structurés et réponses directes aux questions que posent vos clients.</p><span class="v3-tags">Notoriété · Recommandation</span></div></div>
-        <div class="v3-need rv"><span class="n">03</span><div><h3>Animer vos réseaux avec une stratégie</h3><p>Calendrier éditorial et publications alignées sur vos objectifs : followers, image de marque, engagement.</p><span class="v3-tags">Image de marque · Engagement</span></div></div>
-        <div class="v3-need rv"><span class="n">04</span><div><h3>Générer davantage de leads</h3><p>Articles, newsletter automatisée, emailing ou autres leviers, choisis selon votre marché et vos contraintes.</p><span class="v3-tags">Acquisition · Conversion</span></div></div>
+        <div class="v3-need rv"><span class="n">01</span><div><h3>Gagner en visibilité sur Google</h3><p>Fiche Google, avis, référencement, articles.</p><span class="v3-tags">Visibilité · Trafic</span></div></div>
+        <div class="v3-need rv"><span class="n">02</span><div><h3>Être recommandé par les IA</h3><p>Contenus structurés et réponses directes.</p><span class="v3-tags">Notoriété · Recommandation</span></div></div>
+        <div class="v3-need rv"><span class="n">03</span><div><h3>Animer vos réseaux</h3><p>Calendrier éditorial aligné sur vos objectifs.</p><span class="v3-tags">Image de marque · Engagement</span></div></div>
+        <div class="v3-need rv"><span class="n">04</span><div><h3>Générer davantage de leads</h3><p>Articles, newsletter, emailing, selon vos besoins.</p><span class="v3-tags">Acquisition · Conversion</span></div></div>
       </div>
     </div>
   </section>
@@ -1244,29 +1258,12 @@
   <!-- 4. À propos -->
   <section id="qui" class="v3-band">
     <div class="container v3-about">
-      <div class="v3-photo rv" aria-label="Photo de Charlotte Pierrel">
-        <span>CP</span>
-      </div>
+      <div class="v3-photo rv"><img src="photo.jpg" alt="Charlotte Pierrel" loading="lazy"></div>
       <div class="rv d1">
         <span class="v3-kicker">À propos</span>
-        <h2 class="v3-h2">Qui je suis.</h2>
+        <h2 class="v3-h2">Votre interlocutrice.</h2>
         <p class="v3-about-text">Charlotte Pierrel, spécialiste en communication et marketing digital. J'accompagne mes clients sur leur visibilité, leur acquisition et leur image de marque, avec des méthodes concrètes et adaptées à leur situation.</p>
         <a class="v3-link" href="/brouillon/portfolio/">Voir mon parcours et mes réalisations →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Appel à l'action intermédiaire -->
-  <section class="v3-band v3-band-cta">
-    <div class="container v3-cta-box rv">
-      <div>
-        <span class="v3-kicker">Premier échange</span>
-        <h2 class="v3-h2">Voyons si nous pouvons avancer ensemble.</h2>
-        <p class="v3-lead">Un échange pour comprendre vos besoins, identifier ce que vous recherchez et voir si mes compétences répondent à votre objectif.</p>
-      </div>
-      <div class="v3-cta">
-        <a class="btn btn-primary" href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer"><span>Prendre rendez-vous</span></a>
-        <a class="btn btn-outline" href="#contact">Me décrire mon projet</a>
       </div>
     </div>
   </section>
