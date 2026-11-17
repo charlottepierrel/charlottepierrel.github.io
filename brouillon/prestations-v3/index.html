@@ -1082,6 +1082,26 @@
     .v3-step h3{color:#141414}
     .v3-step p{color:#4A4543}
     @media (max-width:900px){.v3-band .v3-lead{white-space:normal}}
+
+    /* ===== Hiérarchie typographique v3 ===== */
+    .v3-kicker{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#D86B52;margin-bottom:18px}
+    .v3-h2{font-family:'Raleway',sans-serif;font-weight:800;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.12;letter-spacing:-.025em;color:#141414}
+    .v3-h2 em{font-style:normal;color:#D86B52}
+    .v3-band .v3-lead{white-space:normal;font-size:1.15rem;margin-top:16px}
+    .v3-band-soft{background:#F3EEEA}
+    .v3-problem{padding-bottom:70px}
+    .v3-pain{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .v3-pain-item{background:#FFFFFF;border:1px solid #EAE2DC;border-radius:20px;padding:32px 28px}
+    .v3-pain-item h3{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.25rem;color:#141414;margin-bottom:10px}
+    .v3-pain-item p{color:#4A4543;font-size:1rem;line-height:1.6}
+    .v3-needs{margin-top:48px}
+    .v3-need h3{font-size:1.35rem}
+    .v3-band-cta{padding:90px 0}
+    .v3-cta-box{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;background:#FFFFFF;border:1px solid #F0C9BE;border-radius:28px;padding:56px 60px;box-shadow:0 30px 60px -30px rgba(216,107,82,.3)}
+    .v3-cta-box .v3-lead{margin-top:14px}
+    .v3-cta-box .v3-cta{display:flex;flex-direction:column;gap:12px}
+    .v3-about{align-items:start}
+    @media (max-width:900px){.v3-pain{grid-template-columns:1fr}.v3-cta-box{grid-template-columns:1fr;padding:36px 28px}}
     @media (max-width:900px){.v3-need{grid-template-columns:1fr;gap:10px}.v3-steps{grid-template-columns:1fr}.v3-about{grid-template-columns:1fr;gap:28px}.v3-band{padding:70px 0}.v3-hero{padding:60px 0 20px}}
 
     /* ===== Hero animé (fluide, léger) ===== */
@@ -1151,10 +1171,25 @@
     </div>
   </section>
 
+  <!-- 1. Problème -->
+  <section class="v3-band v3-problem">
+    <div class="container">
+      <span class="v3-kicker">Votre situation</span>
+      <h2 class="v3-h2">Vous avez de bonnes compétences.<br>Mais vos clients ne vous voient pas.</h2>
+      <div class="v3-pain">
+        <div class="v3-pain-item"><h3>Google vous ignore</h3><p>Vos pages ne répondent pas aux questions que vos clients tapent réellement.</p></div>
+        <div class="v3-pain-item"><h3>Les IA vous oublient</h3><p>Quand un prospect demande conseil à ChatGPT ou Gemini, ce sont vos concurrents qui sont cités.</p></div>
+        <div class="v3-pain-item"><h3>Vos réseaux s'essoufflent</h3><p>Publier au hasard prend du temps, sans résultat visible.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Résultats -->
   <section id="besoins" class="v3-band">
     <div class="container">
-      <h2 class="v3-big">Ce que vous <em>recevez</em>.</h2>
-      <p class="v3-lead">Des résultats concrets pour que vos clients vous trouvent et vous fassent confiance.</p>
+      <span class="v3-kicker">Ce que vous recevez</span>
+      <h2 class="v3-h2">Quatre résultats concrets.</h2>
+      <p class="v3-lead">Pour que vos clients vous trouvent, vous comprennent et vous fassent confiance.</p>
       <div class="v3-needs">
         <div class="v3-need"><span class="n">01</span><h3>Être trouvé sur Google</h3><p>Des pages et des articles qui répondent aux questions de vos clients. Plus de visiteurs qualifiés.</p></div>
         <div class="v3-need"><span class="n">02</span><h3>Être cité par les IA</h3><p>Des contenus structurés et des réponses directes, pour être recommandé quand un prospect demande conseil.</p></div>
@@ -1164,25 +1199,46 @@
     </div>
   </section>
 
-  <section id="methode" class="v3-band">
+  <!-- 3. Méthode -->
+  <section id="methode" class="v3-band v3-band-soft">
     <div class="container">
-      <h2 class="v3-big">Un devis <em>sur mesure</em>.</h2>
+      <span class="v3-kicker">Notre façon de travailler</span>
+      <h2 class="v3-h2">Un devis <em>sur mesure</em>, après un échange.</h2>
       <p class="v3-lead">Chaque projet part de votre situation et de vos objectifs.</p>
       <div class="v3-steps">
         <div class="v3-step"><span class="n">1</span><h3>Un premier échange</h3><p>Votre activité, vos objectifs et ce qui vous freine aujourd'hui.</p></div>
         <div class="v3-step"><span class="n">2</span><h3>Une proposition écrite</h3><p>Le périmètre, les délais et le tarif, détaillés avant tout engagement.</p></div>
         <div class="v3-step"><span class="n">3</span><h3>Le démarrage</h3><p>Une fois validée, la mission part, avec des points d'étape réguliers.</p></div>
       </div>
-</div>
+    </div>
   </section>
 
+  <!-- 4. À propos -->
   <section id="qui" class="v3-band">
     <div class="container v3-about">
-      <h2 class="v3-big">Qui je suis.</h2>
+      <div>
+        <span class="v3-kicker">À propos</span>
+        <h2 class="v3-h2">Qui je suis.</h2>
+      </div>
       <div class="v3-about-card">
         <p>Charlotte Pierrel, spécialiste en communication et marketing digital : rédaction, référencement naturel et visibilité dans les moteurs IA.</p>
         <p class="sig">Particuliers, indépendants et petites entreprises.</p>
         <a class="v3-link" href="/brouillon/portfolio/">Voir mon parcours et mes réalisations →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Appel à l'action intermédiaire -->
+  <section class="v3-band v3-band-cta">
+    <div class="container v3-cta-box">
+      <div>
+        <span class="v3-kicker">Premier pas</span>
+        <h2 class="v3-h2">Parlons de votre projet.</h2>
+        <p class="v3-lead">30 minutes, sans engagement, pour voir ce qui vous ferait gagner des clients.</p>
+      </div>
+      <div class="v3-cta">
+        <a class="btn btn-primary" href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer"><span>Réserver un appel de 30 min</span></a>
+        <a class="btn btn-outline" href="#contact">Demander un devis</a>
       </div>
     </div>
   </section>
