@@ -1165,6 +1165,58 @@
     .v3-photo{background:#EFE9E4;padding:0}
     .v3-photo img{width:100%;height:100%;object-fit:cover;display:block}
     @media (max-width:900px){.v3-band .v3-lead,.v3-need p,.v3-pain-item h3,.v3-step h3,.v3-need h3{white-space:normal}.v3-steps .v3-step .n,.v3-need .n{font-size:4rem}}
+
+    /* ===== v6 : motion hero, about compact ===== */
+    .v3-stage{height:400px;max-width:460px;justify-self:end;width:100%}
+    .mo-glow{position:absolute;left:50%;top:50%;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;background:radial-gradient(circle,rgba(216,107,82,.35),rgba(216,107,82,0) 70%);animation:mo-pulse 3s ease-in-out infinite}
+    @keyframes mo-pulse{0%,100%{transform:scale(.9);opacity:.6}50%{transform:scale(1.12);opacity:1}}
+    .mo-card{position:absolute;background:#FFFFFF;border:1px solid #EAE2DC;border-radius:18px;padding:16px 18px;box-shadow:0 24px 50px -22px rgba(36,34,32,.32);opacity:0;animation:mo-scene 12s cubic-bezier(.2,.7,.2,1) infinite;font-size:.82rem;color:#2E2A28;width:230px}
+    .mo-card small{display:block;color:#7A7471;font-size:.75rem;margin-top:6px}
+    .mo-serp{left:0;top:10px;animation-delay:0s}
+    .mo-review{right:0;top:0;animation-delay:2.6s;width:210px}
+    .mo-insta{left:30px;bottom:6px;width:200px;animation-delay:5.2s}
+    .mo-mail{right:10px;bottom:0;width:210px;animation-delay:7.8s}
+    @keyframes mo-scene{
+      0%{opacity:0;transform:translateY(40px) scale(.9)}
+      6%{opacity:1;transform:translateY(-6px) scale(1.03)}
+      9%{transform:translateY(0) scale(1)}
+      80%{opacity:1;transform:translateY(0) scale(1)}
+      88%,100%{opacity:0;transform:translateY(-14px) scale(.97)}
+    }
+    .mo-bar{display:flex;align-items:center;gap:8px;background:#F3EEEA;border-radius:999px;padding:7px 12px;margin-bottom:12px}
+    .mo-bar i{width:9px;height:9px;border-radius:50%;background:#D86B52;display:inline-block}
+    .mo-bar span{font-size:.72rem;color:#4A4543;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .mo-res{display:flex;gap:10px;align-items:flex-start;padding:8px 0}
+    .mo-res.dim{opacity:.45}
+    .mo-res b{font-size:.84rem;color:#141414;display:block}
+    .mo-res small{margin-top:2px}
+    .mo-pos{width:22px;height:22px;border-radius:50%;background:#D86B52;color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .mo-tag{display:inline-block;margin-top:6px;font-style:normal;font-size:.7rem;font-weight:700;color:#D86B52;background:#FBEDE8;border-radius:999px;padding:4px 10px;animation:mo-tagpop 12s infinite;animation-delay:.6s}
+    @keyframes mo-tagpop{0%,4%{transform:scale(.6);opacity:0}8%{transform:scale(1.12);opacity:1}11%,100%{transform:scale(1);opacity:1}}
+    .mo-stars{color:#D86B52;letter-spacing:2px;font-size:1rem}
+    .mo-review p{margin-top:6px;font-size:.85rem;color:#141414;font-weight:600;line-height:1.4}
+    .mo-head{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:700;color:#141414}
+    .mo-av{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#D86B52,#8A7272)}
+    .mo-img{margin:10px 0;height:84px;border-radius:12px;background:linear-gradient(135deg,#E9A08C,#8A7272);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .mo-img::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-100%);animation:mo-shine 12s infinite;animation-delay:6s}
+    @keyframes mo-shine{0%,50%{transform:translateX(-100%)}65%,100%{transform:translateX(100%)}}
+    .mo-reel{color:#fff;font-size:1.2rem}
+    .mo-likes{font-size:.8rem;color:#2E2A28}
+    .mo-heart{color:#D86B52}
+    .mo-burst{position:absolute;right:20px;top:8px;color:#D86B52;font-style:normal;font-size:1.1rem;opacity:0;animation:mo-burst 12s infinite;animation-delay:6.6s;pointer-events:none}
+    .mo-burst.b2{right:50px;animation-delay:6.9s}.mo-burst.b3{right:8px;animation-delay:7.2s}
+    @keyframes mo-burst{0%{opacity:0;transform:translate(0,0) scale(.5)}10%{opacity:1}60%{opacity:0;transform:translate(14px,-46px) scale(1.2)}100%{opacity:0}}
+    .mo-mail-top{display:flex;align-items:center;gap:8px}
+    .mo-check{width:26px;height:26px;border-radius:50%;background:#D86B52;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;animation:mo-check 12s infinite;animation-delay:8.4s}
+    @keyframes mo-check{0%,6%{transform:scale(0)}10%{transform:scale(1.25)}13%,100%{transform:scale(1)}}
+    .mo-mail-top b{font-size:.85rem;color:#141414}
+    .v3-about{grid-template-columns:200px 1fr;gap:48px}
+    .v3-photo{aspect-ratio:4/5;border-radius:20px}
+    .v3-about .v3-h2{font-size:clamp(1.5rem,2.4vw,2rem)}
+    .v3-about-text{font-size:1rem;margin-top:14px;line-height:1.6}
+    .v3-link{font-size:.9rem;margin-top:18px}
+    @media (max-width:900px){.v3-stage{height:320px;justify-self:center;max-width:360px}.mo-card{width:170px!important;font-size:.72rem;padding:12px}.mo-img{height:60px}.mo-review{right:0}.mo-glow{width:180px;height:180px;margin:-90px 0 0 -90px}.v3-about{grid-template-columns:150px 1fr}}
+    @media (prefers-reduced-motion:reduce){.mo-card,.mo-glow,.mo-burst,.mo-tag,.mo-check,.mo-img::after{animation:none!important;opacity:1}.mo-burst{opacity:0}}
   </style>
 </head>
 <body>
@@ -1204,11 +1256,31 @@
           <p class="v3-sub v3-in d2">Visibilité, prospects, notoriété : chaque objectif a ses leviers, et chacun peut être traité séparément, avec des actions concrètes et adaptées.</p>
           <div class="v3-cta v3-in d3">
             <a class="btn btn-primary" href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer"><span>Prendre rendez-vous</span></a>
-            <a class="btn btn-outline" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet">Expliquer mon besoin par e-mail</a>
+            <a class="btn btn-outline" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet">Expliquer mon besoin</a>
           </div>
         </div>
         <div class="v3-stage v3-in d4" aria-hidden="true">
-          <span class="v3-blob b1"></span><span class="v3-blob b2"></span><span class="v3-blob b3"></span>
+          <div class="mo-glow"></div>
+          <div class="mo-card mo-serp">
+            <div class="mo-bar"><i></i><span>Votre activité près de chez vous</span></div>
+            <div class="mo-res"><span class="mo-pos">1</span><div><b>Votre entreprise</b><small>★★★★★ 5,0 · 48 avis</small></div></div>
+            <em class="mo-tag">En tête des résultats</em>
+          </div>
+          <div class="mo-card mo-review">
+            <div class="mo-stars">★★★★★</div>
+            <p>« Très professionnel, résultats rapides. »</p>
+            <small>Nouvel avis Google</small>
+          </div>
+          <div class="mo-card mo-insta">
+            <div class="mo-head"><span class="mo-av"></span><span>votre_compte</span></div>
+            <div class="mo-img"><span class="mo-reel">▶</span></div>
+            <div class="mo-likes"><span class="mo-heart">♥</span> <b>248</b> j'aime</div>
+            <i class="mo-burst b1">♥</i><i class="mo-burst b2">♥</i><i class="mo-burst b3">♥</i>
+          </div>
+          <div class="mo-card mo-mail">
+            <div class="mo-mail-top"><span class="mo-check">✓</span><b>Message envoyé</b></div>
+            <small>Demande reçue · Réponse sous 24 h</small>
+          </div>
         </div>
       </div>
     </div>
@@ -1234,12 +1306,10 @@
       <h2 class="v3-h2">Des leviers concrets pour <em>vos objectifs</em>.</h2>
       <p class="v3-lead">Chaque levier répond à un objectif précis, à traiter seul ou combiné.</p>
       <div class="v3-needs">
-        <div class="v3-need rv"><span class="n">01</span><div><h3>Gagner en visibilité sur Google</h3><p>Fiche Google, avis, référencement, articles.</p><span class="v3-tags">Visibilité · Trafic</span></div></div>
-        <div class="v3-need rv"><span class="n">02</span><div><h3>Être recommandé par les IA</h3><p>Contenus structurés et réponses directes.</p><span class="v3-tags">Notoriété · Recommandation</span></div></div>
-        <div class="v3-need rv"><span class="n">03</span><div><h3>Animer vos réseaux</h3><p>Calendrier éditorial aligné sur vos objectifs.</p><span class="v3-tags">Image de marque · Engagement</span></div></div>
-        <div class="v3-need rv"><span class="n">04</span><div><h3>Générer davantage de leads</h3><p>Articles, newsletter, emailing, selon vos besoins.</p><span class="v3-tags">Acquisition · Conversion</span></div></div>
-      </div>
-    </div>
+        <div class="v3-need rv"><span class="n">01</span><div><h3>Gagner en visibilité et être recommandé par les IA</h3><p>Référencement, fiche Google et avis, contenus structurés et réponses directes.</p><span class="v3-tags">Visibilité · Notoriété · Trafic</span></div></div>
+        <div class="v3-need rv"><span class="n">02</span><div><h3>Animer vos réseaux</h3><p>Calendrier éditorial aligné sur vos objectifs : image de marque, engagement, followers.</p><span class="v3-tags">Image de marque · Engagement</span></div></div>
+        <div class="v3-need rv"><span class="n">03</span><div><h3>Générer des leads et des ventes</h3><p>Articles, emailing, newsletter, ads, et autres leviers selon vos besoins.</p><span class="v3-tags">Acquisition · Conversion</span></div></div>
+          </div>
   </section>
 
   <!-- 3. Méthode -->
@@ -1261,7 +1331,7 @@
       <div class="v3-photo rv"><img src="photo.jpg" alt="Charlotte Pierrel" loading="lazy"></div>
       <div class="rv d1">
         <span class="v3-kicker">À propos</span>
-        <h2 class="v3-h2">Votre interlocutrice.</h2>
+        <h2 class="v3-h2">Qui je suis.</h2>
         <p class="v3-about-text">Charlotte Pierrel, spécialiste en communication et marketing digital. J'accompagne mes clients sur leur visibilité, leur acquisition et leur image de marque, avec des méthodes concrètes et adaptées à leur situation.</p>
         <a class="v3-link" href="/brouillon/portfolio/">Voir mon parcours et mes réalisations →</a>
       </div>
