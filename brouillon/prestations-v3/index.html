@@ -1284,6 +1284,41 @@
     .m2-mail-btn{display:inline-block;background:#242220;color:#FAFAF9;font-size:.78rem;font-weight:700;padding:9px 16px;border-radius:999px}
     @media (max-width:900px){.v3-stage{height:360px;max-width:340px}.m2-panel{width:280px;font-size:.72rem;padding:14px}.m2-ig-img{height:110px}.m2-burst{top:118px}.m2-plate{width:300px;height:300px;margin:-150px 0 0 -150px}}
     @media (prefers-reduced-motion:reduce){.m2-panel,.m2-plate,.m2-hl,.m2-ig-img span,.m2-ig-likes,.m2-burst,.m2-ig-img::after{animation:none!important}.m2-s2,.m2-s3,.m2-s1{opacity:0}.m2-s1{opacity:1;transform:translate(-50%,-50%)}}
+
+    /* ===== v8 : CTA, faux post, e-mail réaliste, réponse IA ===== */
+    .v3-ask{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+    .v3-ask-q{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.35rem;color:#141414;letter-spacing:-.02em;margin-top:8px}
+    .v3-ask-s{font-size:.98rem;color:#6E6361;max-width:520px;line-height:1.5;margin-bottom:10px}
+    .v3-ask .v3-cta{margin-top:6px}
+    .m2-panel{animation:m2-s24 24s ease-in-out infinite}
+    .m2-s1{animation-delay:0s}.m2-s2{animation-delay:6s}.m2-s3{animation-delay:12s}.m2-s4{animation-delay:18s}
+    @keyframes m2-s24{
+      0%{opacity:0;transform:translate(-50%,-44%) scale(.96)}
+      3%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+      23%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+      28%{opacity:0;transform:translate(-50%,-56%) scale(.98)}
+      100%{opacity:0;transform:translate(-50%,-44%) scale(.96)}
+    }
+    .m2-hl{animation:none;background:#F7F3F0}
+    .m2-ig-img{background:linear-gradient(135deg,#E9DCD3 0%,#C9A99A 55%,#8A7272 100%)}
+    .m2-ig-shape{width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.55);display:block}
+    .m2-ig-img::after{display:none}
+    .m2-ig-likes{opacity:1;animation:none}
+    .m2-burst{animation:m2-burst24 24s infinite;animation-delay:8s}
+    .m2-burst.b2{animation-delay:8.4s}.m2-burst.b3{animation-delay:8.8s}
+    @keyframes m2-burst24{0%{opacity:0;transform:translate(0,0) scale(.5)}3%{opacity:1}20%{opacity:0;transform:translate(16px,-60px) scale(1.2)}100%{opacity:0}}
+    .m2-mail-row:nth-child(3) b{font-weight:700}
+    .m2-mail-btn{background:none;color:#D86B52;padding:0;border-radius:0;font-size:.8rem}
+    .m2-ai-q{display:flex;gap:8px;align-items:flex-start;font-size:.84rem;font-weight:700;color:#141414;padding-bottom:12px;border-bottom:1px solid #EFE9E4}
+    .m2-ai-ico{color:#D86B52;flex-shrink:0}
+    .m2-ai-a{margin-top:12px}
+    .m2-ai-a p{font-size:.82rem;line-height:1.6;color:#2E2A28;opacity:0;animation:m2-ai-in 24s infinite;animation-delay:18.6s}
+    .m2-ai-a b{color:#141414}
+    @keyframes m2-ai-in{0%,4%{opacity:0}7%,23%{opacity:1}28%,100%{opacity:0}}
+    .m2-ai-src{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+    .m2-ai-src span{font-size:.7rem;font-weight:600;color:#6E6361;background:#F3EEEA;border-radius:999px;padding:4px 10px}
+    @media (max-width:900px){.v3-ask-q{font-size:1.15rem}}
+    @media (prefers-reduced-motion:reduce){.m2-ai-a p{animation:none;opacity:1}}
   </style>
 </head>
 <body>
@@ -1321,17 +1356,20 @@
         <div>
           <h1 class="v3-title v3-in d1"><span>Plus de clients,</span><span><span class="c">durablement</span>.</span></h1>
           <p class="v3-sub v3-in d2">Visibilité, prospects, notoriété : chaque objectif a ses leviers, et chacun peut être traité séparément, avec des actions concrètes et adaptées.</p>
-          <div class="v3-cta v3-in d3">
-            <a class="btn btn-primary" href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer"><span>Prendre rendez-vous</span></a>
-            <a class="btn btn-outline" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet">Expliquer mon besoin</a>
+          <div class="v3-ask v3-in d3">
+            <span class="v3-ask-q">Souhaitez-vous échanger ?</span>
+            <span class="v3-ask-s">Deux façons de commencer : réserver un créneau, ou m'écrire directement votre besoin.</span>
+            <div class="v3-cta">
+              <a class="btn btn-primary" href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer"><span>Réserver un créneau</span></a>
+              <a class="btn btn-outline" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet">Écrire mon besoin</a>
+            </div>
           </div>
         </div>
         <div class="v3-stage v3-in d4" aria-hidden="true">
           <div class="m2-plate"></div>
 
-          <!-- Scène 1 : résultats Google -->
           <div class="m2-panel m2-s1">
-            <div class="m2-chrome"><span class="m2-g">G</span><div class="m2-search">meilleur plombier près de chez moi<i></i></div></div>
+            <div class="m2-chrome"><span class="m2-g">G</span><div class="m2-search">plombier près de chez moi<i></i></div></div>
             <div class="m2-tabs"><span class="on">Tous</span><span>Maps</span><span>Actualités</span><span>Images</span></div>
             <div class="m2-res m2-hl">
               <span class="m2-pos">1</span>
@@ -1342,25 +1380,32 @@
             <div class="m2-caption"><span class="m2-dot"></span>Recherche Google</div>
           </div>
 
-          <!-- Scène 2 : publication Instagram -->
           <div class="m2-panel m2-s2">
             <div class="m2-ig-head"><span class="m2-ring"></span><b>votre_compte</b><em>Suivre</em></div>
-            <div class="m2-ig-img"><span>Motion design</span></div>
-            <div class="m2-ig-actions"><span>♡</span><span>💬</span><span>➤</span></div>
+            <div class="m2-ig-img"><span class="m2-ig-shape"></span></div>
+            <div class="m2-ig-actions"><span>♥</span><span>💬</span><span>➤</span></div>
             <div class="m2-ig-likes">Aimé par <b>248 personnes</b></div>
-            <div class="m2-ig-cap"><b>votre_compte</b> Ce que je peux faire pour votre marque.</div>
+            <div class="m2-ig-cap"><b>votre_compte</b> Trois réflexes pour être trouvé avant vos concurrents. #visibilite</div>
             <i class="m2-burst">♥</i><i class="m2-burst b2">♥</i><i class="m2-burst b3">♥</i>
             <div class="m2-caption"><span class="m2-dot"></span>Publication Instagram</div>
           </div>
 
-          <!-- Scène 3 : newsletter par e-mail -->
           <div class="m2-panel m2-s3">
-            <div class="m2-mail-bar"><i></i><i></i><i></i><span>Nouveau message</span></div>
+            <div class="m2-mail-bar"><i></i><i></i><i></i><span>Boîte de réception</span></div>
             <div class="m2-mail-row"><span>De</span><b>Charlotte Pierrel</b></div>
-            <div class="m2-mail-row"><span>Objet</span><b>Votre newsletter du mois</b></div>
+            <div class="m2-mail-row"><span>Objet</span><b>Pourquoi vos clients ne vous trouvent pas encore</b></div>
             <div class="m2-mail-body"><span></span><span></span><span class="short"></span></div>
-            <div class="m2-mail-btn">Réserver un échange</div>
+            <div class="m2-mail-btn">Lire l'article</div>
             <div class="m2-caption"><span class="m2-dot"></span>Newsletter par e-mail</div>
+          </div>
+
+          <div class="m2-panel m2-s4">
+            <div class="m2-ai-q"><span class="m2-ai-ico">✦</span>Quel plombier choisir près de chez moi ?</div>
+            <div class="m2-ai-a">
+              <p>Plusieurs professionnels se démarquent. <b>Votre entreprise</b> est régulièrement citée pour sa réactivité et ses <b>48 avis clients 5 étoiles</b>.</p>
+            </div>
+            <div class="m2-ai-src"><span>votre-site.fr</span><span>Fiche Google</span><span>+2 sources</span></div>
+            <div class="m2-caption"><span class="m2-dot"></span>Réponse d'un moteur IA</div>
           </div>
         </div>
       </div>
