@@ -1482,6 +1482,12 @@
     .cal-modal .calendly-inline-widget{min-width:300px;height:640px}
     body.cal-modal-open{overflow:hidden}
     @media(max-width:600px){.cal-modal{padding:0;align-items:flex-end}.cal-modal-panel{width:100%;max-height:92vh;border-radius:22px 22px 0 0}.cal-modal-head{padding:18px 18px}.cal-modal-titles h2{font-size:1.05rem}.cal-modal-titles p{font-size:.78rem}.cal-modal .calendly-inline-widget{height:calc(92vh - 96px);min-width:0}}
+    /* Fonds en dégradé + précisions */
+    .v3-results{background:linear-gradient(180deg,#F3EEEA 0%,#FDF4F0 100%)!important}
+    .v3-method-about{background:linear-gradient(180deg,#FDF4F0 0%,#FAFAF9 100%)!important}
+    .v3-nowrap{white-space:nowrap}
+    .v3-source{margin:18px 0 0;font-size:.75rem;color:#A39A94;text-align:right;letter-spacing:.01em}
+    .v3-method-about .v3-collab-cta{display:flex;justify-content:center}
   </style>
 </head>
 <body>
@@ -1612,10 +1618,11 @@
       </div>
       <div class="v3-results-grid">
         <article class="v3-result"><span class="v3-result-num">×2</span><h3>Trafic issu des IA</h3><p>Juillet → novembre 2026 · 0,85 % → 2,1 %</p></article>
-        <article class="v3-result"><span class="v3-result-num">16 %</span><h3>Conversion du trafic IA</h3><p>2,8 fois le taux moyen du site et 2,6 fois celui du trafic Google.</p></article>
+        <article class="v3-result"><span class="v3-result-num">16 %</span><h3>Conversion du trafic IA</h3><p>2,6 fois le taux moyen du trafic organique.</p></article>
         <article class="v3-result"><span class="v3-result-num">+287</span><h3>Avis Google collectés</h3><p>En 7 mois · 60 fiches · 84 % de 5 étoiles</p></article>
-        <article class="v3-result"><span class="v3-result-num">+21 %</span><h3>Note moyenne des avis</h3><p>3,8 → 4,6/5</p><p class="v3-result-note">sur 6 mois</p></article>
+        <article class="v3-result"><span class="v3-result-num">+21 %</span><h3>Note moyenne des avis</h3><p class="v3-nowrap">3,8 → 4,6/5</p></article>
       </div>
+      <p class="v3-source">Source : données de [nom de la société], sur 6 mois.</p>
     </div>
   </section>
 
