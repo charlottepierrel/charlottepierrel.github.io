@@ -1319,6 +1319,22 @@
     .m2-ai-src span{font-size:.7rem;font-weight:600;color:#6E6361;background:#F3EEEA;border-radius:999px;padding:4px 10px}
     @media (max-width:900px){.v3-ask-q{font-size:1.15rem}}
     @media (prefers-reduced-motion:reduce){.m2-ai-a p{animation:none;opacity:1}}
+
+    /* ===== v9 : typographie du titre FAQ sur tous les titres (sauf H1) ===== */
+    .v3-h2, .v3-ask-q, .v3-need h3, .v3-step h3, .v3-pain-item h3, .v3-about .v3-h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+    .v3-h2 em {
+      font-family: 'Newsreader', 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--coral);
+      background: none;
+    }
   </style>
 </head>
 <body>
