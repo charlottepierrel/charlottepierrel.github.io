@@ -1436,6 +1436,25 @@
     .v3-steps-compact p{font-size:.78rem;line-height:1.45;color:#6E6361}
     @media(max-width:900px){.v3-hero-grid{grid-template-columns:1fr;gap:20px}.v3-stage{grid-row:auto}.v3-results-grid{grid-template-columns:repeat(2,1fr)}.v3-result:nth-child(2){border-right:0}.v3-result:nth-child(-n+2){border-bottom:1px solid #E6DDD6}.v3-joined-grid{grid-template-columns:1fr}}
     @media(max-width:600px){.v3-results,.v3-expertises{padding:58px 0}.v3-results-grid{grid-template-columns:1fr}.v3-result{border-right:0;border-bottom:1px solid #E6DDD6}.v3-result:last-child{border-bottom:0}.v3-portfolio-stats{grid-template-columns:repeat(2,1fr)}.v3-portfolio-stats div{padding-left:10px}.v3-about-compact{grid-template-columns:80px 1fr;padding:18px}.v3-about-compact img{width:80px;height:110px}.v3-steps-compact{grid-template-columns:1fr}.v3-steps-compact article{display:grid;grid-template-columns:42px 1fr;border-left:0;border-top:1px solid #E6DDD6;padding:12px 0}.v3-steps-compact article:first-child{border-top:0}.v3-steps-compact article>span{margin:0}}
+
+    /* ===== v15 : espacement du hero, alternance, chiffres plus sobres ===== */
+    .v3-ask{max-width:560px;padding:30px 32px;margin-top:44px;border-radius:20px}
+    .v3-ask-s{max-width:none;white-space:nowrap;font-size:1rem;margin-bottom:14px}
+    .v3-ask .mock-line{width:100%;max-width:330px}
+    .v3-result-num{font-family:'DM Sans',var(--font-body);font-weight:600;letter-spacing:-.035em;color:#786960;font-size:clamp(1.8rem,2.8vw,2.35rem)}
+    .v3-results{background:#F3EEEA;padding:86px 0}
+    .v3-results-head{justify-content:center;text-align:center;margin-bottom:34px}
+    .v3-results-head .v3-kicker{display:block}
+    .v3-results-head .v3-h2{margin:0 auto}
+    .v3-results-grid{box-shadow:0 20px 48px -38px rgba(36,34,32,.25)}
+    .v3-expertises{background:#FFFFFF}
+    .v3-method-about{background:#F3EEEA}
+    @media(max-width:900px){.v3-ask-s{white-space:normal}}
+    @media(max-width:600px){.v3-ask{max-width:100%;padding:24px 20px;margin-top:30px}}
+
+    .v3-ask{max-width:600px}
+    .v3-ask-s{white-space:nowrap}
+    @media(max-width:900px){.v3-ask-s{white-space:normal}}
   </style>
 </head>
 <body>
@@ -1531,30 +1550,6 @@
   </section>
 
 
-  <!-- Résultats mesurés -->
-  <section id="resultats" class="v3-results rv">
-    <div class="container">
-      <div class="v3-results-head">
-        <div><span class="v3-kicker">Résultats mesurés</span><h2 class="v3-h2">Quelques chiffres clés</h2></div>
-      </div>
-      <div class="v3-results-grid">
-        <article class="v3-result"><span class="v3-result-num">×2</span><h3>Trafic issu des IA</h3><p>Juillet → novembre 2026 · 0,85 % → 2,1 %</p></article>
-        <article class="v3-result"><span class="v3-result-num">16 %</span><h3>Conversion du trafic IA</h3><p>2,8× la moyenne du site · 2,6× Google</p></article>
-        <article class="v3-result"><span class="v3-result-num">+287</span><h3>Avis Google collectés</h3><p>En 7 mois · 60 fiches · 84 % de 5 étoiles</p></article>
-        <article class="v3-result"><span class="v3-result-num">+21 %</span><h3>Note moyenne des avis</h3><p>3,8 → 4,6/5</p></article>
-      </div>
-      <div class="v3-portfolio-proof">
-        <div class="v3-portfolio-proof-head"><span class="v3-kicker">Repères du portfolio</span><a href="/brouillon/portfolio/">Voir le portfolio →</a></div>
-        <div class="v3-portfolio-stats">
-          <div><b>+22 %</b><span>Instagram</span></div>
-          <div><b>+400</b><span>invités accueillis</span></div>
-          <div><b>65</b><span>fiches Google</span></div>
-          <div><b>+2 000</b><span>salariés touchés</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 1. Freins -->
   <section class="v3-band v3-band-soft rv">
     <div class="container">
@@ -1581,6 +1576,21 @@
           </div>
   </section>
 
+
+  <!-- Résultats mesurés -->
+  <section id="resultats" class="v3-results rv">
+    <div class="container">
+      <div class="v3-results-head">
+        <div><span class="v3-kicker">Résultats mesurés</span><h2 class="v3-h2">Quelques chiffres clés</h2></div>
+      </div>
+      <div class="v3-results-grid">
+        <article class="v3-result"><span class="v3-result-num">×2</span><h3>Trafic issu des IA</h3><p>Juillet → novembre 2026 · 0,85 % → 2,1 %</p></article>
+        <article class="v3-result"><span class="v3-result-num">16 %</span><h3>Conversion du trafic IA</h3><p>2,8× la moyenne du site · 2,6× Google</p></article>
+        <article class="v3-result"><span class="v3-result-num">+287</span><h3>Avis Google collectés</h3><p>En 7 mois · 60 fiches · 84 % de 5 étoiles</p></article>
+        <article class="v3-result"><span class="v3-result-num">+21 %</span><h3>Note moyenne des avis</h3><p>3,8 → 4,6/5</p></article>
+      </div>
+    </div>
+  </section>
 
   <!-- Compétences et expertises -->
   <section id="expertises" class="v3-expertises rv">
