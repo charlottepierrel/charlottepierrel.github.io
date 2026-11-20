@@ -1359,6 +1359,17 @@
     .v3-ask-s{font-size:1rem;margin-bottom:20px}
     .v3-ask .v3-cta{gap:10px}
     .v3-ask .v3-cta .btn{padding:11px 22px;font-size:.92rem}
+
+    /* v13 : choix B, ligne éditoriale des trois objectifs */
+    .v3-ask{max-width:440px;padding:26px 28px;margin-top:32px;border-radius:18px}
+    .v3-ask-q{font-size:1.2rem;margin-bottom:4px}
+    .v3-ask-s{font-size:1rem;margin-bottom:8px}
+    .mock-line{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:8px 0 18px;padding:11px 10px;border-top:1px solid #D9C9C0;border-bottom:1px solid #D9C9C0}
+    .mock-line span{font-family:var(--font-display);font-size:.78rem;font-weight:700;color:#34302E;white-space:nowrap}
+    .mock-line i{width:4px;height:4px;background:#A08A80;border-radius:50%;flex-shrink:0}
+    .v3-ask .v3-cta{gap:8px}
+    .v3-ask .v3-cta .btn{padding:10px 16px;font-size:.82rem}
+    @media(max-width:520px){.mock-line span{font-size:.7rem}.v3-ask{padding:22px 18px}}
   </style>
 </head>
 <body>
@@ -1397,12 +1408,14 @@
           <h1 class="v3-title v3-in d1"><span>Plus de clients,</span><span><span class="c">durablement</span>.</span></h1>
           <p class="v3-sub v3-in d2">Visibilité, prospects, notoriété : un levier par objectif.</p>
           <div class="v3-ask v3-in d3">
-            <span class="v3-ask-q">Souhaitez-vous échanger ?</span>
-            <span class="v3-ask-s">Un créneau ou un message, au choix.</span>
+            <span class="v3-ask-q">Construisons la suite ensemble.</span>
+            <span class="v3-ask-s">Un premier échange pour relier vos objectifs aux bons leviers :</span>
+            <div class="mock-line"><span>Visibilité</span><i></i><span>Notoriété</span><i></i><span>Acquisition</span></div>
             <div class="v3-cta">
               <a class="btn btn-primary" href="https://calendly.com/charlottepierrel/30min" target="_blank" rel="noopener noreferrer"><span>Réserver un créneau</span></a>
               <a class="btn btn-outline" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet">Écrire mon besoin</a>
             </div>
+          </div>
           </div>
         </div>
         <div class="v3-stage v3-in d4" aria-hidden="true">
