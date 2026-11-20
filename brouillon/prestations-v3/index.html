@@ -1479,9 +1479,9 @@
     .cal-modal-close{position:relative;z-index:1;flex:0 0 38px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s}
     .cal-modal-close:hover{background:rgba(255,255,255,.3)}
     .cal-modal-body{flex:1;overflow:auto;background:#fff}
-    .cal-modal .calendly-inline-widget{min-width:300px;height:640px}
+    #my-cal-inline-30min{min-height:640px}
     body.cal-modal-open{overflow:hidden}
-    @media(max-width:600px){.cal-modal{padding:0;align-items:flex-end}.cal-modal-panel{width:100%;max-height:92vh;border-radius:22px 22px 0 0}.cal-modal-head{padding:18px 18px}.cal-modal-titles h2{font-size:1.05rem}.cal-modal-titles p{font-size:.78rem}.cal-modal .calendly-inline-widget{height:calc(92vh - 96px);min-width:0}}
+    @media(max-width:600px){.cal-modal{padding:0;align-items:flex-end}.cal-modal-panel{width:100%;max-height:92vh;border-radius:22px 22px 0 0}.cal-modal-head{padding:18px 18px}.cal-modal-titles h2{font-size:1.05rem}.cal-modal-titles p{font-size:.78rem}#my-cal-inline-30min{min-height:calc(92vh - 96px)}}
     /* Fonds en dégradé + précisions */
     .v3-results{background:linear-gradient(180deg,#F3EEEA 0%,#FDF4F0 100%)!important}
     .v3-method-about{background:linear-gradient(180deg,#FDF4F0 0%,#FAFAF9 100%)!important}
@@ -1834,17 +1834,29 @@
         <button class="cal-modal-close" type="button" aria-label="Fermer le calendrier" data-calendly-close>×</button>
       </header>
       <div class="cal-modal-body">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/charlottepierrel/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=d86b52&text_color=2a2624&background_color=ffffff" style="min-width:300px;height:640px;"></div>
+        <div id="my-cal-inline-30min" style="width:100%;height:100%;min-height:640px;overflow:auto"></div>
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "30min", {origin:"https://app.cal.com"});
+  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"column_view"});
+  </script>
   <script>
   (function(){
     var modal=document.getElementById('calendly-modal');
     if(!modal)return;
-    var lastFocus=null;
-    function open(e){e.preventDefault();lastFocus=document.activeElement;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('cal-modal-open');modal.querySelector('.cal-modal-close').focus();}
+    var lastFocus=null, inited=false;
+    function initCal(){
+      if(inited||!window.Cal)return; inited=true;
+      Cal.ns["30min"]("inline",{
+        elementOrSelector:"#my-cal-inline-30min",
+        config:{"layout":"column_view","useSlotsViewOnSmallScreen":"true"},
+        calLink:"charlotte-pierrel/30min"
+      });
+    }
+    function open(e){e.preventDefault();lastFocus=document.activeElement;modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('cal-modal-open');modal.querySelector('.cal-modal-close').focus();setTimeout(initCal,50);}
     function close(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('cal-modal-open');if(lastFocus)lastFocus.focus();}
     document.querySelectorAll('[data-calendly-open]').forEach(function(el){el.addEventListener('click',open)});
     modal.querySelectorAll('[data-calendly-close]').forEach(function(el){el.addEventListener('click',close)});
