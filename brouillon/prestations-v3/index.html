@@ -1370,6 +1370,36 @@
     .v3-ask .v3-cta{gap:8px}
     .v3-ask .v3-cta .btn{padding:10px 16px;font-size:.82rem}
     @media(max-width:520px){.mock-line span{font-size:.7rem}.v3-ask{padding:22px 18px}}
+
+    /* ===== chiffres clés & expertise ===== */
+    .v3-results{padding:100px 0;background:#F3EEEA;border-top:1px solid #EAE2DC;border-bottom:1px solid #EAE2DC}
+    .v3-results-head{display:flex;align-items:end;justify-content:space-between;gap:36px;margin-bottom:38px}
+    .v3-results-head p{max-width:390px;color:#6E6361;line-height:1.6;font-size:.95rem}
+    .v3-results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .v3-result{background:#fff;border:1px solid #E6DDD6;border-radius:18px;padding:25px 22px;min-height:192px;transition:transform .3s,box-shadow .3s}
+    .v3-result:hover{transform:translateY(-4px);box-shadow:0 20px 40px -28px rgba(36,34,32,.3)}
+    .v3-result-num{display:block;font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;letter-spacing:-.04em;color:#8A7272;line-height:1.05;margin-bottom:15px}
+    .v3-result h3{font-family:var(--font-display);font-weight:700;font-size:1rem;color:#242220;line-height:1.3;margin-bottom:8px}
+    .v3-result p{font-size:.82rem;color:#6E6361;line-height:1.5}
+    .v3-portfolio-proof{margin-top:34px;padding:21px 24px;background:rgba(255,255,255,.62);border:1px solid #E6DDD6;border-radius:18px}
+    .v3-portfolio-proof-head{display:flex;justify-content:space-between;align-items:center;gap:15px}
+    .v3-portfolio-proof-head .v3-kicker{margin:0;color:#786960}
+    .v3-portfolio-proof-head a{font-size:.85rem;font-weight:700;color:#8A625B;text-decoration:none}
+    .v3-portfolio-stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:19px}
+    .v3-portfolio-stats div{display:flex;align-items:baseline;gap:9px;padding:0 16px;border-left:1px solid #DDD1C8}
+    .v3-portfolio-stats div:first-child{padding-left:0;border-left:0}
+    .v3-portfolio-stats b{font-family:var(--font-display);font-size:1.35rem;color:#8A7272;white-space:nowrap}
+    .v3-portfolio-stats span{font-size:.78rem;color:#6E6361;line-height:1.3}
+    .v3-expertises{padding:100px 0;background:#FAFAF9}
+    .v3-expertise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
+    .v3-expertise{display:grid;grid-template-columns:48px 1fr;gap:15px;padding:24px;background:#fff;border:1px solid #EAE2DC;border-radius:16px;transition:border-color .25s,transform .25s}
+    .v3-expertise:hover{border-color:#C8B6AC;transform:translateY(-3px)}
+    .v3-expertise-index{font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:#A58E84;line-height:1.1}
+    .v3-expertise h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:#242220;margin:0 0 8px}
+    .v3-expertise p{font-size:.83rem;font-weight:700;color:#8A625B;line-height:1.5;margin-bottom:6px}
+    .v3-expertise small{display:block;font-size:.8rem;color:#6E6361;line-height:1.5}
+    @media(max-width:900px){.v3-results-grid{grid-template-columns:repeat(2,1fr)}.v3-results-head{display:block}.v3-results-head p{margin-top:14px}.v3-portfolio-stats{grid-template-columns:repeat(2,1fr);row-gap:16px}.v3-portfolio-stats div:nth-child(3){border-left:0;padding-left:0}}
+    @media(max-width:600px){.v3-results,.v3-expertises{padding:70px 0}.v3-results-grid,.v3-expertise-grid{grid-template-columns:1fr}.v3-portfolio-proof-head{align-items:flex-start;flex-direction:column}.v3-result{min-height:0}}
   </style>
 </head>
 <body>
@@ -1465,6 +1495,32 @@
     </div>
   </section>
 
+
+  <!-- Résultats mesurés -->
+  <section id="resultats" class="v3-results rv">
+    <div class="container">
+      <div class="v3-results-head">
+        <div><span class="v3-kicker">Des résultats mesurés</span><h2 class="v3-h2">Les chiffres parlent.</h2></div>
+        <p>Des résultats observés sur des missions réelles, avec des indicateurs qui varient selon les projets et les contextes.</p>
+      </div>
+      <div class="v3-results-grid">
+        <article class="v3-result"><span class="v3-result-num">×2</span><h3>Trafic issu des IA</h3><p>Part du trafic passée de 0,85 % à 2,1 % entre juillet et novembre 2026.</p></article>
+        <article class="v3-result"><span class="v3-result-num">16 %</span><h3>Conversion du trafic IA</h3><p>Soit 2,8× la moyenne du site et 2,6× le trafic issu de Google.</p></article>
+        <article class="v3-result"><span class="v3-result-num">+287</span><h3>Avis Google collectés</h3><p>En 7 mois, sur les 60 fiches du réseau. 84 % des avis sont notés 5 étoiles.</p></article>
+        <article class="v3-result"><span class="v3-result-num">3,8 → 4,6/5</span><h3>Note moyenne des avis</h3><p>Une progression de +0,8 point, soit environ +21 % par rapport à la moyenne historique.</p></article>
+      </div>
+      <div class="v3-portfolio-proof">
+        <div class="v3-portfolio-proof-head"><span class="v3-kicker">Autres repères du portfolio</span><a href="/brouillon/portfolio/">Voir le portfolio →</a></div>
+        <div class="v3-portfolio-stats">
+          <div><b>+22 %</b><span>abonnés Instagram</span></div>
+          <div><b>+400</b><span>invités accueillis</span></div>
+          <div><b>65</b><span>fiches Google optimisées</span></div>
+          <div><b>+2 000</b><span>salariés touchés</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 1. Freins -->
   <section class="v3-band v3-band-soft rv">
     <div class="container">
@@ -1489,6 +1545,22 @@
         <div class="v3-need rv"><span class="n">02</span><div><h3>Animer vos réseaux</h3><p>Calendrier éditorial aligné sur vos objectifs : image de marque, engagement, followers.</p><span class="v3-tags">Image de marque · Engagement</span></div></div>
         <div class="v3-need rv"><span class="n">03</span><div><h3>Générer des leads et des ventes</h3><p>Articles, emailing, newsletter, ads, et autres leviers selon vos besoins.</p><span class="v3-tags">Acquisition · Conversion</span></div></div>
           </div>
+  </section>
+
+
+  <!-- Compétences et expertises -->
+  <section id="expertises" class="v3-expertises rv">
+    <div class="container">
+      <span class="v3-kicker">Expertises mobilisées</span>
+      <h2 class="v3-h2">Les bons leviers, <em>au bon endroit</em>.</h2>
+      <p class="v3-lead">Un socle de compétences complémentaires, activé selon vos objectifs — sans empiler les outils ni les acronymes.</p>
+      <div class="v3-expertise-grid">
+        <article class="v3-expertise"><span class="v3-expertise-index">01</span><div><h3>Visibilité dans les moteurs</h3><p>SEO · Référencement local · GEO · SEA</p><small>Être trouvé sur Google et apparaître dans les réponses des moteurs IA.</small></div></article>
+        <article class="v3-expertise"><span class="v3-expertise-index">02</span><div><h3>Présence & réputation</h3><p>Presence management · E-réputation · Feedback management</p><small>Gérer les fiches locales, les avis et les retours clients.</small></div></article>
+        <article class="v3-expertise"><span class="v3-expertise-index">03</span><div><h3>Contenus & communautés</h3><p>Stratégie éditoriale · Content marketing · Community management</p><small>Créer une présence cohérente et entretenir la relation avec vos audiences.</small></div></article>
+        <article class="v3-expertise"><span class="v3-expertise-index">04</span><div><h3>Acquisition & performance</h3><p>Email marketing · Marketing automation · Data analysis</p><small>Activer les bons canaux, suivre les indicateurs et ajuster les actions.</small></div></article>
+      </div>
+    </div>
   </section>
 
   <!-- 3. Méthode -->
