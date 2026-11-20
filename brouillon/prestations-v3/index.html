@@ -1464,18 +1464,24 @@
     @media(max-width:700px){.faq-section .section-subtitle{white-space:normal}}
 
     /* Calendly in-site modal */
-    .cal-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:20px}
-    .cal-modal.is-open{display:flex}
-    .cal-modal-backdrop{position:absolute;inset:0;background:rgba(28,25,24,.62);backdrop-filter:blur(5px)}
-    .cal-modal-panel{position:relative;z-index:1;width:min(760px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#FAFAF9;border:1px solid #E6DDD6;border-radius:22px;padding:28px 24px 18px;box-shadow:0 30px 90px rgba(0,0,0,.28)}
-    .cal-modal-panel h2{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:#242220;margin:0 44px 14px 4px}
-    .cal-modal-close{position:absolute;right:16px;top:12px;width:40px;height:40px;border:1px solid #E6DDD6;background:#fff;border-radius:50%;font-size:1.6rem;line-height:1;color:#4A4543;cursor:pointer}
-    .cal-modal-close:hover{background:#F3EEEA}
-    .cal-modal .calendly-inline-widget{min-width:320px;height:700px}
+    .cal-modal{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:24px}
+    .cal-modal.is-open{display:flex;animation:calFade .25s ease}
+    @keyframes calFade{from{opacity:0}to{opacity:1}}
+    @keyframes calRise{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+    .cal-modal-backdrop{position:absolute;inset:0;background:rgba(40,28,24,.55);backdrop-filter:blur(6px)}
+    .cal-modal-panel{position:relative;z-index:1;width:min(780px,100%);max-height:calc(100vh - 48px);display:flex;flex-direction:column;overflow:hidden;background:#fff;border-radius:24px;box-shadow:0 40px 100px rgba(40,20,10,.35);animation:calRise .35s cubic-bezier(.2,.8,.2,1)}
+    .cal-modal-head{display:flex;align-items:center;gap:16px;padding:22px 26px;background:linear-gradient(135deg,#D86B52 0%,#C4553C 100%);color:#fff;position:relative;overflow:hidden}
+    .cal-modal-head::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.08)}
+    .cal-modal-icon{flex:0 0 46px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+    .cal-modal-titles{flex:1;min-width:0;z-index:1}
+    .cal-modal-titles h2{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:#fff;margin:0 0 2px;line-height:1.25}
+    .cal-modal-titles p{margin:0;font-size:.85rem;color:rgba(255,255,255,.85)}
+    .cal-modal-close{position:relative;z-index:1;flex:0 0 38px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s}
+    .cal-modal-close:hover{background:rgba(255,255,255,.3)}
+    .cal-modal-body{flex:1;overflow:auto;background:#fff}
+    .cal-modal .calendly-inline-widget{min-width:300px;height:640px}
     body.cal-modal-open{overflow:hidden}
-    @media(max-width:600px){.cal-modal{padding:8px}.cal-modal-panel{max-height:calc(100vh - 16px);padding:24px 10px 8px;border-radius:16px}.cal-modal-panel h2{font-size:1.1rem;margin-left:8px}.cal-modal .calendly-inline-widget{height:calc(100vh - 100px);min-width:300px}}
-    .v3-result-note{font-size:.85rem;opacity:.75;margin-top:4px}
-    .v3-collab-cta{margin-top:40px;text-align:center}
+    @media(max-width:600px){.cal-modal{padding:0;align-items:flex-end}.cal-modal-panel{width:100%;max-height:92vh;border-radius:22px 22px 0 0}.cal-modal-head{padding:18px 18px}.cal-modal-titles h2{font-size:1.05rem}.cal-modal-titles p{font-size:.78rem}.cal-modal .calendly-inline-widget{height:calc(92vh - 96px);min-width:0}}
   </style>
 </head>
 <body>
@@ -1822,9 +1828,17 @@
   <div class="cal-modal" id="calendly-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
     <div class="cal-modal-backdrop" data-calendly-close></div>
     <div class="cal-modal-panel" role="document">
-      <button class="cal-modal-close" type="button" aria-label="Fermer le calendrier" data-calendly-close>×</button>
-      <h2 id="calendly-modal-title">Choisissez un créneau</h2>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/charlottepierrel/30min" style="min-width:320px;height:700px;"></div>
+      <header class="cal-modal-head">
+        <span class="cal-modal-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+        <div class="cal-modal-titles">
+          <h2 id="calendly-modal-title">Réservez un créneau</h2>
+          <p>Appel découverte · 30 min · sans engagement</p>
+        </div>
+        <button class="cal-modal-close" type="button" aria-label="Fermer le calendrier" data-calendly-close>×</button>
+      </header>
+      <div class="cal-modal-body">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/charlottepierrel/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=d86b52&text_color=2a2624&background_color=ffffff" style="min-width:300px;height:640px;"></div>
+      </div>
     </div>
   </div>
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
