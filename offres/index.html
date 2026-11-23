@@ -1515,6 +1515,15 @@
     .cal-confirm-btn{margin-top:14px;padding:12px 28px;border:0;border-radius:999px;background:#786960;color:#fff;font-weight:600;cursor:pointer}
     .cal-confirm-btn:hover{background:#5E534D}
     .v3-ask-bold{font-weight:700;color:#242220}
+      /* Chiffres clés : bandeau */
+    .v3-kf-band{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:#786960;border-radius:18px;padding:34px 30px;box-shadow:0 20px 48px -38px rgba(36,34,32,.35)}
+    .v3-kf-band .v3-result{background:transparent;border:0;border-right:1px solid rgba(255,255,255,.22);border-radius:0;padding:4px 22px;min-height:0;box-shadow:none;transform:none!important}
+    .v3-kf-band .v3-result:last-child{border-right:0}
+    .v3-kf-band .v3-result-num{color:#fff}
+    .v3-kf-band .v3-result h3{color:#fff}
+    .v3-kf-band .v3-result p{color:#EDE6E1}
+    @media(max-width:900px){.v3-kf-band{grid-template-columns:repeat(2,1fr);gap:22px 0}.v3-kf-band .v3-result:nth-child(2){border-right:0}}
+    @media(max-width:600px){.v3-kf-band{grid-template-columns:1fr}.v3-kf-band .v3-result{border-right:0;border-bottom:1px solid rgba(255,255,255,.22);padding:14px 6px}}
   </style>
 </head>
 <body>
@@ -1642,7 +1651,7 @@
       <div class="v3-results-head">
         <div><span class="v3-kicker">Résultats mesurés</span><h2 class="v3-h2">Quelques chiffres clés</h2></div>
       </div>
-      <div class="v3-results-grid">
+      <div class="v3-results-grid v3-kf-band">
         <article class="v3-result"><span class="v3-result-num">×2</span><h3>Trafic issu des IA</h3><p>Juillet → novembre 2026 · 0,85 % → 2,1 %</p></article>
         <article class="v3-result"><span class="v3-result-num">16 %</span><h3>Conversion du trafic IA</h3><p>2,6 fois le taux moyen du trafic organique.</p></article>
         <article class="v3-result"><span class="v3-result-num">+287</span><h3>Avis Google collectés</h3><p>En 7 mois · 60 fiches · 84 % de 5 étoiles</p></article>
