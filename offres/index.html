@@ -18,35 +18,51 @@
   <!-- Schema.org FAQPage Structured Data -->
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "C'est quoi exactement, le GEO (Generative Engine Optimization) ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Le GEO consiste à structurer et optimiser vos contenus pour qu'ils soient reconnus, analysés et recommandés comme sources de référence par les intelligences artificielles (ChatGPT, Perplexity, Google Gemini, Claude). De plus en plus de prospects préparent leurs décisions d'achat via l'IA : être cité dans leurs réponses devient un levier d'acquisition incontournable."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le SEO, ça prend du temps, non ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, les premiers effets se mesurent généralement entre 3 et 6 mois. C'est un investissement pérenne et cumulatif : un article bien positionné continue de générer du trafic qualifié et de nouveaux clients pendant des années sans coût publicitaire supplémentaire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "C'est quoi exactement, le GEO (Generative Engine Optimization) ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le GEO consiste à structurer et optimiser vos contenus pour qu'ils soient reconnus, analysés et recommandés comme sources de référence par les intelligences artificielles (ChatGPT, Perplexity, Google Gemini, Claude). De plus en plus de prospects préparent leurs décisions d'achat via l'IA : être cité dans leurs réponses devient un levier d'acquisition incontournable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vos tarifs sont-ils fixes ou proposez-vous du sur-mesure ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chaque projet est sur mesure. Un premier échange permet de comprendre vos objectifs, puis je vous envoie un devis détaillé avec le périmètre, les délais et les tarifs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment se déroule la collaboration, de l'échange initial à la livraison ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tout commence par un appel découverte pour faire le point sur vos objectifs. Si nécessaire, plusieurs rendez-vous peuvent être organisés en amont : le but est de répondre précisément à vos besoins, à votre rythme. J'établis ensuite un devis personnalisé ainsi que le contrat adapté. Dès le début de la collaboration, je prépare les livrables dédiés à votre projet et nous mettons en place un calendrier d'échanges régulier avec une méthodologie de travail fluide, en totale adéquation avec vous."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Et si je n'ai pas de visuels pour mes articles ou mes réseaux ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aucun problème. Je peux travailler directement à partir de vos photos d'entreprise, sélectionner des banques d'images professionnelles adaptées à votre charte, ou concevoir des visuels sur mesure et carrousels graphiques grâce aux outils de création par IA générative."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Vos tarifs sont-ils fixes ou proposez-vous du sur-mesure ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Chaque projet est sur mesure. Un premier échange permet de comprendre vos objectifs, puis je vous envoie un devis détaillé avec le périmètre, les délais et les tarifs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment se déroule la collaboration, de l'échange initial à la livraison ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Tout commence par un appel découverte pour faire le point sur vos objectifs. Si nécessaire, plusieurs rendez-vous peuvent être organisés en amont : le but est de répondre précisément à vos besoins, à votre rythme. J'établis ensuite un devis personnalisé ainsi que le contrat adapté. Dès le début de la collaboration, je prépare les livrables dédiés à votre projet et nous mettons en place un calendrier d'échanges régulier avec une méthodologie de travail fluide, en totale adéquation avec vous."
-      }
-    }
-  ]
-}
+    ]
+  }
   </script>
 
   <!-- Google Fonts (identiques au Portfolio) -->
@@ -1508,6 +1524,15 @@
     .v3-kf-band .v3-result p{color:#EDE6E1}
     @media(max-width:900px){.v3-kf-band{grid-template-columns:repeat(2,1fr);gap:22px 0}.v3-kf-band .v3-result:nth-child(2){border-right:0}}
     @media(max-width:600px){.v3-kf-band{grid-template-columns:1fr}.v3-kf-band .v3-result{border-right:0;border-bottom:1px solid rgba(255,255,255,.22);padding:14px 6px}}
+      /* FAQ : mise en page allégée (liste épurée, sans cadres) */
+    .faq-section .faq-list{gap:0;border-top:1px solid #E6DDD6}
+    .faq-section .faq-item{background:transparent;border:0;border-bottom:1px solid #E6DDD6;border-radius:0;box-shadow:none;transform:none!important}
+    .faq-section .faq-item.active{background:transparent;box-shadow:none}
+    .faq-section .faq-item:not(.active) .faq-question{padding-bottom:20px}
+    .faq-section .faq-question{padding:20px 4px;font-size:1.02rem;font-weight:600}
+    .faq-section .faq-icon{background:transparent;width:auto;height:auto;font-size:1.3rem;font-weight:300;color:#B5654A}
+    .faq-section .faq-answer{padding:0 4px;font-size:.95rem;line-height:1.65;color:#5A5350;margin-top:0}
+    .faq-section .faq-item.active .faq-answer{padding:0 4px 22px;margin-top:0;max-height:320px}
   </style>
 </head>
 <body>
@@ -1691,6 +1716,16 @@
       <div class="faq-list">
         <div class="faq-item active">
           <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Le SEO, ça prend du temps, non ?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer">
+            Oui, les premiers effets se mesurent généralement entre 3 et 6 mois. C'est un investissement pérenne et cumulatif : un article bien positionné continue de générer du trafic qualifié et de nouveaux clients pendant des années sans coût publicitaire supplémentaire.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
             <span>C'est quoi exactement, le GEO (Generative Engine Optimization) ?</span>
             <div class="faq-icon">+</div>
           </div>
@@ -1719,7 +1754,16 @@
           </div>
         </div>
 
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Et si je n'ai pas de visuels pour mes articles ou mes réseaux ?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer">
+            Aucun problème. Je peux travailler directement à partir de vos photos d'entreprise, sélectionner des banques d'images professionnelles adaptées à votre charte, ou concevoir des visuels sur mesure et carrousels graphiques grâce aux outils de création par IA générative.
+          </div>
         </div>
+      </div>
     </div>
   </section>
 
