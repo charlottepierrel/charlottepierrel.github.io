@@ -1627,6 +1627,11 @@
     .kf-more.is-open{display:block}
     .v3-kf-band .v3-result .kf-more-btn{color:#fff}
     .v3-kf-band .kf-more{color:#EDE6E1}
+      .hero-contact-choice{display:grid;gap:8px;margin-top:12px;max-width:340px}
+    .hero-contact-choice[hidden]{display:none}
+    .hero-contact-choice a{display:flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;font-weight:700;font-size:.92rem;text-decoration:none}
+    .hero-contact-choice .hcc-mail{background:#D86B52;color:#fff}
+    .hero-contact-choice .hcc-visio{border:1.5px solid #786960;color:#786960;background:#fff}
   </style>
 </head>
 <body>
@@ -1668,8 +1673,11 @@
             <span class="v3-ask-s v3-ask-bold">Un premier échange pour identifier le levier le plus rentable pour vous :</span>
             <div class="mock-line"><span>Visibilité</span><i></i><span>Notoriété</span><i></i><span>Acquisition</span></div>
             <div class="v3-cta">
-              <a class="btn btn-primary" href="#calendly-modal" data-calendly-open><span>Réserver un créneau</span></a>
-              <a class="btn btn-outline" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet">Écrire mon besoin</a>
+              <button type="button" class="btn btn-primary" id="hero-contact-toggle" aria-expanded="false" aria-controls="hero-contact-choice" style="border:0;cursor:pointer;font-family:inherit;padding:14px 28px;border-radius:999px;background:#D86B52;color:#fff;font-weight:700;font-size:.95rem;box-shadow:0 10px 24px -12px rgba(216,107,82,.7)"><span>Prendre contact</span></button>
+              <div class="hero-contact-choice" id="hero-contact-choice" hidden style="display:none;flex-wrap:wrap;gap:10px;margin-top:14px">
+                <a class="hcc-mail" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet" style="display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;background:#D86B52;color:#fff;font-weight:700;font-size:.92rem;text-decoration:none">Envoyer un message</a>
+                <a class="hcc-visio" href="#calendly-modal" data-calendly-open style="display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;border:1.5px solid #786960;color:#786960;background:#fff;font-weight:700;font-size:.92rem;text-decoration:none">Réserver un créneau en visio</a>
+              </div>
             </div>
           </div>
         </div>
@@ -2019,6 +2027,9 @@ if (!SHOW_KEY_FIGURES) { var kf = document.getElementById('resultats'); if (kf) 
 </script>
 <script>
 (function(){document.querySelectorAll(".kf-more-btn").forEach(function(b){b.addEventListener("click",function(){var d=b.nextElementSibling,on=d.hidden;d.hidden=!on;d.classList.toggle("is-open",on);b.setAttribute("aria-expanded",on?"true":"false");b.textContent=on?"Masquer":"En savoir plus";});});})();
+</script>
+<script>
+(function(){var t=document.getElementById("hero-contact-toggle"),c=document.getElementById("hero-contact-choice");if(!t||!c)return;t.addEventListener("click",function(){var open=c.hidden;c.hidden=!open;c.style.display=open?"flex":"none";t.setAttribute("aria-expanded",open?"true":"false");});})();
 </script>
 </body>
 </html>
