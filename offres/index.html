@@ -1655,6 +1655,7 @@
     .cp-opt small{display:block;font-size:.82rem;opacity:.8;margin-top:2px;line-height:1.4}
     body.cp-open{overflow:hidden}
 </style>
+<style>.v3-cta-only{margin-top:26px}</style>
 </head>
 <body>
 
@@ -1671,7 +1672,7 @@
         <li><a href="#besoins">Besoins</a></li>
         <li><a href="#methode">Collaboration</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact" class="nav-cta">Prendre contact</a></li>
+        <li><a href="#contact" class="nav-cta" data-cp-open>Prendre contact</a></li>
       </ul>
       <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
         <span></span><span></span><span></span>
@@ -1691,13 +1692,7 @@
         <div>
           <h1 class="v3-title v3-in d1"><span>Plus de clients,</span><span><span class="c">durablement</span>.</span></h1>
           <p class="v3-sub v3-in d2">Être trouvé sur Google, recommandé par les IA, choisi par vos clients. J'aide les entreprises locales et les réseaux multi-sites à gagner en visibilité : fiche Google, avis, référencement, puis réseaux sociaux et e-mailing.</p>
-          <div class="v3-ask v3-in d3">
-            <span class="v3-ask-s v3-ask-bold">Un premier échange pour identifier le levier le plus rentable pour vous :</span>
-            <div class="mock-line"><span>Visibilité</span><i></i><span>Notoriété</span><i></i><span>Acquisition</span></div>
-            <div class="v3-cta">
-              <button type="button" class="btn btn-primary" id="hero-contact-toggle" aria-expanded="false" aria-controls="contact-popup" aria-haspopup="dialog" style="border:0;cursor:pointer;font-family:inherit;padding:14px 28px;border-radius:999px;background:#D86B52;color:#fff;font-weight:700;font-size:.95rem;box-shadow:0 10px 24px -12px rgba(216,107,82,.7)"><span>Prendre contact</span></button>
-              </div>
-          </div>
+          <div class="v3-cta-only v3-in d3"><button type="button" class="btn btn-primary" id="hero-contact-toggle" data-cp-open aria-expanded="false" aria-controls="contact-popup" aria-haspopup="dialog" style="border:0;cursor:pointer;font-family:inherit;padding:14px 28px;border-radius:999px;background:#D86B52;color:#fff;font-weight:700;font-size:.95rem;box-shadow:0 10px 24px -12px rgba(216,107,82,.7)"><span>Prendre contact</span></button></div>
         </div>
         <div class="v3-stage v3-in d4" aria-hidden="true">
           <div class="m2-plate"></div>
@@ -1889,9 +1884,9 @@
         Un projet de visibilité, de réseaux sociaux ou d'e-mailing ? Échangeons lors d'un appel découverte sans engagement.
       </p>
       <div class="contact-actions">
-        <a href="#calendly-modal" data-calendly-open class="btn-cta-main">
+        <a href="#contact" data-cp-open class="btn-cta-main">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Prendre rendez-vous
+          Prendre contact
         </a>
         <a href="mailto:charlottepierrel@outlook.fr" class="btn-cta-outline">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -2062,10 +2057,11 @@ if (!SHOW_KEY_FIGURES) { var kf = document.getElementById('resultats'); if (kf) 
 (function(){document.querySelectorAll(".kf-more-btn").forEach(function(b){b.addEventListener("click",function(){var d=b.nextElementSibling,on=d.hidden;d.hidden=!on;d.classList.toggle("is-open",on);b.setAttribute("aria-expanded",on?"true":"false");b.textContent=on?"Masquer":"En savoir plus";});});})();
 </script>
 <script>
-(function(){var t=document.getElementById("hero-contact-toggle"),m=document.getElementById("contact-popup");if(!t||!m)return;
-function open(e){if(e)e.preventDefault();m.hidden=false;document.body.classList.add("cp-open");t.setAttribute("aria-expanded","true");}
-function close(){m.hidden=true;document.body.classList.remove("cp-open");t.setAttribute("aria-expanded","false");}
-t.addEventListener("click",open);
+(function(){var m=document.getElementById("contact-popup");if(!m)return;
+function setAria(v){document.querySelectorAll("[data-cp-open]").forEach(function(x){if(x.id)x.setAttribute("aria-expanded",v);});}
+function open(e){if(e)e.preventDefault();m.hidden=false;document.body.classList.add("cp-open");setAria("true");}
+function close(){m.hidden=true;document.body.classList.remove("cp-open");setAria("false");}
+document.querySelectorAll("[data-cp-open]").forEach(function(x){x.addEventListener("click",open);});
 m.querySelectorAll("[data-cp-close]").forEach(function(el){el.addEventListener("click",close);});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden)close();});
 })();
