@@ -1632,7 +1632,29 @@
     .hero-contact-choice a{display:flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;font-weight:700;font-size:.92rem;text-decoration:none}
     .hero-contact-choice .hcc-mail{background:#D86B52;color:#fff}
     .hero-contact-choice .hcc-visio{border:1.5px solid #786960;color:#786960;background:#fff}
+  
   </style>
+<style>
+    .cp-modal{position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px}
+    .cp-modal[hidden]{display:none}
+    .cp-backdrop{position:absolute;inset:0;background:rgba(40,28,24,.45);backdrop-filter:blur(4px)}
+    .cp-panel{position:relative;width:min(480px,100%);background:#fff;border-radius:24px;padding:36px 32px 30px;box-shadow:0 30px 80px -20px rgba(0,0,0,.35);animation:cpIn .25s ease}
+    @keyframes cpIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    .cp-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:1.6rem;line-height:1;color:#786960;cursor:pointer}
+    .cp-kicker{display:block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D86B52;margin-bottom:10px}
+    .cp-panel h2{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.6rem;line-height:1.2;color:#141414;margin:0 0 8px;letter-spacing:-.02em}
+    .cp-panel h2 em{font-family:'Instrument Serif',Georgia,serif;font-weight:400;color:#D86B52}
+    .cp-sub{margin:0 0 22px;color:#6E6361;font-size:.95rem}
+    .cp-opt{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1.5px solid #E6DDD6;border-radius:16px;margin-bottom:12px;text-decoration:none;color:#242220;background:#fff;transition:border-color .2s,background .2s}
+    .cp-opt:hover{border-color:#D86B52;background:#FDF4F0}
+    .cp-opt-main{background:#D86B52;border-color:#D86B52;color:#fff}
+    .cp-opt-main:hover{background:#C95E45;border-color:#C95E45}
+    .cp-ico{flex:0 0 40px;height:40px;border-radius:50%;background:rgba(120,105,96,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+    .cp-opt-main .cp-ico{background:rgba(255,255,255,.2)}
+    .cp-opt b{display:block;font-size:.98rem;font-weight:700}
+    .cp-opt small{display:block;font-size:.82rem;opacity:.8;margin-top:2px;line-height:1.4}
+    body.cp-open{overflow:hidden}
+</style>
 </head>
 <body>
 
@@ -1673,12 +1695,8 @@
             <span class="v3-ask-s v3-ask-bold">Un premier échange pour identifier le levier le plus rentable pour vous :</span>
             <div class="mock-line"><span>Visibilité</span><i></i><span>Notoriété</span><i></i><span>Acquisition</span></div>
             <div class="v3-cta">
-              <button type="button" class="btn btn-primary" id="hero-contact-toggle" aria-expanded="false" aria-controls="hero-contact-choice" style="border:0;cursor:pointer;font-family:inherit;padding:14px 28px;border-radius:999px;background:#D86B52;color:#fff;font-weight:700;font-size:.95rem;box-shadow:0 10px 24px -12px rgba(216,107,82,.7)"><span>Prendre contact</span></button>
-              <div class="hero-contact-choice" id="hero-contact-choice" hidden style="display:none;flex-wrap:wrap;gap:10px;margin-top:14px">
-                <a class="hcc-mail" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet" style="display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;background:#D86B52;color:#fff;font-weight:700;font-size:.92rem;text-decoration:none">Envoyer un message</a>
-                <a class="hcc-visio" href="#calendly-modal" data-calendly-open style="display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;border:1.5px solid #786960;color:#786960;background:#fff;font-weight:700;font-size:.92rem;text-decoration:none">Réserver un créneau en visio</a>
+              <button type="button" class="btn btn-primary" id="hero-contact-toggle" aria-expanded="false" aria-controls="contact-popup" aria-haspopup="dialog" style="border:0;cursor:pointer;font-family:inherit;padding:14px 28px;border-radius:999px;background:#D86B52;color:#fff;font-weight:700;font-size:.95rem;box-shadow:0 10px 24px -12px rgba(216,107,82,.7)"><span>Prendre contact</span></button>
               </div>
-            </div>
           </div>
         </div>
         <div class="v3-stage v3-in d4" aria-hidden="true">
@@ -1963,7 +1981,22 @@
 })();
 </script>
 
-  <div class="cal-modal" id="calendly-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
+  <div class="cp-modal" id="contact-popup" role="dialog" aria-modal="true" aria-labelledby="cp-title" hidden>
+    <div class="cp-backdrop" data-cp-close></div>
+    <div class="cp-panel">
+      <button type="button" class="cp-close" aria-label="Fermer" data-cp-close>×</button>
+      <span class="cp-kicker">Contact</span>
+      <h2 id="cp-title">Comment souhaitez-vous <em>échanger&nbsp;?</em></h2>
+      <p class="cp-sub">Choisissez la formule qui vous convient.</p>
+      <a class="cp-opt cp-opt-main" href="mailto:charlottepierrel@outlook.fr?subject=Demande%20de%20projet">
+        <span class="cp-ico">✉</span><span><b>Envoyer un message</b><small>Décrivez votre besoin, je vous réponds rapidement.</small></span>
+      </a>
+      <a class="cp-opt" href="#calendly-modal" data-calendly-open data-cp-close>
+        <span class="cp-ico">◷</span><span><b>Réserver un créneau en visio</b><small>Choisissez un horaire directement dans mon agenda.</small></span>
+      </a>
+    </div>
+  </div>
+<div class="cal-modal" id="calendly-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="calendly-modal-title">
     <div class="cal-modal-backdrop" data-calendly-close></div>
     <div class="cal-modal-panel" role="document">
       <header class="cal-modal-head">
@@ -2029,7 +2062,13 @@ if (!SHOW_KEY_FIGURES) { var kf = document.getElementById('resultats'); if (kf) 
 (function(){document.querySelectorAll(".kf-more-btn").forEach(function(b){b.addEventListener("click",function(){var d=b.nextElementSibling,on=d.hidden;d.hidden=!on;d.classList.toggle("is-open",on);b.setAttribute("aria-expanded",on?"true":"false");b.textContent=on?"Masquer":"En savoir plus";});});})();
 </script>
 <script>
-(function(){var t=document.getElementById("hero-contact-toggle"),c=document.getElementById("hero-contact-choice");if(!t||!c)return;t.addEventListener("click",function(){var open=c.hidden;c.hidden=!open;c.style.display=open?"flex":"none";t.setAttribute("aria-expanded",open?"true":"false");});})();
+(function(){var t=document.getElementById("hero-contact-toggle"),m=document.getElementById("contact-popup");if(!t||!m)return;
+function open(e){if(e)e.preventDefault();m.hidden=false;document.body.classList.add("cp-open");t.setAttribute("aria-expanded","true");}
+function close(){m.hidden=true;document.body.classList.remove("cp-open");t.setAttribute("aria-expanded","false");}
+t.addEventListener("click",open);
+m.querySelectorAll("[data-cp-close]").forEach(function(el){el.addEventListener("click",close);});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden)close();});
+})();
 </script>
 </body>
 </html>
